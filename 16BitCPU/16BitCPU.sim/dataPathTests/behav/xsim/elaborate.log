@@ -14,6 +14,7 @@ Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling architecture behavioral of entity xil_defaultlib.oneBitAdder [onebitadder_default]
 Compiling architecture behavioral of entity xil_defaultlib.nBitAdder [nbitadder_default]
+Compiling architecture behavioral of entity xil_defaultlib.comparator [comparator_default]
 Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
 Compiling architecture behavior of entity xil_defaultlib.alutb
 Built simulation snapshot ALUTB_behav

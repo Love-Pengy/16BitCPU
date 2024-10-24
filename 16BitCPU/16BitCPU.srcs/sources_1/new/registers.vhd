@@ -21,9 +21,10 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use IEEE.numeric_std.all;
 entity registers is
-  Port (read1, read2, writeReg: in std_logic_vector(2 downto 0); 
+  Port (clk : in std_logic;
+        read1, read2, writeReg: in std_logic_vector(2 downto 0); 
         registersWrite: in std_logic;
         writeData: in std_logic_vector(15 downto 0);
         data1, data2: out std_logic_vector(15 downto 0) := (others => '0'));
@@ -37,11 +38,13 @@ begin
     process(read1, read2, writeReg, writeData, registersWrite) 
         
     begin
+      if(rising_edge(clk)) then
+        data1 <= registerVals(to_integer(unsigned(read1)));
+        data2 <= registerVals(to_integer(unsigned(read2)));
         if(registersWrite = '1') then
-            -- write data goes into write register 
-        else
-            -- we are just reading register values
+            registerVals(to_integer(unsigned(writeReg))) <= writeData;
         end if;
+      end if;
     end process;
 
 end Behavioral;

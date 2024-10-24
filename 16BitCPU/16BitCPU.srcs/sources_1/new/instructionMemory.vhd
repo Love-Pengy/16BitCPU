@@ -31,9 +31,12 @@ end instructionMemory;
 
 architecture Behavioral of instructionMemory is
 type instructionArray is array (0 to 65536) of std_logic_vector(15 downto 0);
-signal instructionVals : instructionArray := (others => (others => '0'));
-signal currInstruction: std_logic_vector(15 downto 0) := (others => '0'); 
-
+--signal instructionVals : instructionArray := (others => (others => '0'));
+signal instructionVals : instructionArray := (
+    0 => X"0000", 
+    1 => X"0000", 
+    others => (others => '0')
+); 
 
 begin
 
@@ -41,7 +44,7 @@ process(clk, readAddr)
 begin 
       
     if(rising_edge(clk)) then
-        currInstruction <= instructionVals(to_integer(unsigned(readAddr)));
+        instruction <= instructionVals(to_integer(unsigned(readAddr)));
     end if;
 
 end process;

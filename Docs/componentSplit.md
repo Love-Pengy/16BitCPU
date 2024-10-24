@@ -1,11 +1,14 @@
 ## Brandon: 
 - ~~ALU~~
+    - test slt and sgt
 - Registers 
+    - done needs testing
 - Instruction Memory    
     - done needs testing
 - ALU Control
-    - tent done, needs sgt and slt
+    - tent done
 - Program Counter
+    - done needs testing
 - Shift left 2 
     - done needs testing
 
