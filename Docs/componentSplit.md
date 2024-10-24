@@ -4,6 +4,7 @@
 - Instruction Memory    
     - done needs testing
 - ALU Control
+    - tent done, needs sgt and slt
 - Program Counter
 - Shift left 2 
     - done needs testing
