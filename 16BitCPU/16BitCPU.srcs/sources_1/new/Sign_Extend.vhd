@@ -22,23 +22,13 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity Sign_Extend is
-  Port (SigIn : in std_logic_vector(7 downto 0);
+  Port (SigIn : in std_logic_vector(7 downto 0) := "00001100";
         SigOut : out std_logic_vector(15 downto 0)
         );
 end Sign_Extend;
 
 architecture Behavioral of Sign_Extend is
-
 begin
     process(SigIn)
         begin

@@ -23,15 +23,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity adder is
   Port (BUSA   : in std_logic_vector(15 downto 0);
     	BUSB   : in std_logic_vector(15 downto 0);
@@ -44,7 +35,7 @@ architecture Behavioral of adder is
     signal B: unsigned(16 downto 0) := (others => '0');
     signal output: unsigned(16 downto 0);
 begin
-    process(BUSA, BUSB)
+    process(BUSA, BUSB, A, B, output)
         begin
             A(15 downto 0)  <= unsigned(BUSA);
             B(15 downto 0)  <= unsigned(BUSB);
