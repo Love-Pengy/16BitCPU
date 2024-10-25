@@ -48,8 +48,11 @@ begin
                 when "011" =>
                     output <= "010";
                 when "100" => 
-                    output <= "001";
-                -- write out sgt and slt
+                    output <= "101"; 
+                when "101" =>
+                    output <= "110";
+                when others => 
+                    -- nothing
                 end case;
         end if;
     end process; 

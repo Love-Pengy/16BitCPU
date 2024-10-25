@@ -3,7 +3,11 @@
 Oct 13 2023
 20:47:58
 H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/ALUTB.vhd,1729798209,vhdl,,,,alutb,,,,,,,,
+H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/aluControlTB.vhd,1729827612,vhdl,,,,alucontroltb,,,,,,,,
+H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/registerTB.vhd,1729825798,vhdl,,,,registertb,,,,,,,,
+H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/aluControl.vhd,1729827521,vhdl,H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/aluControlTB.vhd,,,alucontrol,,,,,,,,
 H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/comparator.vhd,1729792901,vhdl,H:/EGRE426/lab3/lab3.srcs/sources_1/new/aluDesign.vhd,,,comparator,,,,,,,,
+H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/registers.vhd,1729826334,vhdl,H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/registerTB.vhd,,,registers,,,,,,,,
 H:/EGRE426/lab3/lab3.srcs/sources_1/new/1bitAdder.vhd,1728307930,vhdl,,,,onebitadder,,,,,,,,
 H:/EGRE426/lab3/lab3.srcs/sources_1/new/aluDesign.vhd,1729798584,vhdl2008,H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/ALUTB.vhd,,,alu,,,,,,,,
 H:/EGRE426/lab3/lab3.srcs/sources_1/new/nBitAdder.vhd,1729626812,vhdl2008,H:/EGRE426/lab3/lab3.srcs/sources_1/new/aluDesign.vhd,,,nbitadder,,,,,,,,
