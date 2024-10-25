@@ -32,31 +32,32 @@ end registers;
 
 architecture Behavioral of registers is
 type registerArray is array (0 to 7) of std_logic_vector(15 downto 0);
-
+signal testUnsigned : unsigned(2 downto 0) := "000";
+signal testInt : integer := 0;
 signal registerVals : registerArray := (
 -- test portion -------------------------------------
-                                        X"0000", 
-                                        X"0001", 
-                                        X"0010", 
-                                        X"0011", 
-                                        X"0100", 
-                                        X"0101", 
-                                        X"0110", 
-                                        X"0111"
+--                                        0 => X"0000", 
+--                                        1 => X"0001", 
+--                                        2 => X"0010", 
+--                                        3 => X"0011", 
+--                                        4 => X"0100", 
+--                                        5 => X"0101", 
+--                                        6 => X"0110", 
+--                                        7 => X"0111"
 -----------------------------------------------------
-                                        --others => (others => '0')
+                                        others => (others => '0')
                                         );
 begin
     
-    process(read1, read2, writeReg, writeData, registersWrite) 
+    process(clk, read1, read2, writeReg, writeData, registersWrite) 
         
     begin
       if(rising_edge(clk)) then
-        data1 <= registerVals(to_integer(unsigned(read1)));
-        data2 <= registerVals(to_integer(unsigned(read2)));
-        if(registersWrite = '1') then
+         if(registersWrite = '1') then
             registerVals(to_integer(unsigned(writeReg))) <= writeData;
         end if;
+        data1 <= registerVals(to_integer(unsigned(read1)));
+        data2 <= registerVals(to_integer(unsigned(read2)));
       end if;
     end process;
 

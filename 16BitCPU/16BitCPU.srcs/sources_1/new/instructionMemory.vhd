@@ -26,7 +26,7 @@ use IEEE.numeric_std.ALL;
 entity instructionMemory is
   Port (clk: in std_logic;
         readAddr: in std_logic_vector(15 downto 0);
-        instruction: out std_logic_vector(15 downto 0));
+        instruction: out std_logic_vector(15 downto 0) := (others => '0'));
 end instructionMemory;
 
 architecture Behavioral of instructionMemory is
@@ -34,7 +34,13 @@ type instructionArray is array (0 to 65536) of std_logic_vector(15 downto 0);
 --signal instructionVals : instructionArray := (others => (others => '0'));
 signal instructionVals : instructionArray := (
     0 => X"0000", 
-    1 => X"0000", 
+    1 => X"0001", 
+    2 => X"0010", 
+    3 => X"0011", 
+    4 => X"0100", 
+    5 => X"0101", 
+    6 => X"0110", 
+    7 => X"0111",
     others => (others => '0')
 ); 
 
@@ -42,7 +48,7 @@ begin
 
 process(clk, readAddr) 
 begin 
-      
+    
     if(rising_edge(clk)) then
         instruction <= instructionVals(to_integer(unsigned(readAddr)));
     end if;
