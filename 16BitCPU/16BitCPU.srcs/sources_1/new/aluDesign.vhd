@@ -56,8 +56,9 @@ end ALU;
 
 architecture Behavioral of ALU is
 
-    signal addOutput, twoOutput, shiftOutput, subOutput, bitOutput, compOutput, shiftIndex: std_logic_vector(N-1 downto 0);
+    signal addOutput, twoOutput, shiftOutput, subOutput, bitOutput, compOutput, shiftIndex, cutCalc: std_logic_vector(N-1 downto 0);
     signal comparatorOutput: std_logic_vector(1 downto 0);
+    
     COMPONENT nBitAdder
         PORT (
             A, B: in std_logic_vector(N-1 downto 0);
@@ -93,7 +94,7 @@ architecture Behavioral of ALU is
       PORT MAP(in1 => A, in2 => B, output => comparatorOutput); 
       
     process(A, B, Mode,subOutput)
-        variable cutCalc : std_logic_vector(15 downto 0);
+        variable tmpForBound: std_logic_vector(N-1 downto 0);
         begin
         case Mode is
             -- addition
@@ -169,9 +170,10 @@ architecture Behavioral of ALU is
                 C <= bitOutput;
             -- CUTL
             when "1001" => 
-                cutCalc := A;
-                for i in 0 to to_integer(unsigned(B)) LOOP
-                    cutCalc(i) := '0';
+                cutCalc <= A;
+                tmpForBound := B when unsigned(B) < N-1 else B"0000_0000_0000_1111";
+                for i in 0 to to_integer(unsigned(tmpForBound)) LOOP
+                    cutCalc(i) <= '0';
                 end LOOP;
                 if(cutCalc = X"0000") then  
                     Zero <= '1';
@@ -181,9 +183,10 @@ architecture Behavioral of ALU is
                 C <= cutCalc;
             -- CUTU 
             when "1010" => 
-                 cutCalc := A;
-                for i in 15 downto (15 - to_integer(unsigned(B)))  LOOP
-                    cutCalc(i) := '0';
+                cutCalc <= A;
+                tmpForBound := B when unsigned(B) < N-1 else B"0000_0000_0000_1111";
+                for i in (N-1) downto ((N-1) - to_integer(unsigned(tmpForBound)))  LOOP
+                    cutCalc(i) <= '0';
                 end LOOP;
                 if(cutCalc = X"0000") then  
                     Zero <= '1';

@@ -1,2 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/shiftLeft2TB.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'shiftLeft2TB'
+INFO: [VRFC 10-163] Analyzing VHDL file "H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/aluDesign.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU'
+INFO: [VRFC 10-163] Analyzing VHDL file "H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/ALUTB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALUTB'
