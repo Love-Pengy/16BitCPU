@@ -10,29 +10,37 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="432.930 ns"></ZoomStartTime>
-      <ZoomEndTime time="657.415 ns"></ZoomEndTime>
-      <Cursor1Time time="620.000 ns"></Cursor1Time>
+      <ZoomStartTime time="628.200 ns"></ZoomStartTime>
+      <ZoomEndTime time="715.401 ns"></ZoomEndTime>
+      <Cursor1Time time="698.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="109"></NameColumnWidth>
+      <NameColumnWidth column_width="101"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="4" />
+   <WVObjectSize size="5" />
    <wvobject fp_name="/ALUTB/DUT/A" type="array">
       <obj_property name="ElementShortName">A[15:0]</obj_property>
       <obj_property name="ObjectShortName">A[15:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/ALUTB/DUT/B" type="array">
       <obj_property name="ElementShortName">B[15:0]</obj_property>
       <obj_property name="ObjectShortName">B[15:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/ALUTB/DUT/C" type="array">
       <obj_property name="ElementShortName">C[15:0]</obj_property>
       <obj_property name="ObjectShortName">C[15:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/ALUTB/DUT/Zero" type="logic">
       <obj_property name="ElementShortName">Zero</obj_property>
       <obj_property name="ObjectShortName">Zero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ALUTB/Mode_sig" type="array">
+      <obj_property name="ElementShortName">Mode_sig[3:0]</obj_property>
+      <obj_property name="ObjectShortName">Mode_sig[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

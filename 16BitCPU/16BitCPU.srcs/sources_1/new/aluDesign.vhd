@@ -171,10 +171,12 @@ architecture Behavioral of ALU is
             -- CUTL
             when "1001" => 
                 cutCalc <= A;
-                tmpForBound := B when unsigned(B) < N-1 else B"0000_0000_0000_1111";
-                for i in 0 to to_integer(unsigned(tmpForBound)) LOOP
-                    cutCalc(i) <= '0';
-                end LOOP;
+                tmpForBound := B when unsigned(B) < (N/2) else B"0000_0000_0000_1000";
+                if(unsigned(tmpForBound) > 0) then
+                    for i in 0 to to_integer((unsigned(tmpForBound) - 1)) LOOP
+                        cutCalc(i) <= '0';
+                    end LOOP;
+                end if;
                 if(cutCalc = X"0000") then  
                     Zero <= '1';
                 else 
@@ -184,10 +186,12 @@ architecture Behavioral of ALU is
             -- CUTU 
             when "1010" => 
                 cutCalc <= A;
-                tmpForBound := B when unsigned(B) < N-1 else B"0000_0000_0000_1111";
-                for i in (N-1) downto ((N-1) - to_integer(unsigned(tmpForBound)))  LOOP
-                    cutCalc(i) <= '0';
-                end LOOP;
+                tmpForBound := B when unsigned(B) < (N/2) else B"0000_0000_0000_1000";
+                if(unsigned(tmpForBound) > 0) then
+                    for i in (N-1) downto ((N-1) - to_integer(unsigned(tmpForBound) - 1))  LOOP
+                      cutCalc(i) <= '0';
+                    end LOOP;
+                 end if;
                 if(cutCalc = X"0000") then  
                     Zero <= '1';
                 else 
