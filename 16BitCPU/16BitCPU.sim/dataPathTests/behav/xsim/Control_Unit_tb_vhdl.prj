@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../16BitCPU.srcs/sources_1/new/Control_Unit.vhd" \
+"../../../../16BitCPU.srcs/dataPathTests/new/Control_Unit_TB.vhd" \
+
+# Do not sort compile order
+nosort

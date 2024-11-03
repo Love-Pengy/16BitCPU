@@ -27,33 +27,24 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity Control_Unit is
     Port (
         opcode : in std_logic_vector(3 downto 0);  
-        alu_op : out std_logic; 
-        reg_dst : out std_logic;                   
-        reg_write : out std_logic;                 
-        alu_src : out std_logic;                   
-        mem_read : out std_logic;                  
-        mem_write : out std_logic;                 
-        mem_to_reg : out std_logic;                 
-        jump : out std_logic;
-        branch : out std_logic
+        alu_op : out std_logic := '0'; 
+        reg_dst : out std_logic := '0';                   
+        reg_write : out std_logic := '0';                 
+        alu_src : out std_logic := '0';                   
+        mem_read : out std_logic := '0';                  
+        mem_write : out std_logic := '0';                 
+        mem_to_reg : out std_logic := '0';                 
+        jump : out std_logic := '0';
+        branch : out std_logic := '0'
     );
 end Control_Unit;
 
 architecture Behavioral of Control_Unit is
-begin
-    alu_op <= '0';       
-    reg_dst <= '0';        
-    reg_write <= '0';      
-    alu_src <= '0';        
-    mem_read <= '0';       
-    mem_write <= '0';      
-    mem_to_reg <= '0';     
-    jump <= '0';
-    branch <= '0';
-    
+begin 
     process(opcode)
     begin
         case opcode is
+            -- IMMEDIATE AND JUMP INSTRUCTIONS --
             when "0001" =>
                 reg_dst <= '0';
                 jump <= '0';
@@ -154,7 +145,19 @@ begin
                 mem_write <= '0';
                 alu_src <= '0';
                 reg_write <= '0';
-            when others =>
+            -- R TYPE INSTRUCTIONS --
+            when "0000" => 
+                reg_dst <= '1';
+                jump <= '0'; 
+                branch <= '0';
+                mem_read <= '0';
+                mem_to_reg <= '0';
+                alu_op <= '1';
+                mem_write <= '0';
+                alu_src <= '0';
+                reg_write <= '1';
+             -- DEFAULT FOR I/J TYPE INSTRUCTIONS --
+             when others =>
                 reg_dst <= '1';
                 jump <= '0';
                 branch <= '0';

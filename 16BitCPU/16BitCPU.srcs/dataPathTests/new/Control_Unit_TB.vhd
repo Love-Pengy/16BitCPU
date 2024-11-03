@@ -95,6 +95,9 @@ begin
         opcode <= "1111";
         wait for 10 ns;
         
+        opcode <= "0000";
+        wait for 10 ns;
+        
         wait;
     end process;
 

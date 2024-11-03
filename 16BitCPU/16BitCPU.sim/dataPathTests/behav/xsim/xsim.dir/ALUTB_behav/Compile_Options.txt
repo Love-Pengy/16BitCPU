@@ -1,1 +1,1 @@
---incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "ALUTB_behav" "xil_defaultlib.ALUTB" -log "elaborate.log" 
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "ALUTB_behav" "xil_defaultlib.ALUTB" -log "elaborate.log" 

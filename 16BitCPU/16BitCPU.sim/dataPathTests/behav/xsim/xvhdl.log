@@ -1,4 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/aluDesign.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'ALU'
-INFO: [VRFC 10-163] Analyzing VHDL file "H:/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/ALUTB.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'ALUTB'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/Control_Unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control_Unit'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/Control_Unit_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Control_Unit_tb'
