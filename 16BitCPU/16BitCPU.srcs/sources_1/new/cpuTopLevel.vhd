@@ -28,11 +28,13 @@ use IEEE.NUMERIC_STD.ALL;
 
 
 entity cpuTopLevel is
---  Port ( );
+  Port (clk: in std_logic := '0';
+        clkEnable: in std_logic := '1';
+        reset: in std_logic := '0' );
 end cpuTopLevel;
 
 architecture Structural of cpuTopLevel is
-COMPONENT programcounter 
+COMPONENT programCounter 
     PORT ( 
         clk : in std_logic;
         readAddress: in std_logic_vector(15 downto 0);
@@ -89,7 +91,7 @@ COMPONENT aluControlUnit
         --check the bit width of this
         ALUOp: in std_logic; 
         opCode: in std_logic_vector(2 downto 0);
-        output: out std_logic_vector(2 downto 0));
+        output: out std_logic_vector(3 downto 0));
 end COMPONENT;
 
 COMPONENT alu
@@ -131,7 +133,6 @@ COMPONENT dataMemory
   );
 end COMPONENT; 
 
--- verify this is the one he was trying to add 4 with
 COMPONENT fourAdder
       Port (BUSA   : in std_logic_vector(15 downto 0);
     	    RESULT : out std_logic_vector(15 downto 0);
@@ -164,8 +165,32 @@ FOR ALL: instructionMemory use entity work.instructionMemory(Behavioral);
 FOR ALL: programCounter use entity work.programCounter(Behavioral);
 
 
-signal pcInput, pcOutput, instructionMemoryOutput, signExtendOutput, registerOutOne, registerOutTwo, ALUZero, ALUResult, dataMemoryOutput, memToRegMuxOutput, ALUSrcMuxOutput, regDstMuxOutput, jumpAddressOutput, fourAdderOutput, signExtendShiftOutput, adderOutput, branchMuxOutput, jumpMuxOutput: std_logic_vector(15 downto 0);
+signal pcInput, pcOutput, instructionMemoryOutput, signExtendOutput, registerOutOne, registerOutTwo, ALUResult, dataMemoryOutput, memToRegMuxOutput, ALUSrcMuxOutput, regDstMuxOutput, jumpAddressOutput, fourAdderOutput, signExtendShiftOutput, adderOutput, branchMuxOutput, jumpMuxOutput: std_logic_vector(15 downto 0);
+signal ALUControlUnitOutput : std_logic_vector(3 downto 0);
+signal regDest_sig, jump_sig, branch_sig, memRead_sig, memToReg_sig, ALUOp_sig, memWrite_sig, ALUSrc_sig, regWrite_sig, ALUZero: std_logic;
 
 begin
+
+
+    programCounterCalc: programCounter
+        PORT MAP(clk => clk, readAddress => pcInput, instruction => pcOutput);
+    instructionMemoryCalc: instructionMemory
+        PORT MAP(clk => clk, readAddr => pcOutput, instruction => instructionMemoryOutput);
+    controlUnitCalc: controlUnit
+        PORT MAP(opcode => instructionMemoryOutput(15 downto 11), reg_dst => regDest_sig, jump => jump_sig, branch => branch_sig, mem_read => memRead_sig, mem_to_reg => memToReg_sig, ALU_Op => ALUOp_sig, mem_write => memWrite_sig, ALU_src => ALUSrc_sig, reg_write => regWrite_sig);
+    writeRegMuxCalc: Mux
+        PORT MAP(cntrl => regDest_sig, topin => instructionMemoryOutput(5 downto 2), bottom => instructionMemoryOutput(11 downto 8), output => regDstMuxOutput);
+    registerFileCalc: registers
+        PORT MAP(clk => clk, read1 => instructionMemoryOutput(8 downto 5), read2 => instructionMemoryOutput(5 downto 2), writeReg => regDstMuxOutput, registersWrite => regWrite_sig, writeData => memToRegMuxOutput, data1 => registerOutOne, data2 => registerOutTwo);
+    signExtendCalc: signExtender
+        PORT MAP(SigIn => instructionMemoryOutput(12 downto 0), SigOut => signExtendOutput);
+    ALUSrcMuxCalc : Mux
+        PORT MAP(cntrl => ALUSrc_sig, topin => registerOutTwo, bottom => signExtendOutput, output => ALUSrcMuxOutput);
+    ALUCalc : ALU
+        PORT MAP(A => registerOutOne, B => ALUSrcMuxOutput, Mode => ALUControlUnitOutput, Zero => ALUZero, C => ALUResult);
+    ALUControlUnitCalc : ALUControlUnit
+        PORT MAP(ALUOp => ALUOp_sig, opCode => instructionMemoryOutput,  output => ALUControlUnitOutput);
+    dataMemoryCalc: dataMemory
+        PORT MAP(clk => clk, address => ALUResult, writeData => registerOutTwo, memWrite => memWrite_sig, memRead => memRead_sig, ReadData => dataMemoryOutput);
 
 end Structural;

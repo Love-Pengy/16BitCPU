@@ -27,7 +27,7 @@ entity aluControl is
         --check the bit width of this
         ALUOp: in std_logic; 
         opCode: in std_logic_vector(2 downto 0);
-        output: out std_logic_vector(2 downto 0));
+        output: out std_logic_vector(3 downto 0));
 end aluControl;
 
 architecture Behavioral of aluControl is
@@ -40,17 +40,19 @@ begin
         else
             case opCode is 
                 when "000" => 
-                    output <= "000";
+                    output <= "0000";
                 when "001" => 
-                    output <= "001"; 
+                    output <= "0001"; 
                 when "010" => 
-                    output <= "011";
+                    output <= "0011";
                 when "011" =>
-                    output <= "010";
+                    output <= "0010";
                 when "100" => 
-                    output <= "101"; 
+                    output <= "0100"; 
                 when "101" =>
-                    output <= "110";
+                    output <= "0101";
+                when "111" => 
+                    output <= "1000";
                 when others => 
                     -- nothing
                 end case;
