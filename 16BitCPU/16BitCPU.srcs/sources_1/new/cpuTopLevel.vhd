@@ -133,7 +133,7 @@ COMPONENT dataMemory
   );
 end COMPONENT; 
 
-COMPONENT fourAdder
+COMPONENT twoAdder
       Port (BUSA   : in std_logic_vector(15 downto 0);
     	    RESULT : out std_logic_vector(15 downto 0);
     	    COUT   : out std_logic);
@@ -153,7 +153,7 @@ end COMPONENT;
 
 FOR ALL: adder use entity work.adder(Behavioral);
 FOR ALL: shiftLeftTwo use entity work.shiftLeft2(Behavioral);
-FOR ALL: fourAdder use entity work.adder2(Behavioral);
+FOR ALL: twoAdder use entity work.adder2(Behavioral);
 FOR ALL: dataMemory use entity work.Data_Memory(Behavioral);
 FOR ALL: alu use entity work.ALU(Behavioral);
 FOR ALL: aluControlUnit use entity work.aluControl(Behavioral);
@@ -165,13 +165,13 @@ FOR ALL: instructionMemory use entity work.instructionMemory(Behavioral);
 FOR ALL: programCounter use entity work.programCounter(Behavioral);
 
 
-signal pcInput, pcOutput, instructionMemoryOutput, signExtendOutput, registerOutOne, registerOutTwo, ALUResult, dataMemoryOutput, memToRegMuxOutput, ALUSrcMuxOutput, regDstMuxOutput, jumpAddressOutput, fourAdderOutput, signExtendShiftOutput, adderOutput, branchMuxOutput, jumpMuxOutput: std_logic_vector(15 downto 0);
+signal jumpAddressShifterOutput, pcInput, pcOutput, instructionMemoryOutput, signExtendOutput, registerOutOne, registerOutTwo, ALUResult, dataMemoryOutput, memToRegMuxOutput, ALUSrcMuxOutput, regDstMuxOutput, jumpAddressOutput, twoAdderOutput, signExtendShiftOutput, adderOutput, branchMuxOutput, jumpMuxOutput: std_logic_vector(15 downto 0);
 signal ALUControlUnitOutput : std_logic_vector(3 downto 0);
 signal regDest_sig, jump_sig, branch_sig, memRead_sig, memToReg_sig, ALUOp_sig, memWrite_sig, ALUSrc_sig, regWrite_sig, ALUZero: std_logic;
 
 begin
 
-
+    
     programCounterCalc: programCounter
         PORT MAP(clk => clk, readAddress => pcInput, instruction => pcOutput);
     instructionMemoryCalc: instructionMemory
@@ -192,5 +192,15 @@ begin
         PORT MAP(ALUOp => ALUOp_sig, opCode => instructionMemoryOutput,  output => ALUControlUnitOutput);
     dataMemoryCalc: dataMemory
         PORT MAP(clk => clk, address => ALUResult, writeData => registerOutTwo, memWrite => memWrite_sig, memRead => memRead_sig, ReadData => dataMemoryOutput);
-
+    memToRegMuxCalc: Mux
+        PORT MAP(cntrl => memToReg_sig, topin => dataMemoryOutput, bottom => ALUResult, output => memToRegMuxOutput);
+    --verify this 
+    -- jump addres * 2 + 2
+    --check up on jump address and PC both inputting into the same bus at the same location
+--    twoAdderCalc: twoAdder
+--        PORT MAP(BUSA => pcOutput, RESULT => twoAdderOutput, COUT => open);
+--     jumpAddressCalc: shiftLeftTwo 
+--        PORT MAP(input => instructionMemoryOutput(11 downto 0), output => jumpAddressShifterOutput);
+             
+    
 end Structural;
