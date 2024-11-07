@@ -46,7 +46,7 @@ begin
                 when "010" => 
                     output <= "0011";
                 when "011" =>
-                    output <= "0010";
+                    output <= "0110";
                 when "100" => 
                     output <= "0100"; 
                 when "101" =>

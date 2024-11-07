@@ -22,12 +22,12 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.ALL;
-entity shiftLeft2 is
+entity leftShifter is
   Port (input: in std_logic_vector(11 downto 0) := (others => '0');
         output: out std_logic_vector(15 downto 0));
-end shiftLeft2;
+end leftShifter;
 
-architecture Behavioral of shiftLeft2 is
+architecture Behavioral of leftShifter is
 
 begin
 
@@ -35,7 +35,7 @@ process(input)
 variable paddedInput : std_logic_vector(15 downto 0);
 begin
     paddedInput := X"0000";
-    paddedInput(13 downto 2) := input;
+    paddedInput(12 downto 1) := input;
     output <= paddedInput;
     --output <= std_logic_vector(unsigned(input), 16) SLL 2);
 end process;
