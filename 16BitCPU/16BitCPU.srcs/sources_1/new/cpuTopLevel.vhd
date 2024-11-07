@@ -181,13 +181,13 @@ begin
     controlUnitCalc: controlUnit
         PORT MAP(opcode => instructionMemoryOutput(15 downto 11), reg_dst => regDest_sig, jump => jump_sig, branch => branch_sig, mem_read => memRead_sig, mem_to_reg => memToReg_sig, ALU_Op => ALUOp_sig, mem_write => memWrite_sig, ALU_src => ALUSrc_sig, reg_write => regWrite_sig);
     writeRegMuxCalc: Mux
-        PORT MAP(cntrl => regDest_sig, topin => instructionMemoryOutput(5 downto 2), bottom => instructionMemoryOutput(11 downto 8), output => regDstMuxOutput);
+        PORT MAP(cntrl => regDest_sig, bottom => instructionMemoryOutput(5 downto 2), topin => instructionMemoryOutput(11 downto 8), output => regDstMuxOutput);
     registerFileCalc: registers
         PORT MAP(clk => clk, read1 => instructionMemoryOutput(8 downto 5), read2 => instructionMemoryOutput(5 downto 2), writeReg => regDstMuxOutput, registersWrite => regWrite_sig, writeData => memToRegMuxOutput, data1 => registerOutOne, data2 => registerOutTwo);
     signExtendCalc: signExtender
         PORT MAP(SigIn => instructionMemoryOutput(12 downto 0), SigOut => signExtendOutput);
     ALUSrcMuxCalc : Mux
-        PORT MAP(cntrl => ALUSrc_sig, topin => registerOutTwo, bottom => signExtendOutput, output => ALUSrcMuxOutput);
+        PORT MAP(cntrl => ALUSrc_sig, bottom => registerOutTwo, topin => signExtendOutput, output => ALUSrcMuxOutput);
     ALUCalc : ALU
         PORT MAP(A => registerOutOne, B => ALUSrcMuxOutput, Mode => ALUControlUnitOutput, Zero => ALUZero, C => ALUResult);
     ALUControlUnitCalc : ALUControlUnit

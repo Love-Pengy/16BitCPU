@@ -26,14 +26,14 @@ entity Control_Unit_tb is
 end Control_Unit_tb;
 
 architecture Behavioral of Control_Unit_tb is
-    signal opcode : std_logic_vector(3 downto 0);
-    signal alu_op, reg_dst, reg_write, alu_src, mem_read : std_logic;
+    signal opcode, alu_op : std_logic_vector(3 downto 0);
+    signal reg_dst, reg_write, alu_src, mem_read : std_logic;
     signal mem_write, mem_to_reg, jump, branch : std_logic;
 
     component Control_Unit
         Port (
             opcode : in std_logic_vector(3 downto 0);
-            alu_op : out std_logic;
+            alu_op : out std_logic_vector(3 downto 0);
             reg_dst : out std_logic;
             reg_write : out std_logic;
             alu_src : out std_logic;

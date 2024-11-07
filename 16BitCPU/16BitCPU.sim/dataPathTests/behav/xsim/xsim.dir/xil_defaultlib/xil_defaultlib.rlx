@@ -1,11 +1,6 @@
 0.7
 2020.2
 May 22 2024
-18:54:44
-/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/ALUTB.vhd,1730672024,vhdl,,,,alutb,,,,,,,,
-/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/Control_Unit_TB.vhd,1730674651,vhdl,,,,control_unit_tb,,,,,,,,
-/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/1bitAdder.vhd,1730672564,vhdl,,,,onebitadder,,,,,,,,
-/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/Control_Unit.vhd,1730674608,vhdl,,,,control_unit,,,,,,,,
-/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/aluDesign.vhd,1730672024,vhdl2008,/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/ALUTB.vhd,,,alu,,,,,,,,
-/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/comparator.vhd,1730672024,vhdl,/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/aluDesign.vhd,,,comparator,,,,,,,,
-/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/nBitAdder.vhd,1730672580,vhdl,/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/aluDesign.vhd,,,nbitadder,,,,,,,,
+19:03:11
+C:/Users/dusti/Documents/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/Control_Unit_TB.vhd,1731013710,vhdl,,,,control_unit_tb,,,,,,,,
+C:/Users/dusti/Documents/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/Control_Unit.vhd,1731013850,vhdl,,,,control_unit,,,,,,,,

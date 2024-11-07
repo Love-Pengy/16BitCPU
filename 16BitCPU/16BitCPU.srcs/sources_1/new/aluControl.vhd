@@ -25,7 +25,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity aluControl is
   Port (
         --check the bit width of this
-        ALUOp: in std_logic; 
+        ALUOp: in std_logic_vector(3 downto 0); 
         opCode: in std_logic_vector(2 downto 0);
         output: out std_logic_vector(3 downto 0));
 end aluControl;
@@ -35,9 +35,7 @@ begin
 
     process(ALUOp, opCode)
     begin 
-        if(ALUOp = '0') then
-            output <= "ZZZ"; 
-        else
+        if(ALUOp = "0000") then
             case opCode is 
                 when "000" => 
                     output <= "0000";
@@ -56,6 +54,27 @@ begin
                 when others => 
                     -- nothing
                 end case;
+        else
+            case ALUop is
+                when "0001" =>
+                    output <= "0000";
+                when "0010" =>
+                    output <= "0000";
+                when "0011" =>
+                    output <= "0000";
+                when "0100" =>
+                    output <= "1001";
+                when "0101" =>
+                    output <= "1010";
+                when "0111" =>
+                    output <= "1011";
+                when "1000" =>
+                    output <= "1100";
+                when "1001" =>
+                    output <= "0001";
+                when others =>
+                    --nothing
+            end case;
         end if;
     end process; 
     
