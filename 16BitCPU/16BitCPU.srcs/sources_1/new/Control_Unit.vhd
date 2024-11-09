@@ -156,6 +156,17 @@ begin
                 mem_write <= '0';
                 alu_src <= '0';
                 reg_write <= '1';
+             -- NOP --
+             when "1111" => 
+                reg_dst <= '0';
+                jump <= '0'; 
+                branch <= '0';
+                mem_read <= '0';
+                mem_to_reg <= '0';
+                alu_op <= opcode;
+                mem_write <= '0';
+                alu_src <= '0';
+                reg_write <= '0';
              -- DEFAULT FOR I/J TYPE INSTRUCTIONS --
              when others =>
                 reg_dst <= '0';

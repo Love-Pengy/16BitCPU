@@ -26,17 +26,17 @@ entity aluControl is
   Port (
         --check the bit width of this
         ALUOp: in std_logic_vector(3 downto 0); 
-        opCode: in std_logic_vector(2 downto 0);
+        func: in std_logic_vector(2 downto 0);
         output: out std_logic_vector(3 downto 0));
 end aluControl;
 
 architecture Behavioral of aluControl is
 begin
 
-    process(ALUOp, opCode)
+    process(ALUOp, func)
     begin 
         if(ALUOp = "0000") then
-            case opCode is 
+            case func is 
                 when "000" => 
                     output <= "0000";
                 when "001" => 

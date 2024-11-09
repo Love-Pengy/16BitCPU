@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "Sign_Extend_tb_behav" "xil_defaultlib.Sign_Extend_tb" -log "elaborate.log" 

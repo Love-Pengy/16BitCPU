@@ -23,22 +23,22 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity shiftLeft2TB is
+entity jumpLeftShifterTB is
 end entity;
 
-architecture behavior of shiftLeft2TB is
+architecture behavior of jumpLeftShifterTB is
   constant Tperiod : time := 10 ns;
            
-  signal output_sig : std_logic_vector(15 downto 0);
+  signal output_sig : std_logic_vector(12 downto 0);
   signal input_sig : std_logic_vector(11 downto 0);
 begin
 
 
-input_sig <= B"0000_0000_0000", B"0000_0000_0001" after 10 ns, B"1110_0000_0000" after 20 ns, X"002" after 30 ns;
+input_sig <= B"0000_0000_0000" after 0 ns, B"0000_0000_0001" after 10 ns, B"1110_0000_0000" after 20 ns, X"002" after 30 ns;
   
 
  -- this is the component instantiation for the
     -- DUT - the device we are testing
-    DUT : entity work.shiftLeft2(Behavioral)
+    DUT : entity work.jumpLeftShifter(Behavioral)
       port map(input => input_sig, output => output_sig);
 end behavior;

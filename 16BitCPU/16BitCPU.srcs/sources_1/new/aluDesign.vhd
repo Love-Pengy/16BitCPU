@@ -169,7 +169,8 @@ architecture Behavioral of ALU is
                 end if;
                 C <= bitOutput;
             -- CUTL
-            when "1001" => 
+            when "1001" =>
+                -- could do an ugly switch case 
                 cutCalc <= A;
                 tmpForBound := B when unsigned(B) < (N/2) else B"0000_0000_0000_1000";
                 if(unsigned(tmpForBound) > 0) then

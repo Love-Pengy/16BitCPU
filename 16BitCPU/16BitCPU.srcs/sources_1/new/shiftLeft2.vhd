@@ -22,19 +22,20 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.ALL;
-entity leftShifter is
+entity jumpLeftShifter is
   Port (input: in std_logic_vector(11 downto 0) := (others => '0');
-        output: out std_logic_vector(15 downto 0));
-end leftShifter;
+        output: out std_logic_vector(12 downto 0));
+end jumpLeftShifter;
 
-architecture Behavioral of leftShifter is
+architecture Behavioral of jumpLeftShifter is
 
 begin
 
 process(input) 
-variable paddedInput : std_logic_vector(15 downto 0);
+variable paddedInput : std_logic_vector(12 downto 0);
 begin
-    paddedInput := X"0000";
+    paddedInput := B"0_0000_0000_0000";
+    
     paddedInput(12 downto 1) := input;
     output <= paddedInput;
     --output <= std_logic_vector(unsigned(input), 16) SLL 2);
