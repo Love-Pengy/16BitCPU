@@ -198,10 +198,10 @@ begin
         PORT MAP(clk => clk, readAddr => pcOutput, instruction => instructionMemoryOutput);
     controlUnitCalc: controlUnit
         PORT MAP(opcode => instructionMemoryOutput(15 downto 12), reg_dst => regDest_sig, jump => jump_sig, branch => branch_sig, mem_read => memRead_sig, mem_to_reg => memToReg_sig, ALU_Op => ALUOp_sig, mem_write => memWrite_sig, ALU_src => ALUSrc_sig, reg_write => regWrite_sig);
-    writeRegMuxCalc: threeBitMux
-        PORT MAP(cntrl => regDest_sig, bottom => instructionMemoryOutput(5 downto 3), topin => instructionMemoryOutput(8 downto 6), output => regDstMuxOutput);
+    regDstMuxCalc: threeBitMux
+        PORT MAP(cntrl => regDest_sig, bottom => instructionMemoryOutput(8 downto 6), topin => instructionMemoryOutput(5 downto 3), output => regDstMuxOutput);
     registerFileCalc: registers
-        PORT MAP(clk => clk, read1 => instructionMemoryOutput(8 downto 6), read2 => instructionMemoryOutput(5 downto 3), writeReg => regDstMuxOutput, registersWrite => regWrite_sig, writeData => memToRegMuxOutput, data1 => registerOutOne, data2 => registerOutTwo);
+        PORT MAP(clk => clk, read1 => instructionMemoryOutput(11 downto 9), read2 => instructionMemoryOutput(8 downto 6), writeReg => regDstMuxOutput, registersWrite => regWrite_sig, writeData => memToRegMuxOutput, data1 => registerOutOne, data2 => registerOutTwo);
     signExtendCalc: signExtender
         PORT MAP(SigIn => instructionMemoryOutput(5 downto 0), SigOut => signExtendOutput);
     ALUSrcMuxCalc : sixteenBitMux

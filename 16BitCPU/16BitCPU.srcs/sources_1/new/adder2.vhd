@@ -34,19 +34,20 @@ use IEEE.numeric_std.ALL;
 
 entity adder2 is
       Port (BUSA   : in std_logic_vector(15 downto 0);
-    	    RESULT : out std_logic_vector(15 downto 0);
+    	    RESULT : out std_logic_vector(15 downto 0) := (others => '0'); 
     	    COUT   : out std_logic := '0' );
 end adder2;
 
 architecture Behavioral of adder2 is
-    signal A: unsigned(16 downto 0) := (others => '0');
-    signal B: unsigned(16 downto 0) := "00000000000000010";
-    signal output: unsigned(16 downto 0);
 begin
     process(BUSA)
+        variable B: unsigned(16 downto 0) := "00000000000000010";
+        variable output: unsigned(16 downto 0) := (others => '0');
+        variable A: unsigned(16 downto 0) := (others => '0');
+
         begin
-            A(15 downto 0)  <= unsigned(BUSA);
-            output <= A + B;
+            A(15 downto 0)  := unsigned(BUSA);
+            output := A + B;
             
             RESULT <= std_logic_vector(output(15 downto 0));
             COUT <= output(16);

@@ -33,9 +33,17 @@ architecture Behavioral of instructionMemory is
 type instructionArray is array (0 to 65536) of std_logic_vector(15 downto 0);
 --signal instructionVals : instructionArray := (others => (others => '0'));
 signal instructionVals : instructionArray := (
-    0 => X"1201", -- addi $1, $zero, 1; 
-    --1 => X"0000", -- add $1, $2, $3
-    others => (others => '0')
+    -- remember 
+    --Rtype: opcode rs rt rd func
+    -- itype: opcode rt rs imm
+    -- jtype: opdcode address
+    
+    -- addi 
+    0 => X"1041", -- addi $1, $zero, 1; 
+    1 => X"107F", -- addi $1, $zero, 111111; 0001 000 001 111111 -- should overflow
+    2 => X"1041", -- addi $1, $zero, 1; 
+    3 => X"107E", -- addi $1, $zero, 111111; 0001 000 001 111110 -- should overflow
+    others => (others => '1') --others are no ops
 ); 
 
 begin

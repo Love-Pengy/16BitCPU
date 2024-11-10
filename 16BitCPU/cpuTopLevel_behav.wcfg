@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="cpuTopLevel_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="cpuTopLevel" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="127.001 ns"></ZoomEndTime>
+      <Cursor1Time time="6.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="305"></NameColumnWidth>
+      <ValueColumnWidth column_width="85"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="divider78" type="divider">
+      <obj_property name="label">Top Level</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#DCDCDC</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group38">
+      <obj_property name="label">Top Level Inputs</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/cpuTopLevel/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/clkEnable">
+         <obj_property name="ElementShortName">clkEnable</obj_property>
+         <obj_property name="ObjectShortName">clkEnable</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/reset">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group57">
+      <obj_property name="label">Top Level Wires</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevel/pcInput">
+         <obj_property name="ElementShortName">pcInput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">pcInput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/pcOutput">
+         <obj_property name="ElementShortName">pcOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">pcOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/jumpAddress">
+         <obj_property name="ElementShortName">jumpAddress[15:0]</obj_property>
+         <obj_property name="ObjectShortName">jumpAddress[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchAddressShifterOutput">
+         <obj_property name="ElementShortName">branchAddressShifterOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">branchAddressShifterOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchAddressMuxOutput">
+         <obj_property name="ElementShortName">branchAddressMuxOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">branchAddressMuxOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/instructionMemoryOutput">
+         <obj_property name="ElementShortName">instructionMemoryOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">instructionMemoryOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchAddress">
+         <obj_property name="ElementShortName">branchAddress[15:0]</obj_property>
+         <obj_property name="ObjectShortName">branchAddress[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/signExtendOutput">
+         <obj_property name="ElementShortName">signExtendOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">signExtendOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/registerOutOne">
+         <obj_property name="ElementShortName">registerOutOne[15:0]</obj_property>
+         <obj_property name="ObjectShortName">registerOutOne[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/registerOutTwo">
+         <obj_property name="ElementShortName">registerOutTwo[15:0]</obj_property>
+         <obj_property name="ObjectShortName">registerOutTwo[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUResult">
+         <obj_property name="ElementShortName">ALUResult[15:0]</obj_property>
+         <obj_property name="ObjectShortName">ALUResult[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/dataMemoryOutput">
+         <obj_property name="ElementShortName">dataMemoryOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">dataMemoryOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/memToRegMuxOutput">
+         <obj_property name="ElementShortName">memToRegMuxOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">memToRegMuxOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUSrcMuxOutput">
+         <obj_property name="ElementShortName">ALUSrcMuxOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">ALUSrcMuxOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/jumpAddressOutput">
+         <obj_property name="ElementShortName">jumpAddressOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">jumpAddressOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/twoAdderOutput">
+         <obj_property name="ElementShortName">twoAdderOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">twoAdderOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/signExtendShiftOutput">
+         <obj_property name="ElementShortName">signExtendShiftOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">signExtendShiftOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/adderOutput">
+         <obj_property name="ElementShortName">adderOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">adderOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchMuxOutput">
+         <obj_property name="ElementShortName">branchMuxOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">branchMuxOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/jumpMuxOutput">
+         <obj_property name="ElementShortName">jumpMuxOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">jumpMuxOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUControlUnitOutput">
+         <obj_property name="ElementShortName">ALUControlUnitOutput[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ALUControlUnitOutput[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUOp_sig">
+         <obj_property name="ElementShortName">ALUOp_sig[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ALUOp_sig[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/jumpAddressShifterOutput">
+         <obj_property name="ElementShortName">jumpAddressShifterOutput[12:0]</obj_property>
+         <obj_property name="ObjectShortName">jumpAddressShifterOutput[12:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/regDstMuxOutput">
+         <obj_property name="ElementShortName">regDstMuxOutput[2:0]</obj_property>
+         <obj_property name="ObjectShortName">regDstMuxOutput[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/regDest_sig">
+         <obj_property name="ElementShortName">regDest_sig</obj_property>
+         <obj_property name="ObjectShortName">regDest_sig</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/jump_sig">
+         <obj_property name="ElementShortName">jump_sig</obj_property>
+         <obj_property name="ObjectShortName">jump_sig</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/branch_sig">
+         <obj_property name="ElementShortName">branch_sig</obj_property>
+         <obj_property name="ObjectShortName">branch_sig</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/memRead_sig">
+         <obj_property name="ElementShortName">memRead_sig</obj_property>
+         <obj_property name="ObjectShortName">memRead_sig</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/memToReg_sig">
+         <obj_property name="ElementShortName">memToReg_sig</obj_property>
+         <obj_property name="ObjectShortName">memToReg_sig</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/memWrite_sig">
+         <obj_property name="ElementShortName">memWrite_sig</obj_property>
+         <obj_property name="ObjectShortName">memWrite_sig</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/ALUSrc_sig">
+         <obj_property name="ElementShortName">ALUSrc_sig</obj_property>
+         <obj_property name="ObjectShortName">ALUSrc_sig</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/regWrite_sig">
+         <obj_property name="ElementShortName">regWrite_sig</obj_property>
+         <obj_property name="ObjectShortName">regWrite_sig</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/ALUZero">
+         <obj_property name="ElementShortName">ALUZero</obj_property>
+         <obj_property name="ObjectShortName">ALUZero</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/branchAnd">
+         <obj_property name="ElementShortName">branchAnd</obj_property>
+         <obj_property name="ObjectShortName">branchAnd</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider77" type="divider">
+      <obj_property name="label">Modules</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#DCDCDC</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group60">
+      <obj_property name="label">Program Counter</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevel/programCounterCalc/readAddress">
+         <obj_property name="ElementShortName">readAddress[15:0]</obj_property>
+         <obj_property name="ObjectShortName">readAddress[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/programCounterCalc/instruction">
+         <obj_property name="ElementShortName">instruction[15:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/programCounterCalc/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group61">
+      <obj_property name="label">Instruction Memory</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/cpuTopLevel/instructionMemoryCalc/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/instructionMemoryCalc/readAddr">
+         <obj_property name="ElementShortName">readAddr[15:0]</obj_property>
+         <obj_property name="ObjectShortName">readAddr[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/instructionMemoryCalc/instruction">
+         <obj_property name="ElementShortName">instruction[15:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction[15:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66">
+      <obj_property name="label">Control Unit</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevel/controlUnitCalc/opcode">
+         <obj_property name="ElementShortName">opcode[3:0]</obj_property>
+         <obj_property name="ObjectShortName">opcode[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/controlUnitCalc/alu_op">
+         <obj_property name="ElementShortName">alu_op[3:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_op[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/controlUnitCalc/reg_dst">
+         <obj_property name="ElementShortName">reg_dst</obj_property>
+         <obj_property name="ObjectShortName">reg_dst</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/controlUnitCalc/reg_write">
+         <obj_property name="ElementShortName">reg_write</obj_property>
+         <obj_property name="ObjectShortName">reg_write</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/controlUnitCalc/alu_src">
+         <obj_property name="ElementShortName">alu_src</obj_property>
+         <obj_property name="ObjectShortName">alu_src</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/controlUnitCalc/mem_read">
+         <obj_property name="ElementShortName">mem_read</obj_property>
+         <obj_property name="ObjectShortName">mem_read</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/controlUnitCalc/mem_write">
+         <obj_property name="ElementShortName">mem_write</obj_property>
+         <obj_property name="ObjectShortName">mem_write</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/controlUnitCalc/mem_to_reg">
+         <obj_property name="ElementShortName">mem_to_reg</obj_property>
+         <obj_property name="ObjectShortName">mem_to_reg</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/controlUnitCalc/jump">
+         <obj_property name="ElementShortName">jump</obj_property>
+         <obj_property name="ObjectShortName">jump</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/controlUnitCalc/branch">
+         <obj_property name="ElementShortName">branch</obj_property>
+         <obj_property name="ObjectShortName">branch</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group79">
+      <obj_property name="label">Register File</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/cpuTopLevel/registerFileCalc/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/registerFileCalc/read1">
+         <obj_property name="ElementShortName">read1[2:0]</obj_property>
+         <obj_property name="ObjectShortName">read1[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/registerFileCalc/read2">
+         <obj_property name="ElementShortName">read2[2:0]</obj_property>
+         <obj_property name="ObjectShortName">read2[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/registerFileCalc/writeReg">
+         <obj_property name="ElementShortName">writeReg[2:0]</obj_property>
+         <obj_property name="ObjectShortName">writeReg[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/registerFileCalc/registersWrite">
+         <obj_property name="ElementShortName">registersWrite</obj_property>
+         <obj_property name="ObjectShortName">registersWrite</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/registerFileCalc/writeData">
+         <obj_property name="ElementShortName">writeData[15:0]</obj_property>
+         <obj_property name="ObjectShortName">writeData[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/registerFileCalc/data1">
+         <obj_property name="ElementShortName">data1[15:0]</obj_property>
+         <obj_property name="ObjectShortName">data1[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/registerFileCalc/data2">
+         <obj_property name="ElementShortName">data2[15:0]</obj_property>
+         <obj_property name="ObjectShortName">data2[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/registerFileCalc/testUnsigned">
+         <obj_property name="ElementShortName">testUnsigned[2:0]</obj_property>
+         <obj_property name="ObjectShortName">testUnsigned[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="other" fp_name="/cpuTopLevel/registerFileCalc/testInt">
+         <obj_property name="ElementShortName">testInt</obj_property>
+         <obj_property name="ObjectShortName">testInt</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/registerFileCalc/registerVals">
+         <obj_property name="ElementShortName">registerVals[0:7][15:0]</obj_property>
+         <obj_property name="ObjectShortName">registerVals[0:7][15:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group91">
+      <obj_property name="label">Sign Extender</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevel/signExtendCalc/SigIn">
+         <obj_property name="ElementShortName">SigIn[5:0]</obj_property>
+         <obj_property name="ObjectShortName">SigIn[5:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/signExtendCalc/SigOut">
+         <obj_property name="ElementShortName">SigOut[15:0]</obj_property>
+         <obj_property name="ObjectShortName">SigOut[15:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group94">
+      <obj_property name="label">ALU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUCalc/A">
+         <obj_property name="ElementShortName">A[15:0]</obj_property>
+         <obj_property name="ObjectShortName">A[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUCalc/B">
+         <obj_property name="ElementShortName">B[15:0]</obj_property>
+         <obj_property name="ObjectShortName">B[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUCalc/C">
+         <obj_property name="ElementShortName">C[15:0]</obj_property>
+         <obj_property name="ObjectShortName">C[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUCalc/Mode">
+         <obj_property name="ElementShortName">Mode[3:0]</obj_property>
+         <obj_property name="ObjectShortName">Mode[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/ALUCalc/Zero">
+         <obj_property name="ElementShortName">Zero</obj_property>
+         <obj_property name="ObjectShortName">Zero</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUCalc/addOutput">
+         <obj_property name="ElementShortName">addOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">addOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUCalc/twoOutput">
+         <obj_property name="ElementShortName">twoOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">twoOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUCalc/shiftOutput">
+         <obj_property name="ElementShortName">shiftOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">shiftOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUCalc/subOutput">
+         <obj_property name="ElementShortName">subOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">subOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUCalc/bitOutput">
+         <obj_property name="ElementShortName">bitOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">bitOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUCalc/compOutput">
+         <obj_property name="ElementShortName">compOutput[15:0]</obj_property>
+         <obj_property name="ObjectShortName">compOutput[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUCalc/shiftIndex">
+         <obj_property name="ElementShortName">shiftIndex[15:0]</obj_property>
+         <obj_property name="ObjectShortName">shiftIndex[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUCalc/cutCalc">
+         <obj_property name="ElementShortName">cutCalc[15:0]</obj_property>
+         <obj_property name="ObjectShortName">cutCalc[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUCalc/comparatorOutput">
+         <obj_property name="ElementShortName">comparatorOutput[1:0]</obj_property>
+         <obj_property name="ObjectShortName">comparatorOutput[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="other" fp_name="/cpuTopLevel/ALUCalc/N">
+         <obj_property name="ElementShortName">N</obj_property>
+         <obj_property name="ObjectShortName">N</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group110">
+      <obj_property name="label">ALU Control Unit</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUControlUnitCalc/ALUOp">
+         <obj_property name="ElementShortName">ALUOp[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ALUOp[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUControlUnitCalc/func">
+         <obj_property name="ElementShortName">func[2:0]</obj_property>
+         <obj_property name="ObjectShortName">func[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUControlUnitCalc/output">
+         <obj_property name="ElementShortName">output[3:0]</obj_property>
+         <obj_property name="ObjectShortName">output[3:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group114">
+      <obj_property name="label">Data Memory</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevel/dataMemoryCalc/address">
+         <obj_property name="ElementShortName">address[15:0]</obj_property>
+         <obj_property name="ObjectShortName">address[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/dataMemoryCalc/writeData">
+         <obj_property name="ElementShortName">writeData[15:0]</obj_property>
+         <obj_property name="ObjectShortName">writeData[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/dataMemoryCalc/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/dataMemoryCalc/memRead">
+         <obj_property name="ElementShortName">memRead</obj_property>
+         <obj_property name="ObjectShortName">memRead</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/dataMemoryCalc/memWrite">
+         <obj_property name="ElementShortName">memWrite</obj_property>
+         <obj_property name="ObjectShortName">memWrite</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/dataMemoryCalc/ReadData">
+         <obj_property name="ElementShortName">ReadData[15:0]</obj_property>
+         <obj_property name="ObjectShortName">ReadData[15:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group121">
+      <obj_property name="label">Two Adder</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevel/twoAdderCalc/BUSA">
+         <obj_property name="ElementShortName">BUSA[15:0]</obj_property>
+         <obj_property name="ObjectShortName">BUSA[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/twoAdderCalc/RESULT">
+         <obj_property name="ElementShortName">RESULT[15:0]</obj_property>
+         <obj_property name="ObjectShortName">RESULT[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/twoAdderCalc/COUT">
+         <obj_property name="ElementShortName">COUT</obj_property>
+         <obj_property name="ObjectShortName">COUT</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group139">
+      <obj_property name="label">Jump Address Shifter</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevel/jumpAddressCalc/input">
+         <obj_property name="ElementShortName">input[11:0]</obj_property>
+         <obj_property name="ObjectShortName">input[11:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/jumpAddressCalc/output">
+         <obj_property name="ElementShortName">output[12:0]</obj_property>
+         <obj_property name="ObjectShortName">output[12:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group142">
+      <obj_property name="label">Branch Address Shifter</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchAddressShifterCalc/input">
+         <obj_property name="ElementShortName">input[15:0]</obj_property>
+         <obj_property name="ObjectShortName">input[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchAddressShifterCalc/output">
+         <obj_property name="ElementShortName">output[15:0]</obj_property>
+         <obj_property name="ObjectShortName">output[15:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group145">
+      <obj_property name="label">Branch Address Adder</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchAddressAdderCalc/BUSA">
+         <obj_property name="ElementShortName">BUSA[15:0]</obj_property>
+         <obj_property name="ObjectShortName">BUSA[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchAddressAdderCalc/BUSB">
+         <obj_property name="ElementShortName">BUSB[15:0]</obj_property>
+         <obj_property name="ObjectShortName">BUSB[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchAddressAdderCalc/RESULT">
+         <obj_property name="ElementShortName">RESULT[15:0]</obj_property>
+         <obj_property name="ObjectShortName">RESULT[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevel/branchAddressAdderCalc/COUT">
+         <obj_property name="ElementShortName">COUT</obj_property>
+         <obj_property name="ObjectShortName">COUT</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchAddressAdderCalc/A">
+         <obj_property name="ElementShortName">A[16:0]</obj_property>
+         <obj_property name="ObjectShortName">A[16:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchAddressAdderCalc/B">
+         <obj_property name="ElementShortName">B[16:0]</obj_property>
+         <obj_property name="ObjectShortName">B[16:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchAddressAdderCalc/output">
+         <obj_property name="ElementShortName">output[16:0]</obj_property>
+         <obj_property name="ObjectShortName">output[16:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group872">
+      <obj_property name="label">ALU Src Mux</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/cpuTopLevel/ALUSrcMuxCalc/cntrl">
+         <obj_property name="ElementShortName">cntrl</obj_property>
+         <obj_property name="ObjectShortName">cntrl</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUSrcMuxCalc/topin">
+         <obj_property name="ElementShortName">topin[15:0]</obj_property>
+         <obj_property name="ObjectShortName">topin[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUSrcMuxCalc/bottom">
+         <obj_property name="ElementShortName">bottom[15:0]</obj_property>
+         <obj_property name="ObjectShortName">bottom[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUSrcMuxCalc/output">
+         <obj_property name="ElementShortName">output[15:0]</obj_property>
+         <obj_property name="ObjectShortName">output[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUSrcMuxCalc/top">
+         <obj_property name="ElementShortName">top[15:0]</obj_property>
+         <obj_property name="ObjectShortName">top[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/ALUSrcMuxCalc/bottomIn">
+         <obj_property name="ElementShortName">bottomIn[15:0]</obj_property>
+         <obj_property name="ObjectShortName">bottomIn[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="other" fp_name="/cpuTopLevel/ALUSrcMuxCalc/N">
+         <obj_property name="ElementShortName">N</obj_property>
+         <obj_property name="ObjectShortName">N</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group1154">
+      <obj_property name="label">RegDST Mux</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/cpuTopLevel/regDstMuxCalc/cntrl">
+         <obj_property name="ElementShortName">cntrl</obj_property>
+         <obj_property name="ObjectShortName">cntrl</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/regDstMuxCalc/topin">
+         <obj_property name="ElementShortName">topin[2:0]</obj_property>
+         <obj_property name="ObjectShortName">topin[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/regDstMuxCalc/bottom">
+         <obj_property name="ElementShortName">bottom[2:0]</obj_property>
+         <obj_property name="ObjectShortName">bottom[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/regDstMuxCalc/output">
+         <obj_property name="ElementShortName">output[2:0]</obj_property>
+         <obj_property name="ObjectShortName">output[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/regDstMuxCalc/top">
+         <obj_property name="ElementShortName">top[2:0]</obj_property>
+         <obj_property name="ObjectShortName">top[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/regDstMuxCalc/bottomIn">
+         <obj_property name="ElementShortName">bottomIn[2:0]</obj_property>
+         <obj_property name="ObjectShortName">bottomIn[2:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

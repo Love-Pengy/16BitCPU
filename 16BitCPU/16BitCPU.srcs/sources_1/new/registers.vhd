@@ -58,6 +58,7 @@ begin
         end if;
         data1 <= registerVals(to_integer(unsigned(read1)));
         data2 <= registerVals(to_integer(unsigned(read2)));
+        registerVals(0) <= X"0000";
       end if;
     end process;
 

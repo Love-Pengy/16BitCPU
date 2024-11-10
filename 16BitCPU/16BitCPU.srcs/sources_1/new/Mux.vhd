@@ -38,7 +38,7 @@ signal bottomIn : std_logic_vector(N-1 downto 0) := (others => '0');
 begin
     top <= topin;
     bottomin <= bottom;
-    process(cntrl)
+    process(cntrl, top, bottomIn)
         begin
         if cntrl = '1' then
             output <= top;

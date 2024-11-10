@@ -37,7 +37,7 @@ entity Data_Memory is
         clk : in std_logic;
         memRead : in std_logic;
         memWrite: in std_logic;
-        ReadData : out std_logic_vector(15 downto 0)
+        ReadData : out std_logic_vector(15 downto 0) := (others => '0')
   );
 end Data_Memory;
 
