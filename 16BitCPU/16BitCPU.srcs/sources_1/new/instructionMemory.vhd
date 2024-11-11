@@ -42,7 +42,7 @@ signal instructionVals : instructionArray := (
     0 => X"1041", -- addi $1, $zero, 1; 
     1 => X"107F", -- addi $1, $zero, 111111; 0001 000 001 111111 -- should overflow
     2 => X"1041", -- addi $1, $zero, 1; 
-    3 => X"107E", -- addi $1, $zero, 111111; 0001 000 001 111110 -- should overflow
+    3 => X"1041", -- addi $1, $zero, 111111; 0001 000 001 111110 -- should overflow
     others => (others => '1') --others are no ops
 ); 
 

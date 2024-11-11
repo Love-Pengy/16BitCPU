@@ -30,7 +30,8 @@ use IEEE.NUMERIC_STD.ALL;
 entity cpuTopLevel is
   Port (clk: in std_logic := '0';
         clkEnable: in std_logic := '1';
-        reset: in std_logic := '0' );
+        reset: in std_logic := '0' ;
+        result: out std_logic_vector(15 downto 0));
 end cpuTopLevel;
 
 architecture Structural of cpuTopLevel is
@@ -187,9 +188,7 @@ signal ALUControlUnitOutput, ALUOp_sig: std_logic_vector(3 downto 0);
 signal jumpAddressShifterOutput : std_logic_vector(12 downto 0);
 signal regDstMuxOutput : std_logic_vector(2 downto 0);
 signal regDest_sig, jump_sig, branch_sig, memRead_sig, memToReg_sig, memWrite_sig, ALUSrc_sig, regWrite_sig, ALUZero, branchAnd: std_logic;
-
 begin
-    
     
     
     programCounterCalc: programCounter
@@ -217,7 +216,10 @@ begin
         PORT MAP(clk => clk, address => ALUResult, writeData => registerOutTwo, memWrite => memWrite_sig, memRead => memRead_sig, ReadData => dataMemoryOutput);
     memToRegMuxCalc: sixteenBitMux
         PORT MAP(cntrl => memToReg_sig, topin => dataMemoryOutput, bottom => ALUResult, output => memToRegMuxOutput);
-
+        
+    -- cpu output
+    result <= memToRegMuxOutput;
+    
     -- full jump address is (program counter + 2)(15 downto 14) + (immediate << 1)(13 downto 0)
      twoAdderCalc: twoAdder
         PORT MAP(BUSA => pcOutput, RESULT => twoAdderOutput, COUT => open);

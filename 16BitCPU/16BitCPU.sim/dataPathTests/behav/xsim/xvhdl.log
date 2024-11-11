@@ -1,4 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/shiftLeft2.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'jumpLeftShifter'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.srcs/dataPathTests/new/shiftLeft2TB.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'jumpLeftShifterTB'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/dusti/Documents/EGRE426/16BitCPU/16BitCPU/16BitCPU.srcs/sources_1/new/cpuTopLevel.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cpuTopLevel'
