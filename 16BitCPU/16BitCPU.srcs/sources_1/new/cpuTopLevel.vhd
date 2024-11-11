@@ -183,7 +183,7 @@ FOR ALL: instructionMemory use entity work.instructionMemory(Behavioral);
 FOR ALL: programCounter use entity work.programCounter(Behavioral);
 
 
-signal pcInput, pcOutput, jumpAddress, branchAddressShifterOutput, branchAddressMuxOutput, instructionMemoryOutput, branchAddress, signExtendOutput, registerOutOne, registerOutTwo, ALUResult, dataMemoryOutput, memToRegMuxOutput, ALUSrcMuxOutput, jumpAddressOutput, twoAdderOutput, signExtendShiftOutput, adderOutput, branchMuxOutput, jumpMuxOutput: std_logic_vector(15 downto 0);
+signal pcInput, pcOutput, jumpAddress, branchAddressShifterOutput, branchAddressMuxOutput, instructionMemoryOutput, branchAddress, signExtendOutput, registerOutOne, registerOutTwo, ALUResult, dataMemoryOutput, memToRegMuxOutput, ALUSrcMuxOutput, twoAdderOutput: std_logic_vector(15 downto 0);
 signal ALUControlUnitOutput, ALUOp_sig: std_logic_vector(3 downto 0);
 signal jumpAddressShifterOutput : std_logic_vector(12 downto 0);
 signal regDstMuxOutput : std_logic_vector(2 downto 0);
@@ -234,7 +234,7 @@ begin
      branchAddressAdderCalc: adder
         PORT MAP(BUSA => twoAdderOutput, BUSB => branchAddressShifterOutput, RESULT => branchAddress, COUT => open);
      branchMuxCalc : sixteenBitMux
-        PORT MAP(cntrl => branchAnd, topin => twoAdderOutput, bottom => branchAddress, output => branchAddressMuxOutput);
+        PORT MAP(cntrl => branchAnd, topin => branchAddress, bottom => twoAdderOutput, output => branchAddressMuxOutput);
      jumpMuxCalc : sixteenBitMux
         PORT MAP(cntrl => jump_sig, topin => jumpAddress, bottom => branchAddressMuxOutput, output => pcInput);
 end Structural;

@@ -40,9 +40,8 @@ signal instructionVals : instructionArray := (
     
     -- addi 
     0 => X"1041", -- addi $1, $zero, 1; 
-    1 => X"107F", -- addi $1, $zero, 111111; 0001 000 001 111111 -- should overflow
-    2 => X"1041", -- addi $1, $zero, 1; 
-    3 => X"1041", -- addi $1, $zero, 111111; 0001 000 001 111110 -- should overflow
+    1 => X"107F", -- addi $1, $zero, 111111; 0001 000 001 111111 -- put -1 into register
+    -------------
     others => (others => '1') --others are no ops
 ); 
 
@@ -52,7 +51,7 @@ process(clk, readAddr)
 begin 
     
     if(rising_edge(clk)) then
-        instruction <= instructionVals(to_integer(unsigned(readAddr)));
+        instruction <= instructionVals(to_integer(unsigned(readAddr)/2));
     end if;
 
 end process;

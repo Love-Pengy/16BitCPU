@@ -11,14 +11,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="127.001 ns"></ZoomEndTime>
-      <Cursor1Time time="6.000 ns"></Cursor1Time>
+      <ZoomEndTime time="171.601 ns"></ZoomEndTime>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="305"></NameColumnWidth>
-      <ValueColumnWidth column_width="85"></ValueColumnWidth>
+      <NameColumnWidth column_width="147"></NameColumnWidth>
+      <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="20" />
    <wvobject fp_name="divider78" type="divider">
       <obj_property name="label">Top Level</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -100,29 +100,9 @@
          <obj_property name="ElementShortName">ALUSrcMuxOutput[15:0]</obj_property>
          <obj_property name="ObjectShortName">ALUSrcMuxOutput[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevel/jumpAddressOutput">
-         <obj_property name="ElementShortName">jumpAddressOutput[15:0]</obj_property>
-         <obj_property name="ObjectShortName">jumpAddressOutput[15:0]</obj_property>
-      </wvobject>
       <wvobject type="array" fp_name="/cpuTopLevel/twoAdderOutput">
          <obj_property name="ElementShortName">twoAdderOutput[15:0]</obj_property>
          <obj_property name="ObjectShortName">twoAdderOutput[15:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevel/signExtendShiftOutput">
-         <obj_property name="ElementShortName">signExtendShiftOutput[15:0]</obj_property>
-         <obj_property name="ObjectShortName">signExtendShiftOutput[15:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevel/adderOutput">
-         <obj_property name="ElementShortName">adderOutput[15:0]</obj_property>
-         <obj_property name="ObjectShortName">adderOutput[15:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevel/branchMuxOutput">
-         <obj_property name="ElementShortName">branchMuxOutput[15:0]</obj_property>
-         <obj_property name="ObjectShortName">branchMuxOutput[15:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevel/jumpMuxOutput">
-         <obj_property name="ElementShortName">jumpMuxOutput[15:0]</obj_property>
-         <obj_property name="ObjectShortName">jumpMuxOutput[15:0]</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/cpuTopLevel/ALUControlUnitOutput">
          <obj_property name="ElementShortName">ALUControlUnitOutput[3:0]</obj_property>
@@ -217,7 +197,6 @@
       <wvobject type="array" fp_name="/cpuTopLevel/instructionMemoryCalc/instruction">
          <obj_property name="ElementShortName">instruction[15:0]</obj_property>
          <obj_property name="ObjectShortName">instruction[15:0]</obj_property>
-         <obj_property name="isExpanded"></obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group66">
@@ -539,7 +518,6 @@
    <wvobject type="group" fp_name="group1154">
       <obj_property name="label">RegDST Mux</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject type="logic" fp_name="/cpuTopLevel/regDstMuxCalc/cntrl">
          <obj_property name="ElementShortName">cntrl</obj_property>
          <obj_property name="ObjectShortName">cntrl</obj_property>
@@ -563,6 +541,70 @@
       <wvobject type="array" fp_name="/cpuTopLevel/regDstMuxCalc/bottomIn">
          <obj_property name="ElementShortName">bottomIn[2:0]</obj_property>
          <obj_property name="ObjectShortName">bottomIn[2:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group855">
+      <obj_property name="label">Branch Mux</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/cpuTopLevel/branchMuxCalc/cntrl">
+         <obj_property name="ElementShortName">cntrl</obj_property>
+         <obj_property name="ObjectShortName">cntrl</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchMuxCalc/topin">
+         <obj_property name="ElementShortName">topin[15:0]</obj_property>
+         <obj_property name="ObjectShortName">topin[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchMuxCalc/bottom">
+         <obj_property name="ElementShortName">bottom[15:0]</obj_property>
+         <obj_property name="ObjectShortName">bottom[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchMuxCalc/output">
+         <obj_property name="ElementShortName">output[15:0]</obj_property>
+         <obj_property name="ObjectShortName">output[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchMuxCalc/top">
+         <obj_property name="ElementShortName">top[15:0]</obj_property>
+         <obj_property name="ObjectShortName">top[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/branchMuxCalc/bottomIn">
+         <obj_property name="ElementShortName">bottomIn[15:0]</obj_property>
+         <obj_property name="ObjectShortName">bottomIn[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="other" fp_name="/cpuTopLevel/branchMuxCalc/N">
+         <obj_property name="ElementShortName">N</obj_property>
+         <obj_property name="ObjectShortName">N</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group863">
+      <obj_property name="label">Jump Mux</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/cpuTopLevel/jumpMuxCalc/cntrl">
+         <obj_property name="ElementShortName">cntrl</obj_property>
+         <obj_property name="ObjectShortName">cntrl</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/jumpMuxCalc/topin">
+         <obj_property name="ElementShortName">topin[15:0]</obj_property>
+         <obj_property name="ObjectShortName">topin[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/jumpMuxCalc/bottom">
+         <obj_property name="ElementShortName">bottom[15:0]</obj_property>
+         <obj_property name="ObjectShortName">bottom[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/jumpMuxCalc/output">
+         <obj_property name="ElementShortName">output[15:0]</obj_property>
+         <obj_property name="ObjectShortName">output[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/jumpMuxCalc/top">
+         <obj_property name="ElementShortName">top[15:0]</obj_property>
+         <obj_property name="ObjectShortName">top[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevel/jumpMuxCalc/bottomIn">
+         <obj_property name="ElementShortName">bottomIn[15:0]</obj_property>
+         <obj_property name="ObjectShortName">bottomIn[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="other" fp_name="/cpuTopLevel/jumpMuxCalc/N">
+         <obj_property name="ElementShortName">N</obj_property>
+         <obj_property name="ObjectShortName">N</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>
