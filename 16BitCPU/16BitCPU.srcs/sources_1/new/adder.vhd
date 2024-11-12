@@ -31,16 +31,12 @@ entity adder is
 end adder;
 
 architecture Behavioral of adder is
-    signal A: unsigned(16 downto 0) := (others => '0');
-    signal B: unsigned(16 downto 0) := (others => '0');
-    signal output: unsigned(16 downto 0);
+
 begin
-    process(BUSA, BUSB, A, B, output)
+    process(BUSA, BUSB)
+        variable output: signed(16 downto 0);
         begin
-            A(15 downto 0)  <= unsigned(BUSA);
-            B(15 downto 0)  <= unsigned(BUSB);
-            output <= A + B;
-            
+            output := resize(signed(BUSA) + signed(BUSB), 17);
             RESULT <= std_logic_vector(output(15 downto 0));
             COUT <= output(16);
     end process;

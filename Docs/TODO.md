@@ -14,22 +14,25 @@
     - ~~add~~
     - ~~addi~~ 
     - ~~sub~~
-    - OR
-    - AND
-    - SGT
+    - ~~CUTL~~
+    - ~~CUTU~~
+    - ~~SUBI~~
+    - ~~NANDI~~
+    - ~~NOP~~
+    - ~~J~~
+    - ~~beq~~
+# TODO for Dustin
+
+- Test the following instruction: 
+    - ~~OR~~
+    - ~~AND~~
+    -   SGT
     - SLT
-    - LW
     - SW
+    - LW
     - XOR
     - XNOR
-    - CUTL
-    - CUTU
-    - J
     - SLL
     - SRL
-    - SUBI
-    - NANDI
-    - NOP
-
 - *ref* 
         - https://gab.wallawalla.edu/~curt.nelson/cptr380/lecture/chapter2%20-%20itype%20instructions.pdf
