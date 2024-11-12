@@ -45,6 +45,9 @@ signal instructionVals : instructionArray := (
     2 => X"0248", -- add $1, $1, $1; 0000 001 001 001 000 -- add -1 to -1 
     3 => X"0250", -- add $2, $1, $1; 0000 001 001 010 000 -- add -2 to -2 
     4 => X"0298", -- add $3, $1, $2; 0000 001 010 011 000 -- add -2 to -4 
+    -- sub 
+    5 => X"02A1", -- sub $4, $1, $2; 0000 001 010 100 001 -- sub -2 and -4
+    6 => X"0869", -- sub $5, $4, $1; 0000 100 001 101 001 -- sub 2 and -2
     others => (others => '1') --others are no ops
 ); 
 

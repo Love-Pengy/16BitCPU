@@ -55,7 +55,6 @@ end ALU;
 
 
 architecture Behavioral of ALU is
-
     signal addOutput, twoOutput, shiftOutput, subOutput, bitOutput, compOutput, shiftIndex, cutCalc: std_logic_vector(N-1 downto 0);
     signal comparatorOutput: std_logic_vector(1 downto 0);
     

@@ -13,7 +13,7 @@
 - Test the following instructions:  
     - ~~add~~
     - ~~addi~~ 
-    - sub
+    - ~~sub~~
     - OR
     - AND
     - SGT
