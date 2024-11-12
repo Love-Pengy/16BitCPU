@@ -8,9 +8,10 @@
 - ~~create R format instructions in control unit~~
 - ~~create test bench for R format instructions in control unit~~~ 
 - ~~connect components in a top level~~ 
-- figure out why instructions are not coming out as they should
+- ~~figure out why instructions are not coming out as they should~~
+    - mux was flipped
 - Test the following instructions:  
-    - add
+    - ~~add~~
     - ~~addi~~ 
     - sub
     - OR

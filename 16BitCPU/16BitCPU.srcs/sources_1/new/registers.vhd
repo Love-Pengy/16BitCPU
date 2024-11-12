@@ -56,10 +56,10 @@ begin
          if(registersWrite = '1') then
             registerVals(to_integer(unsigned(writeReg))) <= writeData;
         end if;
-        data1 <= registerVals(to_integer(unsigned(read1)));
-        data2 <= registerVals(to_integer(unsigned(read2)));
         registerVals(0) <= X"0000";
       end if;
+      data1 <= registerVals(to_integer(unsigned(read1)));
+      data2 <= registerVals(to_integer(unsigned(read2)));
     end process;
 
 end Behavioral;
