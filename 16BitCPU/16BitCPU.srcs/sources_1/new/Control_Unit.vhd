@@ -138,6 +138,16 @@ begin
             when "1010" =>
                 reg_dst <= '0';
                 jump <= '0';
+                branch <= '0';
+                mem_read <= '0';
+                mem_to_reg <= '0';
+                alu_op <= opcode;
+                mem_write <= '0';
+                alu_src <= '1';
+                reg_write <= '1';
+            when "1011" =>
+                reg_dst <= '0';
+                jump <= '0';
                 branch <= '1';
                 mem_read <= '0';
                 mem_to_reg <= '0';

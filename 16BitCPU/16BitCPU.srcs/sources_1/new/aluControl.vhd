@@ -72,6 +72,10 @@ begin
                     output <= "1100";
                 when "1001" =>
                     output <= "0001";
+                when "1010" =>
+                    output <= "0111";
+                when "1011" =>
+                    output <= "0001";
                 when others =>
                     --nothing
             end case;
