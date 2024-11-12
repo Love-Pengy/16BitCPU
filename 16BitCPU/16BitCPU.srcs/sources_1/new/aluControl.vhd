@@ -44,11 +44,13 @@ begin
                 when "010" => 
                     output <= "0011";
                 when "011" =>
-                    output <= "0110";
+                    output <= "0010";
                 when "100" => 
                     output <= "0100"; 
                 when "101" =>
                     output <= "0101";
+                when "110" =>
+                    output <= "0110";
                 when "111" => 
                     output <= "1000";
                 when others => 
