@@ -29,7 +29,7 @@ entity ALU is
          -- in 2
          B: in std_logic_vector(N-1 downto 0);
          -- result
-         C: out std_logic_vector(N-1 downto 0);
+         C: out std_logic_vector(N-1 downto 0) := (others => '0');
          -- 0000 Addition 
          -- 0001 Subtraction
          -- 0010 Bitwise AND
@@ -46,7 +46,7 @@ entity ALU is
 
         Mode: in std_logic_vector(3 downto 0);
         -- Output Flags
-        Zero: out std_logic
+        Zero: out std_logic := '0'
         --Overflow: out std_logic;
         --Cout: out std_logic
         );
@@ -55,7 +55,7 @@ end ALU;
 
 
 architecture Behavioral of ALU is
-    signal addOutput, twoOutput, shiftOutput, subOutput, compOutput: std_logic_vector(N-1 downto 0);
+    signal addOutput, twoOutput, shiftOutput, subOutput: std_logic_vector(N-1 downto 0);
     signal comparatorOutput: std_logic_vector(1 downto 0);
     
     COMPONENT nBitAdder
@@ -92,8 +92,8 @@ architecture Behavioral of ALU is
     compare: comparator
       PORT MAP(in1 => A, in2 => B, output => comparatorOutput); 
       
-    process(A, B, Mode,subOutput)
-        variable tmpForBound, bitOutput, cutCalc: std_logic_vector(N-1 downto 0);
+    process(A, B, Mode, addOutput, twoOutput, subOutput, comparatorOutput)
+        variable cutBound, bitOutput, compOutput, cutCalc: std_logic_vector(N-1 downto 0);
         begin
         case Mode is
             -- addition
@@ -132,12 +132,12 @@ architecture Behavioral of ALU is
                 C <= bitOutput;
             -- sgt
             when "0100" => 
-                compOutput <= X"0001" when (comparatorOutput = "01") else X"0000";  
+                compOutput := X"0001" when (comparatorOutput = "01") else X"0000";  
                 zero <= '1' when (compOutput = X"0000") else '0';
                 C <= compOutput;
             -- slt
             when "0101" => 
-                 compOutput <= X"0001" when (comparatorOutput = "10") else X"0000";  
+                 compOutput := X"0001" when (comparatorOutput = "10") else X"0000";  
                 zero <= '1' when (compOutput = X"0000") else '0';
                 C <= compOutput;
             -- XOR
@@ -169,35 +169,42 @@ architecture Behavioral of ALU is
                 C <= bitOutput;
             -- CUTL
             when "1001" =>
-                -- could do an ugly switch case 
                 cutCalc := A;
-                tmpForBound := B when unsigned(B) < (N/2) else B"0000_0000_0000_1000";
-                if(unsigned(tmpForBound) > 0) then
-                    for i in 0 to to_integer((unsigned(tmpForBound) - 1)) LOOP
-                        cutCalc(i) := '0';
-                    end LOOP;
+                cutBound := B when unsigned(B) < (N/2) else B"0000_0000_0000_1000";
+                if(unsigned(cutBound) > 0) then 
+                    cutCalc(7 downto 0) := std_logic_vector(signed(A(7 downto 0) SLL to_integer(unsigned(cutBound))));
                 end if;
+--                if(unsigned(tmpForBound) > 0) then
+--                    for i in 0 to to_integer((unsigned(tmpForBound) - 1)) LOOP
+--                        cutCalc(i) := '0';
+--                    end LOOP;
+--                end if;
                 if(cutCalc = X"0000") then  
                     Zero <= '1';
                 else 
                     Zero <= '0';
                 end if;
                 C <= cutCalc;
+                
             -- CUTU 
             when "1010" => 
                 cutCalc := A;
-                tmpForBound := B when unsigned(B) < (N/2) else B"0000_0000_0000_1000";
-                if(unsigned(tmpForBound) > 0) then
-                    for i in (N-1) downto ((N-1) - to_integer(unsigned(tmpForBound) - 1))  LOOP
-                      cutCalc(i) := '0';
-                    end LOOP;
-                 end if;
+                cutBound := B when unsigned(B) < (N/2) else B"0000_0000_0000_1000";
+--                if(unsigned(tmpForBound) > 0) then
+--                    for i in (N-1) downto ((N-1) - to_integer(unsigned(tmpForBound) - 1))  LOOP
+--                      cutCalc(i) := '0';
+--                    end LOOP;
+--                 end if;
+                if(unsigned(cutBound) > 0) then 
+                    cutCalc := std_logic_vector(signed(A(15 downto 8)) SRL to_integer(unsigned(cutBound)));
+                end if;
                 if(cutCalc = X"0000") then  
                     Zero <= '1';
                 else 
                     Zero <= '0';
                 end if;
                 C <= cutCalc;
+                
             -- SLL
             when "1011" =>
                 bitOutput := A SLL to_integer(unsigned(B));

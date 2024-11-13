@@ -1,7 +1,7 @@
 Vivado Simulator v2024.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /tools/Xilinx/Vivado/2024.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cpuTopLevel_behav xil_defaultlib.cpuTopLevel -log elaborate.log 
+Running: /tools/Xilinx/Vivado/2024.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot cpuTopLevelTB_behav xil_defaultlib.cpuTopLevelTB -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -31,5 +31,6 @@ Compiling architecture behavioral of entity xil_defaultlib.adder2 [adder2_defaul
 Compiling architecture behavioral of entity xil_defaultlib.jumpLeftShifter [jumpleftshifter_default]
 Compiling architecture behavioral of entity xil_defaultlib.branchLeftShifter [branchleftshifter_default]
 Compiling architecture behavioral of entity xil_defaultlib.adder [adder_default]
-Compiling architecture structural of entity xil_defaultlib.cputoplevel
-Built simulation snapshot cpuTopLevel_behav
+Compiling architecture structural of entity xil_defaultlib.cpuTopLevel [cputoplevel_default]
+Compiling architecture behavior of entity xil_defaultlib.cputopleveltb
+Built simulation snapshot cpuTopLevelTB_behav

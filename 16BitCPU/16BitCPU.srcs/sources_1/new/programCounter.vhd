@@ -24,6 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity programCounter is
   Port (clk : in std_logic := '0';
+        enable: in std_logic := '0';
         readAddress: in std_logic_vector(15 downto 0);
         instruction: out std_logic_vector(15 downto 0) := (others => '0'));
 end programCounter;
@@ -35,7 +36,9 @@ begin
 process(clk, readAddress) 
 begin
   if(rising_edge(clk)) then
-    instruction <= readAddress;
+    if(enable = '1') then 
+        instruction <= readAddress;
+     end if;
   end if;
 end process;
 

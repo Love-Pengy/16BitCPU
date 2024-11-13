@@ -21,6 +21,7 @@ vhdl xil_defaultlib  \
 "../../../../16BitCPU.srcs/sources_1/new/instructionMemory.vhd" \
 "../../../../16BitCPU.srcs/sources_1/new/programCounter.vhd" \
 "../../../../16BitCPU.srcs/sources_1/new/cpuTopLevel.vhd" \
+"../../../../16BitCPU.srcs/dataPathTests/new/cpuTopLevel_TB.vhd" \
 
 # Do not sort compile order
 nosort

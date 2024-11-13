@@ -29,15 +29,15 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity cpuTopLevel is
   Port (clk: in std_logic := '0';
-        clkEnable: in std_logic := '1';
-        reset: in std_logic := '0' ;
-        result: out std_logic_vector(15 downto 0));
+        clkEnable: in std_logic := '0';
+        reset: in std_logic := '0'); 
 end cpuTopLevel;
 
 architecture Structural of cpuTopLevel is
 COMPONENT programCounter 
     PORT ( 
         clk : in std_logic;
+        enable: in std_logic;
         readAddress: in std_logic_vector(15 downto 0);
         instruction: out std_logic_vector(15 downto 0));
 end COMPONENT;
@@ -190,9 +190,8 @@ signal regDstMuxOutput : std_logic_vector(2 downto 0);
 signal regDest_sig, jump_sig, branch_sig, memRead_sig, memToReg_sig, memWrite_sig, ALUSrc_sig, regWrite_sig, ALUZero, branchAnd: std_logic;
 begin
     
-    
     programCounterCalc: programCounter
-        PORT MAP(clk => clk, readAddress => pcInput, instruction => pcOutput);
+        PORT MAP(clk => clk, readAddress => pcInput, instruction => pcOutput, enable => clkEnable);
     instructionMemoryCalc: instructionMemory
         PORT MAP(clk => clk, readAddr => pcOutput, instruction => instructionMemoryOutput);
     controlUnitCalc: controlUnit
@@ -216,9 +215,6 @@ begin
         PORT MAP(clk => clk, address => ALUResult, writeData => registerOutTwo, memWrite => memWrite_sig, memRead => memRead_sig, ReadData => dataMemoryOutput);
     memToRegMuxCalc: sixteenBitMux
         PORT MAP(cntrl => memToReg_sig, topin => dataMemoryOutput, bottom => ALUResult, output => memToRegMuxOutput);
-        
-    -- cpu output
-    result <= memToRegMuxOutput;
     
     -- full jump address is (program counter + 2)(15 downto 14) + (immediate << 1)(13 downto 0)
      twoAdderCalc: twoAdder

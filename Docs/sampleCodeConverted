@@ -80,8 +80,8 @@
 -- WHILE: sgt $6, $5, $zero 
 24 => X"0C3C",   -- 0000 110 000 111 100  
 
---beq $6, $zero, ENDLABEL
-25 => X"B1XX",   -- 1011 000 111 ENDLABEL     
+--beq $6, $zero, ENDLABEL (24)
+25 => X"B1D8",   -- 1011 000 111 011000 
 
 -- subi $5, $5, 1
 26 => X"9D81",   -- 1001 110 110 000001 
@@ -104,8 +104,8 @@
 -- lw $4, 0($zero);
 32 => X"2140", -- 0010 000 101 000000 
 
---beq $6, $zero, ELSESTATEMENT
-33 => X"B1XX", -- 1011 000 111 ELSESTATEMENT   
+--beq $6, $zero, ELSESTATEMENT (offset of 8)
+33 => X"B1C8", -- 1011 000 111 001000 
 
 -- srl $0, $0, 8;
 34 => X"8008", -- 1000 000 000 001000  
@@ -128,8 +128,8 @@
 -- sw $6, 0($4)
 40 => X"3F00", -- 0011 111 100 000000
 
--- j ENDIF;
-41 => X"6XXX", -- 0110 ENDIF 
+-- j ENDIF; (48) 
+41 => X"6030", -- 0110 000000110000 
 
 -- ELSESTATEMENT: 	sll $2, $2, 2;
 42 => X"76C2", -- 0111 011 011 000010
@@ -153,9 +153,11 @@
 -- ENDIF: addi $4, $4, 2
 48 => X"1B42", -- 0001 101 101 000010
 
--- j WHILE
-49 => X"6XXX", -- 0110 WHILE
+-- j WHILE (24)
+49 => X"6018", -- 0110 000000011000 
 
-(AKA 50) ENDLABEL: 
-//program done
+-- (AKA 50) ENDLABEL: 
 
+-- program done
+
+others => (others => '1')

@@ -20,57 +20,33 @@
 
 
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
 
-entity cpuTopLevel_TB is
-end cpuTopLevel_TB;
+entity cpuTopLevelTB is
+end entity;
 
-architecture behavior of cpuTopLevel_TB is
+architecture behavior of cpuTopLevelTB is
+  constant Tperiod : time := 10 ns;
 
-    component cpuTopLevel
-        Port ( 
-            clk : in std_logic;
-            clkEnable : in std_logic;
-            reset : in std_logic;
-            result : out std_logic_vector(15 downto 0)
-        );
-    end component;
 
-    signal clk         : std_logic := '0';
-    signal clkEnable   : std_logic := '1';
-    signal reset       : std_logic := '0';
-    signal result      : std_logic_vector(15 downto 0);
-
-    constant clk_period : time := 10 ns;
-
+  signal clk_sig, clkEnable_sig, reset_sig : std_logic := '0';
 begin
 
-    DUT: cpuTopLevel
-        Port map (
-            clk => clk,
-            clkEnable => clkEnable,
-            reset => reset,
-            result => result
-        );
-
-    clk_process : process
-    begin
-        clk <= '0';
-        wait for clk_period / 2;
-        clk <= '1';
-        wait for clk_period / 2;
-    end process;
-
-    stim_proc: process
-    begin
-        reset <= '1';
-        wait for 20 ns;
-        reset <= '0';
-
-        wait for 100 ns;
-        wait;
-    end process;
-
+  process(clk_sig) 
+  
+  begin 
+    clk_sig <= not clk_sig after Tperiod/2;
+  end process;
+  
+  clkEnable_sig <= '0', '1' after 20 ns;
+  reset_sig <= '1', '0' after 10 ns;
+  
+ -- this is the component instantiation for the
+    -- DUT - the device we are testing
+    DUT : entity work.cpuTopLevel(Structural)
+      port map(clk => clk_sig, clkEnable => clkEnable_sig, reset => reset_sig);
+      
 end behavior;
+
 
