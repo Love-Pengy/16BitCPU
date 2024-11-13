@@ -10,7 +10,7 @@
 - ~~connect components in a top level~~ 
 - ~~figure out why instructions are not coming out as they should~~
     - mux was flipped
-- Test the following instructions:  
+- ~~Test the following instructions:~~  
     - ~~add~~
     - ~~addi~~ 
     - ~~sub~~
@@ -21,6 +21,7 @@
     - ~~NOP~~
     - ~~J~~
     - ~~beq~~
+- put jump addresses/branch offsets into the test program 
 # TODO for Dustin
 
 - Test the following instruction: 
