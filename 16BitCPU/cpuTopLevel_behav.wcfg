@@ -11,12 +11,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="307.243 ns"></ZoomEndTime>
+      <ZoomEndTime time="360.558 ns"></ZoomEndTime>
       <Cursor1Time time="800.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="210"></NameColumnWidth>
-      <ValueColumnWidth column_width="163"></ValueColumnWidth>
+      <ValueColumnWidth column_width="159"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="20" />
    <wvobject fp_name="divider78" type="divider">
@@ -337,10 +337,6 @@
          <obj_property name="ElementShortName">subOutput[15:0]</obj_property>
          <obj_property name="ObjectShortName">subOutput[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUCalc/compOutput">
-         <obj_property name="ElementShortName">compOutput[15:0]</obj_property>
-         <obj_property name="ObjectShortName">compOutput[15:0]</obj_property>
-      </wvobject>
       <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUCalc/comparatorOutput">
          <obj_property name="ElementShortName">comparatorOutput[1:0]</obj_property>
          <obj_property name="ObjectShortName">comparatorOutput[1:0]</obj_property>
@@ -392,6 +388,10 @@
       <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/dataMemoryCalc/ReadData">
          <obj_property name="ElementShortName">ReadData[15:0]</obj_property>
          <obj_property name="ObjectShortName">ReadData[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/dataMemoryCalc/dm">
+         <obj_property name="ElementShortName">dm[0:65535][15:0]</obj_property>
+         <obj_property name="ObjectShortName">dm[0:65535][15:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group121">
