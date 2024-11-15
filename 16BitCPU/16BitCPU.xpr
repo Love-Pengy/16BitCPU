@@ -59,7 +59,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="210"/>
+    <Option Name="WTXSimLaunchSim" Val="238"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -76,8 +76,8 @@
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
-    <Option Name="XSimArrayDisplayLimit" Val="1024"/>
-    <Option Name="XSimTraceLimit" Val="65536"/>
+    <Option Name="XSimArrayDisplayLimit" Val="2000000"/>
+    <Option Name="XSimTraceLimit" Val="2000000"/>
     <Option Name="SimTypes" Val="rtl"/>
     <Option Name="SimTypes" Val="bfm"/>
     <Option Name="SimTypes" Val="tlm"/>
@@ -284,6 +284,7 @@
         <Option Name="PamPseudoTop" Val="pseudo_tb"/>
         <Option Name="SrcSet" Val="sources_1"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/ALUTB_behav.wcfg"/>
+        <Option Name="xsim.simulate.runtime" Val="180ns"/>
       </Config>
     </FileSet>
   </FileSets>

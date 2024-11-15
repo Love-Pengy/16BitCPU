@@ -43,6 +43,8 @@ end Data_Memory;
 
 architecture Behavioral of Data_Memory is
     type memory_array is array (0 to 65535) of std_logic_vector(15 downto 0);
+    -- for testing
+    --type memory_array is array (0 to 499) of std_logic_vector(15 downto 0);
     signal dm : memory_array := (
         others => (others => '0')
     );
@@ -53,11 +55,10 @@ begin
         if rising_edge(clk) then
             if memWrite = '1' then
                 dm(to_integer(unsigned(address))) <= writeData;
-            end if;
-            
-            if memRead = '1' then
+            end if; 
+        end if;
+        if memRead = '1' then
                 ReadData <= dm(to_integer(unsigned(address)));
-            end if;
         end if;
     end process;
 
