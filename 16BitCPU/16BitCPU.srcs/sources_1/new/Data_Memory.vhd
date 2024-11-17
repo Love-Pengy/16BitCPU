@@ -45,9 +45,20 @@ architecture Behavioral of Data_Memory is
     type memory_array is array (0 to 65535) of std_logic_vector(15 downto 0);
     -- for testing
     --type memory_array is array (0 to 499) of std_logic_vector(15 downto 0);
+    
+    -- for test program (reference below test programin lab4.pdf)
     signal dm : memory_array := (
-        others => (others => '0')
-    );
+      16 => X"0101", 
+      18 => X"0110", 
+      20 => X"0011", 
+      22 => X"00F0", 
+      24 => X"00FF", 
+      others => (others => '0')
+    ); 
+    -- signal dm : memory_array := (
+    --     others => (others => '0')
+    -- );
+    
 
 begin
     process(clk, memRead, memWrite, address)

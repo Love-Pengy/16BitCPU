@@ -188,6 +188,7 @@ signal ALUControlUnitOutput, ALUOp_sig: std_logic_vector(3 downto 0);
 signal jumpAddressShifterOutput : std_logic_vector(12 downto 0);
 signal regDstMuxOutput : std_logic_vector(2 downto 0);
 signal regDest_sig, jump_sig, branch_sig, memRead_sig, memToReg_sig, memWrite_sig, ALUSrc_sig, regWrite_sig, ALUZero, branchAnd: std_logic;
+signal ccCounter : integer;
 begin
     
     programCounterCalc: programCounter
@@ -233,4 +234,15 @@ begin
         PORT MAP(cntrl => branchAnd, topin => branchAddress, bottom => twoAdderOutput, output => branchAddressMuxOutput);
      jumpMuxCalc : sixteenBitMux
         PORT MAP(cntrl => jump_sig, topin => jumpAddress, bottom => branchAddressMuxOutput, output => pcInput);
+        
+     -- counter process
+     process(clk, clkEnable, reset)
+     begin
+        if(rising_edge(clk) AND (clkEnable = '1') AND (NOT (reset = '1'))) then
+            ccCounter <= ccCounter + 1;
+        elsif(reset = '1') then
+            ccCounter <= 0;
+        end if;
+     end process;
+     
 end Structural;

@@ -10,13 +10,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="360.558 ns"></ZoomEndTime>
-      <Cursor1Time time="800.000 ns"></Cursor1Time>
+      <ZoomStartTime time="651.090 ns"></ZoomStartTime>
+      <ZoomEndTime time="815.691 ns"></ZoomEndTime>
+      <Cursor1Time time="744.890 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="210"></NameColumnWidth>
-      <ValueColumnWidth column_width="159"></ValueColumnWidth>
+      <ValueColumnWidth column_width="155"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="20" />
    <wvobject fp_name="divider78" type="divider">
@@ -169,6 +169,7 @@
    <wvobject type="group" fp_name="group79">
       <obj_property name="label">Register File</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/clk">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
@@ -204,6 +205,41 @@
       <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals">
          <obj_property name="ElementShortName">registerVals[0:7][15:0]</obj_property>
          <obj_property name="ObjectShortName">registerVals[0:7][15:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[0]">
+            <obj_property name="ElementShortName">[0][15:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[1]">
+            <obj_property name="ElementShortName">[1][15:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[2]">
+            <obj_property name="ElementShortName">[2][15:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[3]">
+            <obj_property name="ElementShortName">[3][15:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][15:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[4]">
+            <obj_property name="ElementShortName">[4][15:0]</obj_property>
+            <obj_property name="ObjectShortName">[4][15:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[5]">
+            <obj_property name="ElementShortName">[5][15:0]</obj_property>
+            <obj_property name="ObjectShortName">[5][15:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[6]">
+            <obj_property name="ElementShortName">[6][15:0]</obj_property>
+            <obj_property name="ObjectShortName">[6][15:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[7]">
+            <obj_property name="ElementShortName">[7][15:0]</obj_property>
+            <obj_property name="ObjectShortName">[7][15:0]</obj_property>
+         </wvobject>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group60">
@@ -229,6 +265,7 @@
    <wvobject type="group" fp_name="group61">
       <obj_property name="label">Instruction Memory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/instructionMemoryCalc/clk">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
@@ -365,6 +402,7 @@
    <wvobject type="group" fp_name="group114">
       <obj_property name="label">Data Memory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/dataMemoryCalc/address">
          <obj_property name="ElementShortName">address[15:0]</obj_property>
          <obj_property name="ObjectShortName">address[15:0]</obj_property>
@@ -392,6 +430,7 @@
       <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/dataMemoryCalc/dm">
          <obj_property name="ElementShortName">dm[0:65535][15:0]</obj_property>
          <obj_property name="ObjectShortName">dm[0:65535][15:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group121">

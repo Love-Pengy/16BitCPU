@@ -55,7 +55,7 @@ end ALU;
 
 
 architecture Behavioral of ALU is
-    signal addOutput, twoOutput, shiftOutput, subOutput: std_logic_vector(N-1 downto 0);
+    signal addOutput, twoOutput, shiftOutput, subOutput, testSig: std_logic_vector(N-1 downto 0);
     signal comparatorOutput: std_logic_vector(1 downto 0);
     
     COMPONENT nBitAdder
@@ -208,6 +208,7 @@ architecture Behavioral of ALU is
             -- SLL
             when "1011" =>
                 bitOutput := A SLL to_integer(unsigned(B));
+                testSig <= bitOutput;
                 if(bitOutput <= X"0000") then 
                     Zero <= '1';
                  else 
