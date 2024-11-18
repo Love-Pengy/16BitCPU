@@ -58,12 +58,13 @@ architecture Behavioral of Data_Memory is
     -- signal dm : memory_array := (
     --     others => (others => '0')
     -- );
-    
+    signal clock_cycle : integer := 0;
 
 begin
     process(clk, memRead, memWrite, address)
     begin
         if rising_edge(clk) then
+        clock_cycle <= clock_cycle + 1;
             if memWrite = '1' then
                 dm(to_integer(unsigned(address))) <= writeData;
             end if; 
