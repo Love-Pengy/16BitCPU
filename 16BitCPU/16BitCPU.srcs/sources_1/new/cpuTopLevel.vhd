@@ -238,10 +238,10 @@ begin
      -- counter process
      process(clk, clkEnable, reset)
      begin
-        if(rising_edge(clk) AND (clkEnable = '1') AND (NOT (reset = '1'))) then
-            ccCounter <= ccCounter + 1;
-        elsif(reset = '1') then
+        if(reset = '1') then 
             ccCounter <= 0;
+        elsif(rising_edge(clk) AND (clkEnable = '1')) then
+            ccCounter <= ccCounter + 1;
         end if;
      end process;
      

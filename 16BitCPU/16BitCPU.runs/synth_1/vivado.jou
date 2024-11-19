@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Nov 18 19:09:18 2024
+# Process ID: 199656
+# Current directory: /home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.runs/synth_1
+# Command line: vivado -log topLevel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source topLevel.tcl
+# Log file: /home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.runs/synth_1/topLevel.vds
+# Journal file: /home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.runs/synth_1/vivado.jou
+# Running On        :Jake
+# Platform          :Linuxmint
+# Operating System  :Linux Mint 22
+# Processor Detail  :Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz
+# CPU Frequency     :2800.011 MHz
+# CPU Physical cores:2
+# CPU Logical cores :4
+# Host memory       :12258 MB
+# Swap memory       :2147 MB
+# Total Virtual     :14406 MB
+# Available Virtual :8999 MB
+#-----------------------------------------------------------
+source topLevel.tcl -notrace

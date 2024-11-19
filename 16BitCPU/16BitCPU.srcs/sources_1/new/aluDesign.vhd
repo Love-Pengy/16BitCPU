@@ -196,7 +196,7 @@ architecture Behavioral of ALU is
 --                    end LOOP;
 --                 end if;
                 if(unsigned(cutBound) > 0) then 
-                    cutCalc := std_logic_vector(signed(A(15 downto 8)) SRL to_integer(unsigned(cutBound)));
+                    cutCalc(15 downto 8) := std_logic_vector(signed(A(15 downto 8)) SRL to_integer(unsigned(cutBound)));
                 end if;
                 if(cutCalc = X"0000") then  
                     Zero <= '1';
