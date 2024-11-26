@@ -34,10 +34,12 @@ use IEEE.NUMERIC_STD.ALL;
 entity IDEXBuffer is
   Port (clk : in std_logic;
   
-        regDstIn, jumpIn, branchIn, memReadIn, memToRegIn, ALUOpIn, memWriteIn, ALUSrcIn, regWriteIn : in std_logic; 
+        regDstIn, jumpIn, branchIn, memReadIn, memToRegIn, memWriteIn, ALUSrcIn, regWriteIn : in std_logic; 
+        ALUOpIn: in std_logic_vector(3 downto 0);
         
-        regDstOut, jumpOut, branchOut, memReadOut, memToRegOut, ALUOpOut, memWriteOut, ALUSrcOut, regWriteOut : out std_logic; 
-
+        regDstOut, jumpOut, branchOut, memReadOut, memToRegOut, memWriteOut, ALUSrcOut, regWriteOut : out std_logic; 
+        ALUOpOut: out std_logic_vector(3 downto 0);
+        
         rData1In, rData2In, nextIn, signExtendIn: in std_logic_vector(15 downto 0);
         rtIn, rdIn, rsIn: in std_logic_vector(2 downto 0); 
         
@@ -52,7 +54,8 @@ begin
 
     process(clk)
         variable readData1, readData2, nextInstruction, signExtender: std_logic_vector(15 downto 0);
-        variable regDst, jump, branch, memRead, memToReg, ALUOp, memWrite, ALUSrc, regWrite : std_logic;
+        variable regDst, jump, branch, memRead, memToReg, memWrite, ALUSrc, regWrite : std_logic;
+        variable ALUOp : std_logic_vector(3 downto 0);
         variable rt, rd, rs  : std_logic_vector(2 downto 0);
     begin
         if(rising_edge(clk)) then 
