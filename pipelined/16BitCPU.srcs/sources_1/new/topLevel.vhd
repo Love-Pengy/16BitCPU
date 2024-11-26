@@ -45,7 +45,7 @@ architecture Structural of topLevel is
     end COMPONENT;
     FOR ALL: cpuTopLevel use entity work.cpuTopLevel(structural);
 begin
-    LED(15 downto 0) <= "1111111111111111";
+    LED(15 downto 0) <= "11011111111111111";
     cpuCalc: cpuTopLevel 
         PORT MAP(clk => CLK100MHZ, clkEnable => SW(0), reset => CPU_RESETN);
 
