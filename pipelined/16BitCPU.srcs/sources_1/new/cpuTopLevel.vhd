@@ -391,9 +391,9 @@ begin
             clk  => clk, 
             read1 => IFIDCurrOutput(11 downto 9), 
             read2 => IFIDCurrOutput(8 downto 6),  
-            writeReg =>  regWriteOutput,  
+            writeReg =>  EXMEMRd,  
             registersWrite => regWrite, 
-            writeData => memToRegMuxOutput, 
+            writeData => WBMuxOutput, 
             data1 => readDataOne, 
             data2 =>  readDataTwo);
                  
@@ -464,14 +464,14 @@ begin
         
         forwardMux1Calc: forward_mux
              PORT MAP (readData => IDEXRData1, 
-                   aluResult => MEMWBdMemReadDataOut, 
+                   aluResult => EXMEMAddress, 
                    wrData => WBMuxOutput, 
                    fowardSig => fw1, 
                    output => ALUIn1);
                    
         forwardMux2Calc: forward_mux
          PORT MAP (readData => IDEXRData2, 
-               aluResult => MEMWBdMemReadDataOut, 
+               aluResult => EXMEMAddress, 
                wrData => WBMuxOutput, 
                fowardSig => fw2, 
                output => aluSrcMuxIn);   
@@ -484,7 +484,7 @@ begin
                  A => ALUIn1, 
                  B => ALUIn2, 
                  C => ALUOut, 
-                 Mode => ALUMode, 
+                 Mode => ALUOp, 
                  Zero => Zero
                 );
             
@@ -500,7 +500,7 @@ begin
            forwardUnitCalc: forwarding_unit
              PORT MAP (rs => IDEXRsOut, 
                        rt => IDEXRtOut, 
-                       ExMemRd => IDEXMemRd, 
+                       ExMemRd => EXMEMRd, 
                        MemWbRd => MEMWBRd,
                        ExMemRegwr => EXMEMRegWrite, 
                        MemWbRegwr => MEMWBRegWrite,
@@ -540,7 +540,7 @@ begin
              PORT MAP(clk => clk, 
                 dMemReadDataIn => dataMemReadData, 
                 aluResultIn => EXMEMAddress, 
-                rdIn => writeRegMuxOuptut,
+                rdIn => EXMEMRd,
                 memToRegIn => EXMEMMemToReg, 
                 regWriteIn => EXMEMRegWrite,
                 memToRegOut => MEMWBMemToReg,
@@ -552,7 +552,7 @@ begin
                 
                 
              WBMuxCalc: sixteenBitMux
-                PORT MAP(cntrl => MEMWBMemToReg, topin => MEMWBDMemReadData, bottom => MEMWBALUResult, output => WBMuxOuput); 
+                PORT MAP(cntrl => MEMWBMemToReg, topin => MEMWBDMemReadData, bottom => MEMWBALUResult, output => WBMuxOutput); 
                 
      process(clk, clkEnable, reset)
      begin
