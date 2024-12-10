@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="195.519 ns"></ZoomEndTime>
-      <Cursor1Time time="9.717 ns"></Cursor1Time>
+      <ZoomStartTime time="655.679 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,068.865 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="210"></NameColumnWidth>
-      <ValueColumnWidth column_width="151"></ValueColumnWidth>
+      <ValueColumnWidth column_width="135"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
+   <WVObjectSize size="29" />
    <wvobject fp_name="divider78" type="divider">
       <obj_property name="label">Top Level</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -56,105 +56,17 @@
          <obj_property name="ElementShortName">jumpAddress[15:0]</obj_property>
          <obj_property name="ObjectShortName">jumpAddress[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/branchAddressShifterOutput">
-         <obj_property name="ElementShortName">branchAddressShifterOutput[15:0]</obj_property>
-         <obj_property name="ObjectShortName">branchAddressShifterOutput[15:0]</obj_property>
-      </wvobject>
       <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/branchAddressMuxOutput">
          <obj_property name="ElementShortName">branchAddressMuxOutput[15:0]</obj_property>
          <obj_property name="ObjectShortName">branchAddressMuxOutput[15:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/instructionMemoryOutput">
-         <obj_property name="ElementShortName">instructionMemoryOutput[15:0]</obj_property>
-         <obj_property name="ObjectShortName">instructionMemoryOutput[15:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/branchAddress">
-         <obj_property name="ElementShortName">branchAddress[15:0]</obj_property>
-         <obj_property name="ObjectShortName">branchAddress[15:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/signExtendOutput">
-         <obj_property name="ElementShortName">signExtendOutput[15:0]</obj_property>
-         <obj_property name="ObjectShortName">signExtendOutput[15:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerOutOne">
-         <obj_property name="ElementShortName">registerOutOne[15:0]</obj_property>
-         <obj_property name="ObjectShortName">registerOutOne[15:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerOutTwo">
-         <obj_property name="ElementShortName">registerOutTwo[15:0]</obj_property>
-         <obj_property name="ObjectShortName">registerOutTwo[15:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUResult">
-         <obj_property name="ElementShortName">ALUResult[15:0]</obj_property>
-         <obj_property name="ObjectShortName">ALUResult[15:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/dataMemoryOutput">
-         <obj_property name="ElementShortName">dataMemoryOutput[15:0]</obj_property>
-         <obj_property name="ObjectShortName">dataMemoryOutput[15:0]</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/memToRegMuxOutput">
          <obj_property name="ElementShortName">memToRegMuxOutput[15:0]</obj_property>
          <obj_property name="ObjectShortName">memToRegMuxOutput[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUSrcMuxOutput">
-         <obj_property name="ElementShortName">ALUSrcMuxOutput[15:0]</obj_property>
-         <obj_property name="ObjectShortName">ALUSrcMuxOutput[15:0]</obj_property>
-      </wvobject>
       <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/twoAdderOutput">
          <obj_property name="ElementShortName">twoAdderOutput[15:0]</obj_property>
          <obj_property name="ObjectShortName">twoAdderOutput[15:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUControlUnitOutput">
-         <obj_property name="ElementShortName">ALUControlUnitOutput[3:0]</obj_property>
-         <obj_property name="ObjectShortName">ALUControlUnitOutput[3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUOp_sig">
-         <obj_property name="ElementShortName">ALUOp_sig[3:0]</obj_property>
-         <obj_property name="ObjectShortName">ALUOp_sig[3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/jumpAddressShifterOutput">
-         <obj_property name="ElementShortName">jumpAddressShifterOutput[12:0]</obj_property>
-         <obj_property name="ObjectShortName">jumpAddressShifterOutput[12:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/regDstMuxOutput">
-         <obj_property name="ElementShortName">regDstMuxOutput[2:0]</obj_property>
-         <obj_property name="ObjectShortName">regDstMuxOutput[2:0]</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/regDest_sig">
-         <obj_property name="ElementShortName">regDest_sig</obj_property>
-         <obj_property name="ObjectShortName">regDest_sig</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/jump_sig">
-         <obj_property name="ElementShortName">jump_sig</obj_property>
-         <obj_property name="ObjectShortName">jump_sig</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/branch_sig">
-         <obj_property name="ElementShortName">branch_sig</obj_property>
-         <obj_property name="ObjectShortName">branch_sig</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/memRead_sig">
-         <obj_property name="ElementShortName">memRead_sig</obj_property>
-         <obj_property name="ObjectShortName">memRead_sig</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/memToReg_sig">
-         <obj_property name="ElementShortName">memToReg_sig</obj_property>
-         <obj_property name="ObjectShortName">memToReg_sig</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/memWrite_sig">
-         <obj_property name="ElementShortName">memWrite_sig</obj_property>
-         <obj_property name="ObjectShortName">memWrite_sig</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/ALUSrc_sig">
-         <obj_property name="ElementShortName">ALUSrc_sig</obj_property>
-         <obj_property name="ObjectShortName">ALUSrc_sig</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/regWrite_sig">
-         <obj_property name="ElementShortName">regWrite_sig</obj_property>
-         <obj_property name="ObjectShortName">regWrite_sig</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/ALUZero">
-         <obj_property name="ElementShortName">ALUZero</obj_property>
-         <obj_property name="ObjectShortName">ALUZero</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/branchAnd">
          <obj_property name="ElementShortName">branchAnd</obj_property>
@@ -169,112 +81,37 @@
    <wvobject type="group" fp_name="group79">
       <obj_property name="label">Register File</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/clk">
-         <obj_property name="ElementShortName">clk</obj_property>
-         <obj_property name="ObjectShortName">clk</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/read1">
-         <obj_property name="ElementShortName">read1[2:0]</obj_property>
-         <obj_property name="ObjectShortName">read1[2:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/read2">
-         <obj_property name="ElementShortName">read2[2:0]</obj_property>
-         <obj_property name="ObjectShortName">read2[2:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/writeReg">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerCalc/writeReg">
          <obj_property name="ElementShortName">writeReg[2:0]</obj_property>
          <obj_property name="ObjectShortName">writeReg[2:0]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registersWrite">
-         <obj_property name="ElementShortName">registersWrite</obj_property>
-         <obj_property name="ObjectShortName">registersWrite</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/writeData">
-         <obj_property name="ElementShortName">writeData[15:0]</obj_property>
-         <obj_property name="ObjectShortName">writeData[15:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/data1">
-         <obj_property name="ElementShortName">data1[15:0]</obj_property>
-         <obj_property name="ObjectShortName">data1[15:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/data2">
-         <obj_property name="ElementShortName">data2[15:0]</obj_property>
-         <obj_property name="ObjectShortName">data2[15:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerCalc/registerVals">
          <obj_property name="ElementShortName">registerVals[0:7][15:0]</obj_property>
          <obj_property name="ObjectShortName">registerVals[0:7][15:0]</obj_property>
-         <obj_property name="isExpanded"></obj_property>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[0]">
-            <obj_property name="ElementShortName">[0][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[0][15:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[1]">
-            <obj_property name="ElementShortName">[1][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[1][15:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[2]">
-            <obj_property name="ElementShortName">[2][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[2][15:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[3]">
-            <obj_property name="ElementShortName">[3][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[3][15:0]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[4]">
-            <obj_property name="ElementShortName">[4][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[4][15:0]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[5]">
-            <obj_property name="ElementShortName">[5][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[5][15:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[6]">
-            <obj_property name="ElementShortName">[6][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[6][15:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[7]">
-            <obj_property name="ElementShortName">[7][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[7][15:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[0]">
-            <obj_property name="ElementShortName">[0][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[0][15:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[1]">
-            <obj_property name="ElementShortName">[1][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[1][15:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[2]">
-            <obj_property name="ElementShortName">[2][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[2][15:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[3]">
-            <obj_property name="ElementShortName">[3][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[3][15:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[4]">
-            <obj_property name="ElementShortName">[4][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[4][15:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[5]">
-            <obj_property name="ElementShortName">[5][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[5][15:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[6]">
-            <obj_property name="ElementShortName">[6][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[6][15:0]</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerFileCalc/registerVals[7]">
-            <obj_property name="ElementShortName">[7][15:0]</obj_property>
-            <obj_property name="ObjectShortName">[7][15:0]</obj_property>
-         </wvobject>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerCalc/read1">
+         <obj_property name="ElementShortName">read1[2:0]</obj_property>
+         <obj_property name="ObjectShortName">read1[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerCalc/read2">
+         <obj_property name="ElementShortName">read2[2:0]</obj_property>
+         <obj_property name="ObjectShortName">read2[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerCalc/data1">
+         <obj_property name="ElementShortName">data1[15:0]</obj_property>
+         <obj_property name="ObjectShortName">data1[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerCalc/data2">
+         <obj_property name="ElementShortName">data2[15:0]</obj_property>
+         <obj_property name="ObjectShortName">data2[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerCalc/writeReg">
+         <obj_property name="ElementShortName">writeReg[2:0]</obj_property>
+         <obj_property name="ObjectShortName">writeReg[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/registerCalc/writeData">
+         <obj_property name="ElementShortName">writeData[15:0]</obj_property>
+         <obj_property name="ObjectShortName">writeData[15:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group60">
@@ -300,16 +137,15 @@
    <wvobject type="group" fp_name="group61">
       <obj_property name="label">Instruction Memory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/instructionMemoryCalc/clk">
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/instructionMemCalc/clk">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/instructionMemoryCalc/readAddr">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/instructionMemCalc/readAddr">
          <obj_property name="ElementShortName">readAddr[15:0]</obj_property>
          <obj_property name="ObjectShortName">readAddr[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/instructionMemoryCalc/instruction">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/instructionMemCalc/instruction">
          <obj_property name="ElementShortName">instruction[15:0]</obj_property>
          <obj_property name="ObjectShortName">instruction[15:0]</obj_property>
       </wvobject>
@@ -357,6 +193,10 @@
          <obj_property name="ElementShortName">branch</obj_property>
          <obj_property name="ObjectShortName">branch</obj_property>
       </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/controlUnitCalc/IFflush">
+         <obj_property name="ElementShortName">IFflush</obj_property>
+         <obj_property name="ObjectShortName">IFflush</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group91">
       <obj_property name="label">Sign Extender</obj_property>
@@ -373,71 +213,54 @@
    <wvobject type="group" fp_name="group94">
       <obj_property name="label">ALU</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUCalc/A">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluCalc/A">
          <obj_property name="ElementShortName">A[15:0]</obj_property>
          <obj_property name="ObjectShortName">A[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUCalc/B">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluCalc/B">
          <obj_property name="ElementShortName">B[15:0]</obj_property>
          <obj_property name="ObjectShortName">B[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUCalc/C">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluCalc/C">
          <obj_property name="ElementShortName">C[15:0]</obj_property>
          <obj_property name="ObjectShortName">C[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUCalc/Mode">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluCalc/Mode">
          <obj_property name="ElementShortName">Mode[3:0]</obj_property>
          <obj_property name="ObjectShortName">Mode[3:0]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/ALUCalc/Zero">
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/aluCalc/Zero">
          <obj_property name="ElementShortName">Zero</obj_property>
          <obj_property name="ObjectShortName">Zero</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUCalc/addOutput">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluCalc/addOutput">
          <obj_property name="ElementShortName">addOutput[15:0]</obj_property>
          <obj_property name="ObjectShortName">addOutput[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUCalc/twoOutput">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluCalc/twoOutput">
          <obj_property name="ElementShortName">twoOutput[15:0]</obj_property>
          <obj_property name="ObjectShortName">twoOutput[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUCalc/shiftOutput">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluCalc/shiftOutput">
          <obj_property name="ElementShortName">shiftOutput[15:0]</obj_property>
          <obj_property name="ObjectShortName">shiftOutput[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUCalc/subOutput">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluCalc/subOutput">
          <obj_property name="ElementShortName">subOutput[15:0]</obj_property>
          <obj_property name="ObjectShortName">subOutput[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUCalc/comparatorOutput">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluCalc/comparatorOutput">
          <obj_property name="ElementShortName">comparatorOutput[1:0]</obj_property>
          <obj_property name="ObjectShortName">comparatorOutput[1:0]</obj_property>
       </wvobject>
-      <wvobject type="other" fp_name="/cpuTopLevelTB/DUT/ALUCalc/N">
+      <wvobject type="other" fp_name="/cpuTopLevelTB/DUT/aluCalc/N">
          <obj_property name="ElementShortName">N</obj_property>
          <obj_property name="ObjectShortName">N</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject type="group" fp_name="group110">
-      <obj_property name="label">ALU Control Unit</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUControlUnitCalc/ALUOp">
-         <obj_property name="ElementShortName">ALUOp[3:0]</obj_property>
-         <obj_property name="ObjectShortName">ALUOp[3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUControlUnitCalc/func">
-         <obj_property name="ElementShortName">func[2:0]</obj_property>
-         <obj_property name="ObjectShortName">func[2:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUControlUnitCalc/output">
-         <obj_property name="ElementShortName">output[3:0]</obj_property>
-         <obj_property name="ObjectShortName">output[3:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group114">
       <obj_property name="label">Data Memory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/dataMemoryCalc/address">
          <obj_property name="ElementShortName">address[15:0]</obj_property>
          <obj_property name="ObjectShortName">address[15:0]</obj_property>
@@ -465,7 +288,6 @@
       <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/dataMemoryCalc/dm">
          <obj_property name="ElementShortName">dm[0:65535][15:0]</obj_property>
          <obj_property name="ObjectShortName">dm[0:65535][15:0]</obj_property>
-         <obj_property name="isExpanded"></obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group121">
@@ -487,11 +309,11 @@
    <wvobject type="group" fp_name="group139">
       <obj_property name="label">Jump Address Shifter</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/jumpAddressCalc/input">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/jumpShiftCalc/input">
          <obj_property name="ElementShortName">input[11:0]</obj_property>
          <obj_property name="ObjectShortName">input[11:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/jumpAddressCalc/output">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/jumpShiftCalc/output">
          <obj_property name="ElementShortName">output[12:0]</obj_property>
          <obj_property name="ObjectShortName">output[12:0]</obj_property>
       </wvobject>
@@ -499,11 +321,11 @@
    <wvobject type="group" fp_name="group142">
       <obj_property name="label">Branch Address Shifter</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/branchAddressShifterCalc/input">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/branchLeftShifterCalc/input">
          <obj_property name="ElementShortName">input[15:0]</obj_property>
          <obj_property name="ObjectShortName">input[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/branchAddressShifterCalc/output">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/branchLeftShifterCalc/output">
          <obj_property name="ElementShortName">output[15:0]</obj_property>
          <obj_property name="ObjectShortName">output[15:0]</obj_property>
       </wvobject>
@@ -511,19 +333,19 @@
    <wvobject type="group" fp_name="group145">
       <obj_property name="label">Branch Address Adder</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/branchAddressAdderCalc/BUSA">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/adderCalc/BUSA">
          <obj_property name="ElementShortName">BUSA[15:0]</obj_property>
          <obj_property name="ObjectShortName">BUSA[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/branchAddressAdderCalc/BUSB">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/adderCalc/BUSB">
          <obj_property name="ElementShortName">BUSB[15:0]</obj_property>
          <obj_property name="ObjectShortName">BUSB[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/branchAddressAdderCalc/RESULT">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/adderCalc/RESULT">
          <obj_property name="ElementShortName">RESULT[15:0]</obj_property>
          <obj_property name="ObjectShortName">RESULT[15:0]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/branchAddressAdderCalc/COUT">
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/adderCalc/COUT">
          <obj_property name="ElementShortName">COUT</obj_property>
          <obj_property name="ObjectShortName">COUT</obj_property>
       </wvobject>
@@ -531,63 +353,31 @@
    <wvobject type="group" fp_name="group872">
       <obj_property name="label">ALU Src Mux</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/ALUSrcMuxCalc/cntrl">
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/aluSrcMuxCalc/cntrl">
          <obj_property name="ElementShortName">cntrl</obj_property>
          <obj_property name="ObjectShortName">cntrl</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUSrcMuxCalc/topin">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluSrcMuxCalc/topin">
          <obj_property name="ElementShortName">topin[15:0]</obj_property>
          <obj_property name="ObjectShortName">topin[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUSrcMuxCalc/bottom">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluSrcMuxCalc/bottom">
          <obj_property name="ElementShortName">bottom[15:0]</obj_property>
          <obj_property name="ObjectShortName">bottom[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUSrcMuxCalc/output">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluSrcMuxCalc/output">
          <obj_property name="ElementShortName">output[15:0]</obj_property>
          <obj_property name="ObjectShortName">output[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUSrcMuxCalc/top">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluSrcMuxCalc/top">
          <obj_property name="ElementShortName">top[15:0]</obj_property>
          <obj_property name="ObjectShortName">top[15:0]</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/ALUSrcMuxCalc/bottomIn">
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/aluSrcMuxCalc/bottomIn">
          <obj_property name="ElementShortName">bottomIn[15:0]</obj_property>
          <obj_property name="ObjectShortName">bottomIn[15:0]</obj_property>
       </wvobject>
-      <wvobject type="other" fp_name="/cpuTopLevelTB/DUT/ALUSrcMuxCalc/N">
-         <obj_property name="ElementShortName">N</obj_property>
-         <obj_property name="ObjectShortName">N</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject type="group" fp_name="group1154">
-      <obj_property name="label">RegDST Mux</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/regDstMuxCalc/cntrl">
-         <obj_property name="ElementShortName">cntrl</obj_property>
-         <obj_property name="ObjectShortName">cntrl</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/regDstMuxCalc/topin">
-         <obj_property name="ElementShortName">topin[2:0]</obj_property>
-         <obj_property name="ObjectShortName">topin[2:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/regDstMuxCalc/bottom">
-         <obj_property name="ElementShortName">bottom[2:0]</obj_property>
-         <obj_property name="ObjectShortName">bottom[2:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/regDstMuxCalc/output">
-         <obj_property name="ElementShortName">output[2:0]</obj_property>
-         <obj_property name="ObjectShortName">output[2:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/regDstMuxCalc/top">
-         <obj_property name="ElementShortName">top[2:0]</obj_property>
-         <obj_property name="ObjectShortName">top[2:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/regDstMuxCalc/bottomIn">
-         <obj_property name="ElementShortName">bottomIn[2:0]</obj_property>
-         <obj_property name="ObjectShortName">bottomIn[2:0]</obj_property>
-      </wvobject>
-      <wvobject type="other" fp_name="/cpuTopLevelTB/DUT/regDstMuxCalc/N">
+      <wvobject type="other" fp_name="/cpuTopLevelTB/DUT/aluSrcMuxCalc/N">
          <obj_property name="ElementShortName">N</obj_property>
          <obj_property name="ObjectShortName">N</obj_property>
       </wvobject>
@@ -654,6 +444,478 @@
       <wvobject type="other" fp_name="/cpuTopLevelTB/DUT/jumpMuxCalc/N">
          <obj_property name="ElementShortName">N</obj_property>
          <obj_property name="ObjectShortName">N</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66407">
+      <obj_property name="label">Stalling Unit</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/stallingUnitCalc/IdExMemRead">
+         <obj_property name="ElementShortName">IdExMemRead</obj_property>
+         <obj_property name="ObjectShortName">IdExMemRead</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/stallingUnitCalc/IdExRt">
+         <obj_property name="ElementShortName">IdExRt[2:0]</obj_property>
+         <obj_property name="ObjectShortName">IdExRt[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/stallingUnitCalc/IfIdRt">
+         <obj_property name="ElementShortName">IfIdRt[2:0]</obj_property>
+         <obj_property name="ObjectShortName">IfIdRt[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/stallingUnitCalc/IfIdRs">
+         <obj_property name="ElementShortName">IfIdRs[2:0]</obj_property>
+         <obj_property name="ObjectShortName">IfIdRs[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/stallingUnitCalc/stall">
+         <obj_property name="ElementShortName">stall</obj_property>
+         <obj_property name="ObjectShortName">stall</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/stallingUnitCalc/IfIdWr">
+         <obj_property name="ElementShortName">IfIdWr</obj_property>
+         <obj_property name="ObjectShortName">IfIdWr</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/stallingUnitCalc/pcWr">
+         <obj_property name="ElementShortName">pcWr</obj_property>
+         <obj_property name="ObjectShortName">pcWr</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66415">
+      <obj_property name="label">Comparator</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/regComaratorCalc/in1">
+         <obj_property name="ElementShortName">in1[15:0]</obj_property>
+         <obj_property name="ObjectShortName">in1[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/regComaratorCalc/in2">
+         <obj_property name="ElementShortName">in2[15:0]</obj_property>
+         <obj_property name="ObjectShortName">in2[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/regComaratorCalc/output">
+         <obj_property name="ElementShortName">output</obj_property>
+         <obj_property name="ObjectShortName">output</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66419">
+      <obj_property name="label">IDEXControlSignalMux</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/regDst">
+         <obj_property name="ElementShortName">regDst</obj_property>
+         <obj_property name="ObjectShortName">regDst</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/jump">
+         <obj_property name="ElementShortName">jump</obj_property>
+         <obj_property name="ObjectShortName">jump</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/branch">
+         <obj_property name="ElementShortName">branch</obj_property>
+         <obj_property name="ObjectShortName">branch</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/memRead">
+         <obj_property name="ElementShortName">memRead</obj_property>
+         <obj_property name="ObjectShortName">memRead</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/memToReg">
+         <obj_property name="ElementShortName">memToReg</obj_property>
+         <obj_property name="ObjectShortName">memToReg</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/memWrite">
+         <obj_property name="ElementShortName">memWrite</obj_property>
+         <obj_property name="ObjectShortName">memWrite</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/ALUSrc">
+         <obj_property name="ElementShortName">ALUSrc</obj_property>
+         <obj_property name="ObjectShortName">ALUSrc</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/regWrite">
+         <obj_property name="ElementShortName">regWrite</obj_property>
+         <obj_property name="ObjectShortName">regWrite</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/stallSig">
+         <obj_property name="ElementShortName">stallSig</obj_property>
+         <obj_property name="ObjectShortName">stallSig</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/alu_op">
+         <obj_property name="ElementShortName">alu_op[3:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_op[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/regDstOut">
+         <obj_property name="ElementShortName">regDstOut</obj_property>
+         <obj_property name="ObjectShortName">regDstOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/jumpOut">
+         <obj_property name="ElementShortName">jumpOut</obj_property>
+         <obj_property name="ObjectShortName">jumpOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/branchOut">
+         <obj_property name="ElementShortName">branchOut</obj_property>
+         <obj_property name="ObjectShortName">branchOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/memReadOut">
+         <obj_property name="ElementShortName">memReadOut</obj_property>
+         <obj_property name="ObjectShortName">memReadOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/memToRegOut">
+         <obj_property name="ElementShortName">memToRegOut</obj_property>
+         <obj_property name="ObjectShortName">memToRegOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/memWriteOut">
+         <obj_property name="ElementShortName">memWriteOut</obj_property>
+         <obj_property name="ObjectShortName">memWriteOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/ALUSrcOut">
+         <obj_property name="ElementShortName">ALUSrcOut</obj_property>
+         <obj_property name="ObjectShortName">ALUSrcOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/regWriteOut">
+         <obj_property name="ElementShortName">regWriteOut</obj_property>
+         <obj_property name="ObjectShortName">regWriteOut</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/alu_op_out">
+         <obj_property name="ElementShortName">alu_op_out[3:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_op_out[3:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66459">
+      <obj_property name="label">Forward One MUx</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardMux1Calc/readData">
+         <obj_property name="ElementShortName">readData[15:0]</obj_property>
+         <obj_property name="ObjectShortName">readData[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardMux1Calc/aluResult">
+         <obj_property name="ElementShortName">aluResult[15:0]</obj_property>
+         <obj_property name="ObjectShortName">aluResult[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardMux1Calc/wrData">
+         <obj_property name="ElementShortName">wrData[15:0]</obj_property>
+         <obj_property name="ObjectShortName">wrData[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardMux1Calc/fowardSig">
+         <obj_property name="ElementShortName">fowardSig[1:0]</obj_property>
+         <obj_property name="ObjectShortName">fowardSig[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardMux1Calc/output">
+         <obj_property name="ElementShortName">output[15:0]</obj_property>
+         <obj_property name="ObjectShortName">output[15:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66465">
+      <obj_property name="label">Forward Two Mux</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardMux2Calc/readData">
+         <obj_property name="ElementShortName">readData[15:0]</obj_property>
+         <obj_property name="ObjectShortName">readData[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardMux2Calc/aluResult">
+         <obj_property name="ElementShortName">aluResult[15:0]</obj_property>
+         <obj_property name="ObjectShortName">aluResult[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardMux2Calc/wrData">
+         <obj_property name="ElementShortName">wrData[15:0]</obj_property>
+         <obj_property name="ObjectShortName">wrData[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardMux2Calc/fowardSig">
+         <obj_property name="ElementShortName">fowardSig[1:0]</obj_property>
+         <obj_property name="ObjectShortName">fowardSig[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardMux2Calc/output">
+         <obj_property name="ElementShortName">output[15:0]</obj_property>
+         <obj_property name="ObjectShortName">output[15:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66471">
+      <obj_property name="label">Write Reg Mux</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/writeRegMux/cntrl">
+         <obj_property name="ElementShortName">cntrl</obj_property>
+         <obj_property name="ObjectShortName">cntrl</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/writeRegMux/topin">
+         <obj_property name="ElementShortName">topin[2:0]</obj_property>
+         <obj_property name="ObjectShortName">topin[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/writeRegMux/bottom">
+         <obj_property name="ElementShortName">bottom[2:0]</obj_property>
+         <obj_property name="ObjectShortName">bottom[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/writeRegMux/output">
+         <obj_property name="ElementShortName">output[2:0]</obj_property>
+         <obj_property name="ObjectShortName">output[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/writeRegMux/top">
+         <obj_property name="ElementShortName">top[2:0]</obj_property>
+         <obj_property name="ObjectShortName">top[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/writeRegMux/bottomIn">
+         <obj_property name="ElementShortName">bottomIn[2:0]</obj_property>
+         <obj_property name="ObjectShortName">bottomIn[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="other" fp_name="/cpuTopLevelTB/DUT/writeRegMux/N">
+         <obj_property name="ElementShortName">N</obj_property>
+         <obj_property name="ObjectShortName">N</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66479">
+      <obj_property name="label">Forwarding Unit</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardUnitCalc/rs">
+         <obj_property name="ElementShortName">rs[2:0]</obj_property>
+         <obj_property name="ObjectShortName">rs[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardUnitCalc/rt">
+         <obj_property name="ElementShortName">rt[2:0]</obj_property>
+         <obj_property name="ObjectShortName">rt[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardUnitCalc/ExMemRd">
+         <obj_property name="ElementShortName">ExMemRd[2:0]</obj_property>
+         <obj_property name="ObjectShortName">ExMemRd[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardUnitCalc/MemWbRd">
+         <obj_property name="ElementShortName">MemWbRd[2:0]</obj_property>
+         <obj_property name="ObjectShortName">MemWbRd[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/forwardUnitCalc/ExMemRegwr">
+         <obj_property name="ElementShortName">ExMemRegwr</obj_property>
+         <obj_property name="ObjectShortName">ExMemRegwr</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/forwardUnitCalc/MemWbRegwr">
+         <obj_property name="ElementShortName">MemWbRegwr</obj_property>
+         <obj_property name="ObjectShortName">MemWbRegwr</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardUnitCalc/forward1">
+         <obj_property name="ElementShortName">forward1[1:0]</obj_property>
+         <obj_property name="ObjectShortName">forward1[1:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/forwardUnitCalc/forward2">
+         <obj_property name="ElementShortName">forward2[1:0]</obj_property>
+         <obj_property name="ObjectShortName">forward2[1:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider66739" type="divider">
+      <obj_property name="label">Buffers</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group66504">
+      <obj_property name="label">MEMWB</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/MEMWBBufferCalc/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/MEMWBBufferCalc/dMemReadDataIn">
+         <obj_property name="ElementShortName">dMemReadDataIn[15:0]</obj_property>
+         <obj_property name="ObjectShortName">dMemReadDataIn[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/MEMWBBufferCalc/aluResultIn">
+         <obj_property name="ElementShortName">aluResultIn[15:0]</obj_property>
+         <obj_property name="ObjectShortName">aluResultIn[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/MEMWBBufferCalc/rdIn">
+         <obj_property name="ElementShortName">rdIn[2:0]</obj_property>
+         <obj_property name="ObjectShortName">rdIn[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/MEMWBBufferCalc/memToRegIn">
+         <obj_property name="ElementShortName">memToRegIn</obj_property>
+         <obj_property name="ObjectShortName">memToRegIn</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/MEMWBBufferCalc/regWriteIn">
+         <obj_property name="ElementShortName">regWriteIn</obj_property>
+         <obj_property name="ObjectShortName">regWriteIn</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/MEMWBBufferCalc/memToRegOut">
+         <obj_property name="ElementShortName">memToRegOut</obj_property>
+         <obj_property name="ObjectShortName">memToRegOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/MEMWBBufferCalc/regWriteOut">
+         <obj_property name="ElementShortName">regWriteOut</obj_property>
+         <obj_property name="ObjectShortName">regWriteOut</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/MEMWBBufferCalc/dMemReadDataOut">
+         <obj_property name="ElementShortName">dMemReadDataOut[15:0]</obj_property>
+         <obj_property name="ObjectShortName">dMemReadDataOut[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/MEMWBBufferCalc/aluResultOut">
+         <obj_property name="ElementShortName">aluResultOut[15:0]</obj_property>
+         <obj_property name="ObjectShortName">aluResultOut[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/MEMWBBufferCalc/rdOut">
+         <obj_property name="ElementShortName">rdOut[2:0]</obj_property>
+         <obj_property name="ObjectShortName">rdOut[2:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66488">
+      <obj_property name="label">EXMEM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/aluResultIn">
+         <obj_property name="ElementShortName">aluResultIn[15:0]</obj_property>
+         <obj_property name="ObjectShortName">aluResultIn[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/dMemWriteDataIn">
+         <obj_property name="ElementShortName">dMemWriteDataIn[15:0]</obj_property>
+         <obj_property name="ObjectShortName">dMemWriteDataIn[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/rdIn">
+         <obj_property name="ElementShortName">rdIn[2:0]</obj_property>
+         <obj_property name="ObjectShortName">rdIn[2:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/memReadIn">
+         <obj_property name="ElementShortName">memReadIn</obj_property>
+         <obj_property name="ObjectShortName">memReadIn</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/memWriteIn">
+         <obj_property name="ElementShortName">memWriteIn</obj_property>
+         <obj_property name="ObjectShortName">memWriteIn</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/regWriteIn">
+         <obj_property name="ElementShortName">regWriteIn</obj_property>
+         <obj_property name="ObjectShortName">regWriteIn</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/memToRegIn">
+         <obj_property name="ElementShortName">memToRegIn</obj_property>
+         <obj_property name="ObjectShortName">memToRegIn</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/memReadOut">
+         <obj_property name="ElementShortName">memReadOut</obj_property>
+         <obj_property name="ObjectShortName">memReadOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/memWriteOut">
+         <obj_property name="ElementShortName">memWriteOut</obj_property>
+         <obj_property name="ObjectShortName">memWriteOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/regWriteOut">
+         <obj_property name="ElementShortName">regWriteOut</obj_property>
+         <obj_property name="ObjectShortName">regWriteOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/memToRegOut">
+         <obj_property name="ElementShortName">memToRegOut</obj_property>
+         <obj_property name="ObjectShortName">memToRegOut</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/aluResultOut">
+         <obj_property name="ElementShortName">aluResultOut[15:0]</obj_property>
+         <obj_property name="ObjectShortName">aluResultOut[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/dMemWriteDataOut">
+         <obj_property name="ElementShortName">dMemWriteDataOut[15:0]</obj_property>
+         <obj_property name="ObjectShortName">dMemWriteDataOut[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/EXMemCalc/rdOut">
+         <obj_property name="ElementShortName">rdOut[2:0]</obj_property>
+         <obj_property name="ObjectShortName">rdOut[2:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group66439">
+      <obj_property name="label">IDEX</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/regDst">
+         <obj_property name="ElementShortName">regDst</obj_property>
+         <obj_property name="ObjectShortName">regDst</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/jump">
+         <obj_property name="ElementShortName">jump</obj_property>
+         <obj_property name="ObjectShortName">jump</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/branch">
+         <obj_property name="ElementShortName">branch</obj_property>
+         <obj_property name="ObjectShortName">branch</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/memRead">
+         <obj_property name="ElementShortName">memRead</obj_property>
+         <obj_property name="ObjectShortName">memRead</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/memToReg">
+         <obj_property name="ElementShortName">memToReg</obj_property>
+         <obj_property name="ObjectShortName">memToReg</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/memWrite">
+         <obj_property name="ElementShortName">memWrite</obj_property>
+         <obj_property name="ObjectShortName">memWrite</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/ALUSrc">
+         <obj_property name="ElementShortName">ALUSrc</obj_property>
+         <obj_property name="ObjectShortName">ALUSrc</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/regWrite">
+         <obj_property name="ElementShortName">regWrite</obj_property>
+         <obj_property name="ObjectShortName">regWrite</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/stallSig">
+         <obj_property name="ElementShortName">stallSig</obj_property>
+         <obj_property name="ObjectShortName">stallSig</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/alu_op">
+         <obj_property name="ElementShortName">alu_op[3:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_op[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/regDstOut">
+         <obj_property name="ElementShortName">regDstOut</obj_property>
+         <obj_property name="ObjectShortName">regDstOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/jumpOut">
+         <obj_property name="ElementShortName">jumpOut</obj_property>
+         <obj_property name="ObjectShortName">jumpOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/branchOut">
+         <obj_property name="ElementShortName">branchOut</obj_property>
+         <obj_property name="ObjectShortName">branchOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/memReadOut">
+         <obj_property name="ElementShortName">memReadOut</obj_property>
+         <obj_property name="ObjectShortName">memReadOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/memToRegOut">
+         <obj_property name="ElementShortName">memToRegOut</obj_property>
+         <obj_property name="ObjectShortName">memToRegOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/memWriteOut">
+         <obj_property name="ElementShortName">memWriteOut</obj_property>
+         <obj_property name="ObjectShortName">memWriteOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/ALUSrcOut">
+         <obj_property name="ElementShortName">ALUSrcOut</obj_property>
+         <obj_property name="ObjectShortName">ALUSrcOut</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/regWriteOut">
+         <obj_property name="ElementShortName">regWriteOut</obj_property>
+         <obj_property name="ObjectShortName">regWriteOut</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/alu_op_out">
+         <obj_property name="ElementShortName">alu_op_out[3:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_op_out[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="group66399">
+         <obj_property name="label">IFID</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IFIDCalc/clk">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IFIDCalc/IFIDWrite">
+            <obj_property name="ElementShortName">IFIDWrite</obj_property>
+            <obj_property name="ObjectShortName">IFIDWrite</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/cpuTopLevelTB/DUT/IFIDCalc/flush">
+            <obj_property name="ElementShortName">flush</obj_property>
+            <obj_property name="ObjectShortName">flush</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/IFIDCalc/nextIn">
+            <obj_property name="ElementShortName">nextIn[15:0]</obj_property>
+            <obj_property name="ObjectShortName">nextIn[15:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/IFIDCalc/currIn">
+            <obj_property name="ElementShortName">currIn[15:0]</obj_property>
+            <obj_property name="ObjectShortName">currIn[15:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/IFIDCalc/nextOut">
+            <obj_property name="ElementShortName">nextOut[15:0]</obj_property>
+            <obj_property name="ObjectShortName">nextOut[15:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/cpuTopLevelTB/DUT/IFIDCalc/currOut">
+            <obj_property name="ElementShortName">currOut[15:0]</obj_property>
+            <obj_property name="ObjectShortName">currOut[15:0]</obj_property>
+         </wvobject>
       </wvobject>
    </wvobject>
 </wave_config>

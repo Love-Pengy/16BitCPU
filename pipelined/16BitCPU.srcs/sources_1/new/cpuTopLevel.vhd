@@ -77,21 +77,6 @@ COMPONENT registers
         data1, data2: out std_logic_vector(15 downto 0));
 end COMPONENT;
 
-COMPONENT controlUnit
-    Port (
-        opcode : in std_logic_vector(3 downto 0);  
-        alu_op : out std_logic_vector(3 downto 0); 
-        reg_dst : out std_logic := '0';                   
-        reg_write : out std_logic := '0';                 
-        alu_src : out std_logic := '0';                   
-        mem_read : out std_logic := '0';                  
-        mem_write : out std_logic := '0';                 
-        mem_to_reg : out std_logic := '0';                 
-        jump : out std_logic := '0';
-        branch : out std_logic := '0'
-    );
-end COMPONENT;
-
 COMPONENT signExtender
      Port (SigIn : in std_logic_vector(5 downto 0);
         SigOut : out std_logic_vector(15 downto 0)
@@ -245,6 +230,24 @@ COMPONENT Stalling_Unit
         stall, IfIdWr, pcWr: out std_logic := '1');
 end COMPONENT; 
 
+COMPONENT controlUnit
+   Port (
+        opcode : in std_logic_vector(3 downto 0);
+        func: in std_logic_vector(2 downto 0);
+        branchSig : in std_logic;
+        IFflush : out std_logic := '0';
+        alu_op : out std_logic_vector(3 downto 0) := "0000"; 
+        reg_dst : out std_logic := '0';                   
+        reg_write : out std_logic := '0';                 
+        alu_src : out std_logic := '0';                   
+        mem_read : out std_logic := '0';                  
+        mem_write : out std_logic := '0';                 
+        mem_to_reg : out std_logic := '0';                 
+        jump : out std_logic := '0';
+        branch : out std_logic := '0'
+    );
+end COMPONENT;
+
 --COMPONENT programCounterMux
 --    Port (in1, in2: in std_logic_vector(15 downto 0);
 --        output: out std_logic_vector(15 downto 0);
@@ -290,7 +293,7 @@ constant handler : std_logic_vector(15 downto 0) := X"0000";
 
 
 signal WBMuxOuput, dataMemReadData, MEMWBDMemReadData, MEMWBALUResult,  ALUOut, ALUIn2,EXMEMWriteData,   EXMEMAddress, branchLeftShifterOutput,pcInput,ALUSrcMuxIn, MEMWBdMemReadDataOut,ALUIn1,  WBMuxOutput, IDEXRData1, IDEXRData2, IDEXNextInstr, IDEXSignExtend,   branchAddressMuxOutput, jumpAddress, readDataOne, readDataTwo, memToRegMuxOutput,  signExtenderOutput, IFIDNextOutput, IFIDCurrOutput, instructionMemOutput, twoAdderOutput, adderOutput, pcOutput, pcMuxOutput : std_logic_vector(15 downto 0);
-signal EXMEMMemRead,IDEXMemRead,  MEMWBMemToReg, EXMEMemWrite, EXMEMMemWrite, EXMEMMemToReg, stallMuxBranch,IDEXRegDst, IDEXJump, IDEXBranch, EXMEMRegWrite, MEMWBRegWrite, IDEXMemToReg, IDEXMemWrite, IDEXALUSrc, IDEXRegWrite, stallMuxMemRead, stallMuxMemToReg, stallMuxMemWrite, stallMuxALUSrc, stallMuxRegWrite, regDst, memRead, memToReg, memWrite, ALUSrc, stall, stallMuxRegDst, stallMuxJump, regComparatorOutput, branchAnd,  zero,pcWrite, branch,regWrite,jump,   causeEPCOutput, IFFlush, IFIDWrite: std_logic;
+signal EXMEMMemRead,IDEXMemRead, flush,  MEMWBMemToReg, EXMEMemWrite, EXMEMMemWrite, EXMEMMemToReg, stallMuxBranch,IDEXRegDst, IDEXJump, IDEXBranch, EXMEMRegWrite, MEMWBRegWrite, IDEXMemToReg, IDEXMemWrite, IDEXALUSrc, IDEXRegWrite, stallMuxMemRead, stallMuxMemToReg, stallMuxMemWrite, stallMuxALUSrc, stallMuxRegWrite, regDst, memRead, memToReg, memWrite, ALUSrc, stall, stallMuxRegDst, stallMuxJump, regComparatorOutput, branchAnd,  zero,pcWrite, branch,regWrite,jump,   causeEPCOutput, IFFlush, IFIDWrite: std_logic;
 signal regWriteOutput,writeRegMuxOuptut, MEMWBRd, IDEXMemRd,writeRegMuxOutput, EXMEMRd,  IDEXRtOut, IDEXRdOut, IDEXRsOut :  std_logic_vector(2 downto 0);
 signal ALUOp, stallMuxALUOp,IDEXALUOp: std_logic_vector(3 downto 0);
 signal jumpLeftShifterOutput : std_logic_vector(12 downto 0);
@@ -328,7 +331,7 @@ begin
      IFIDCalc: IFIDBuffer
         PORT MAP (
             clk => clk,
-            flush => IFFlush, 
+            flush => flush, 
             IFIDWrite => IFIDWrite,
             nextIn => twoAdderOutput,  
             currIn => instructionMemOutput, 
@@ -358,7 +361,31 @@ begin
      jumpMuxCalc: sixteenBitMux
         PORT MAP(cntrl => jump, topin => jumpAddress, bottom => branchAddressMuxOutput, output => pcInput);
      
-     
+     controlUnitCalc: controlUnit
+         PORT MAP (
+            opcode => IFIDCurrOutput(15 downto 12),
+            func => IFIDCurrOutput(2 downto 0),
+            branchSig => regComparatorOutput, 
+            IFflush => flush, 
+            alu_op => ALUOp, 
+            reg_dst => regDst,                   
+            reg_write => regWrite, 
+            alu_src => ALUSrc, 
+            mem_read => memRead, 
+            mem_write => memWrite,                  
+            mem_to_reg => memToReg, 
+            jump => jump, 
+            branch => branch);
+        
+       stallingUnitCalc: stalling_unit
+            PORT MAP( IdExMemRead => IDEXMemRead, 
+                IdExRt => IDEXRtOut, 
+                IfIdRt => IFIDCurrOutput(8 downto 6), 
+                IfIdRs => IFIDCurrOutput(11 downto 9), 
+                stall => stall, 
+                IfIdWr => IFIDWrite, 
+                pcWr => PCWrite);
+            
      registerCalc: registers
         PORT MAP (
             clk  => clk, 

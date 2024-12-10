@@ -34,14 +34,14 @@ architecture Behavioral of registers is
 type registerArray is array (0 to 7) of std_logic_vector(15 downto 0);
 signal registerVals : registerArray := (
 -- test portion -------------------------------------
-                                        0 => X"0000", 
-                                        1 => X"000C", 
-                                        2 => X"0010", 
-                                        3 => X"0011", 
-                                        4 => X"0100", 
-                                        5 => X"0101", 
-                                        6 => X"0110", 
-                                        7 => X"0111",
+--                                        0 => X"0000", 
+--                                        1 => X"000C", 
+--                                        2 => X"0010", 
+--                                        3 => X"0011", 
+--                                        4 => X"0100", 
+--                                        5 => X"0101", 
+--                                        6 => X"0110", 
+--                                        7 => X"0111",
 ---------------------------------------------------
                                         others => (others => '0')
                                         );

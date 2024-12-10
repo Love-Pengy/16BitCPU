@@ -36,7 +36,7 @@ entity IFIDBuffer is
 
   Port (clk : in std_logic;
         IFIDWrite : in std_logic := '1';
-        flush: in std_logic;
+        flush: in std_logic := '1';
         nextIn: in std_logic_vector(15 downto 0); 
         currIn: in std_logic_vector(15 downto 0);
         nextOut: out std_logic_vector(15 downto 0) := (others => '0');
