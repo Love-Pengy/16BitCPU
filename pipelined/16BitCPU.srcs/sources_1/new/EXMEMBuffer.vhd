@@ -68,7 +68,7 @@ begin
            dMemWriteDataOut <= dMemWriteData; 
            rdOut <= rd;
            
-           
+
            memReadOut <= memRead; 
            memWriteOut <= memWrite; 
            regWriteOut <= regWrite; 

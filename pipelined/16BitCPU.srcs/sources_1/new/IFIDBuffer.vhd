@@ -32,7 +32,10 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity IFIDBuffer is
-  Port (clk, IFIDWrite : in std_logic;
+
+
+  Port (clk : in std_logic;
+        IFIDWrite : in std_logic := '1';
         flush: in std_logic;
         nextIn: in std_logic_vector(15 downto 0); 
         currIn: in std_logic_vector(15 downto 0);
