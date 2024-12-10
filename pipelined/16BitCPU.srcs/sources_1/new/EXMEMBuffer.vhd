@@ -33,15 +33,13 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity EXMEMBuffer is
   Port (clk : in std_logic;
-        branchAddrIn, aluResultIn, dMemWriteDataIn : in std_logic_vector(15 downto 0);
-        zeroIn : in std_logic; 
+        aluResultIn, dMemWriteDataIn : in std_logic_vector(15 downto 0);
         rdIn : std_logic_vector(2 downto 0);
-        jumpIn, branchIn, memReadIn, memWriteIn, regWriteIn, memToRegIn : in std_logic;
+        memReadIn, memWriteIn, regWriteIn, memToRegIn : in std_logic;
         
-        jumpOut, branchOut, memReadOut, memWriteOut, regWriteOut, memToRegOut : out std_logic;
+        memReadOut, memWriteOut, regWriteOut, memToRegOut : out std_logic;
 
-        branchAddrOut, aluResultOut, dMemWriteDataOut : out std_logic_vector(15 downto 0);
-        zeroOut : out std_logic; 
+        aluResultOut, dMemWriteDataOut : out std_logic_vector(15 downto 0);
         rdOut : out std_logic_vector(2 downto 0));
 end EXMEMBuffer;
 
@@ -56,28 +54,21 @@ begin
         variable jump, branch, memRead, memWrite, regWrite, memToReg : std_logic; 
     begin
         if(rising_edge(clk)) then 
-            branchAddress := branchAddrIn; 
             aluResult := aluResultIn; 
             dMemWriteData := dMemWriteDataIn; 
-            zero := zeroIn; 
             rd := rdIn;
             
-            jump := jumpIn; 
-            branch := branchIn; 
             memRead := memReadIn; 
             memWrite := memWriteIn; 
             regWrite := regWriteIn; 
             memToReg := memToRegIn; 
             
         elsif(falling_edge(clk)) then 
-           branchAddrOut <= branchAddress; 
            aluResultOut <= aluResult; 
            dMemWriteDataOut <= dMemWriteData; 
-           zeroOut <= zero; 
            rdOut <= rd;
            
-           jumpOut <= jump; 
-           brnachOut <= branch; 
+           
            memReadOut <= memRead; 
            memWriteOut <= memWrite; 
            regWriteOut <= regWrite; 

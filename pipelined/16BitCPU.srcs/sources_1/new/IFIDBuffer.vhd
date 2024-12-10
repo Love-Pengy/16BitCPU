@@ -33,6 +33,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity IFIDBuffer is
   Port (clk, IFIDWrite : in std_logic;
+        flush: in std_logic;
         nextIn: in std_logic_vector(15 downto 0); 
         currIn: in std_logic_vector(15 downto 0);
         nextOut: out std_logic_vector(15 downto 0) := (others => '0');
@@ -47,8 +48,13 @@ begin
         variable nextInstruction, currentInstruction : std_logic_vector(15 downto 0); 
     begin
         if(rising_edge(clk)) then 
-            nextInstruction := nextIn; 
-            currentInstruction := currIn; 
+            if(flush = '1') then 
+                currentInstruction := X"1111";
+                nextInstruction := nextIn;
+            else  
+                nextInstruction := nextIn; 
+                currentInstruction := currIn; 
+            end if;
         elsif(falling_edge(clk)) and (IFIDWrite = '1') then 
             nextOut <= nextInstruction; 
             currOut <= currentInstruction; 

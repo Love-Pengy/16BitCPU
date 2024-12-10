@@ -38,6 +38,7 @@ COMPONENT programCounter
     PORT ( 
         clk : in std_logic;
         enable: in std_logic;
+        pcWrite: in std_logic;
         readAddress: in std_logic_vector(15 downto 0);
         instruction: out std_logic_vector(15 downto 0));
 end COMPONENT;
@@ -167,6 +168,97 @@ COMPONENT adder
     	COUT   : out std_logic);
 end COMPONENT;
 
+
+COMPONENT EXMEMBuffer
+    Port(clk : in std_logic;
+        aluResultIn, dMemWriteDataIn : in std_logic_vector(15 downto 0);
+        rdIn : std_logic_vector(2 downto 0);
+        memReadIn, memWriteIn, regWriteIn, memToRegIn : in std_logic;
+        
+        memReadOut, memWriteOut, regWriteOut, memToRegOut : out std_logic;
+
+        aluResultOut, dMemWriteDataOut : out std_logic_vector(15 downto 0);
+        rdOut : out std_logic_vector(2 downto 0)); 
+end COMPONENT;
+
+COMPONENT Forward_Mux
+    Port (readData, aluResult, wrData: in std_logic_vector(15 downto 0);
+        fowardSig: in std_logic_vector(1 downto 0);
+        output: out std_logic_vector(15 downto 0));
+end COMPONENT;
+
+
+COMPONENT Forwarding_Unit
+    Port (rs, rt, ExMemRd, MemWbRd: in std_logic_vector(2 downto 0);
+        ExMemRegwr, MemWbRegwr: in std_logic;
+        forward1, forward2: out std_logic_vector(1 downto 0) := (others => '0'));
+end COMPONENT;
+       
+COMPONENT  IDEXBuffer 
+    Port(clk : in std_logic;
+  
+        regDstIn, jumpIn, branchIn, memReadIn, memToRegIn, memWriteIn, ALUSrcIn, regWriteIn : in std_logic; 
+        ALUOpIn: in std_logic_vector(3 downto 0);
+        
+        regDstOut, jumpOut, branchOut, memReadOut, memToRegOut, memWriteOut, ALUSrcOut, regWriteOut : out std_logic; 
+        ALUOpOut: out std_logic_vector(3 downto 0);
+        
+        rData1In, rData2In, nextIn, signExtendIn: in std_logic_vector(15 downto 0);
+        rtIn, rdIn, rsIn: in std_logic_vector(2 downto 0); 
+        
+        rData1Out, rData2Out, nextOut : out std_logic_vector(15 downto 0);
+        signExtendOut : out std_logic_vector(15 downto 0); 
+        rtOut, rdOut, rsOut: out std_logic_vector(2 downto 0));
+end COMPONENT;
+
+COMPONENT IFIDBuffer
+    Port(clk, IFIDWrite : in std_logic;
+        flush: in std_logic;
+        nextIn: in std_logic_vector(15 downto 0); 
+        currIn: in std_logic_vector(15 downto 0);
+        nextOut: out std_logic_vector(15 downto 0) := (others => '0');
+        currOut : out std_logic_vector(15 downto 0) := (others => '0'));
+end COMPONENT;
+
+COMPONENT MEMWBBuffer 
+    Port(clk : in std_logic;
+        dMemReadDataIn, aluResultIn : in std_logic_vector(15 downto 0); 
+        rdIn : in std_logic_vector(2 downto 0);
+        
+        memToRegIn, regWriteIn : in std_logic;
+        memToRegOut, regWriteOut : out std_logic; 
+        
+        dMemReadDataOut, aluResultOut : out std_logic_vector(15 downto 0); 
+        rdOut : out std_logic_vector(2 downto 0));
+end COMPONENT;
+
+COMPONENT Stall_Mux
+    Port( regDst, jump, branch, memRead, memToReg, memWrite, ALUSrc, regWrite, stallSig : in std_logic;
+        alu_op : in std_logic_vector(3 downto 0);
+        regDstOut, jumpOut, branchOut, memReadOut, memToRegOut, memWriteOut, ALUSrcOut, regWriteOut : out std_logic;
+        alu_op_out : out std_logic_vector(3 downto 0));
+end COMPONENT;
+
+COMPONENT Stalling_Unit
+    Port( IdExMemRead: in std_logic;
+        IdExRt, IfIdRt, IfIdRs: in std_logic_vector(2 downto 0);
+        stall, IfIdWr, pcWr: out std_logic := '1');
+end COMPONENT; 
+
+--COMPONENT programCounterMux
+--    Port (in1, in2: in std_logic_vector(15 downto 0);
+--        output: out std_logic_vector(15 downto 0);
+--        selector: in std_logic;
+--        exceptionEnable : in std_logic;
+--        exception: in std_logic_vector(15 downto 0));
+--end COMPONENT;
+
+
+COMPONENT regComparator
+    Port (in1, in2: in std_logic_vector(15 downto 0); 
+        output : out std_logic := '0' );
+end COMPONENT;
+
 FOR ALL: adder use entity work.adder(Behavioral);
 FOR ALL: jumpLeftShifter use entity work.jumpLeftShifter(Behavioral);
 FOR ALL: branchLeftShifter use entity work.branchLeftShifter(Behavioral);
@@ -181,61 +273,260 @@ FOR ALL: sixteenBitMux use entity work.Mux(Behavioral);
 FOR ALL: threeBitMux use entity work.Mux(Behavioral);
 FOR ALL: instructionMemory use entity work.instructionMemory(Behavioral);
 FOR ALL: programCounter use entity work.programCounter(Behavioral);
+FOR ALL: EXMEMBuffer use entity work.EXMEMBuffer(Behavioral);
+FOR ALL: Forward_Mux use entity work.Forward_Mux(Behavioral);
+FOR ALL: Forwarding_Unit use entity work.Forwarding_Unit(Behavioral);
+FOR ALL: IDEXBuffer use entity work.IDEXBuffer(Behavioral);
+FOR ALL: IFIDBuffer use entity work.IFIDBuffer(Behavioral);
+FOR ALL: MEMWBBuffer use entity work.MEMWBBuffer(Behavioral);
+FOR ALL: Stall_Mux use entity work.Stall_Mux(Behavioral);
+FOR ALL: Stalling_Unit use entity work.Stalling_Unit(Behavioral);
+--FOR ALL: programCounterMux use entity work.ProgramCounterMux(Behavioral);
+FOR ALL: regComparator use entity work.regComparator(Behavioral);
 
-
-signal pcInput, pcOutput, jumpAddress, branchAddressShifterOutput, branchAddressMuxOutput, instructionMemoryOutput, branchAddress, signExtendOutput, registerOutOne, registerOutTwo, ALUResult, dataMemoryOutput, memToRegMuxOutput, ALUSrcMuxOutput, twoAdderOutput: std_logic_vector(15 downto 0);
-signal ALUControlUnitOutput, ALUOp_sig: std_logic_vector(3 downto 0);
-signal jumpAddressShifterOutput : std_logic_vector(12 downto 0);
-signal regDstMuxOutput : std_logic_vector(2 downto 0);
-signal regDest_sig, jump_sig, branch_sig, memRead_sig, memToReg_sig, memWrite_sig, ALUSrc_sig, regWrite_sig, ALUZero, branchAnd: std_logic;
 signal ccCounter : integer;
-begin
-    
-    programCounterCalc: programCounter
-        PORT MAP(clk => clk, readAddress => pcInput, instruction => pcOutput, enable => clkEnable);
-    instructionMemoryCalc: instructionMemory
-        PORT MAP(clk => clk, readAddr => pcOutput, instruction => instructionMemoryOutput);
-    controlUnitCalc: controlUnit
-        PORT MAP(opcode => instructionMemoryOutput(15 downto 12), reg_dst => regDest_sig, jump => jump_sig, branch => branch_sig, mem_read => memRead_sig, mem_to_reg => memToReg_sig, ALU_Op => ALUOp_sig, mem_write => memWrite_sig, ALU_src => ALUSrc_sig, reg_write => regWrite_sig);
-    regDstMuxCalc: threeBitMux
-        PORT MAP(cntrl => regDest_sig, bottom => instructionMemoryOutput(8 downto 6), topin => instructionMemoryOutput(5 downto 3), output => regDstMuxOutput);
-    registerFileCalc: registers
-        PORT MAP(clk => clk, read1 => instructionMemoryOutput(11 downto 9), read2 => instructionMemoryOutput(8 downto 6), writeReg => regDstMuxOutput, registersWrite => regWrite_sig, writeData => memToRegMuxOutput, data1 => registerOutOne, data2 => registerOutTwo);
-    signExtendCalc: signExtender
-        PORT MAP(SigIn => instructionMemoryOutput(5 downto 0), SigOut => signExtendOutput);
-    ALUSrcMuxCalc : sixteenBitMux
-        PORT MAP(cntrl => ALUSrc_sig, bottom => registerOutTwo, topin => signExtendOutput, output => ALUSrcMuxOutput);
-    ALUCalc : ALU
-        PORT MAP(A => registerOutOne, B => ALUSrcMuxOutput, Mode => ALUControlUnitOutput, Zero => ALUZero, C => ALUResult);
+-- where to jump if exception happens
+constant handler : std_logic_vector(15 downto 0) := X"0000";
+
+
+signal WBMuxOuput, dataMemReadData, MEMWBDMemReadData, MEMWBALUResult,  ALUOut, ALUIn2,EXMEMWriteData,   EXMEMAddress, branchLeftShifterOutput,pcInput,ALUSrcMuxIn, MEMWBdMemReadDataOut,ALUIn1,  WBMuxOutput, IDEXRData1, IDEXRData2, IDEXNextInstr, IDEXSignExtend,   branchAddressMuxOutput, jumpAddress, readDataOne, readDataTwo, memToRegMuxOutput,  signExtenderOutput, IFIDNextOutput, IFIDCurrOutput, instructionMemOutput, twoAdderOutput, adderOutput, pcOutput, pcMuxOutput : std_logic_vector(15 downto 0);
+signal EXMEMMemRead,IDEXMemRead,  MEMWBMemToReg, EXMEMemWrite, EXMEMMemWrite, EXMEMMemToReg, stallMuxBranch,IDEXRegDst, IDEXJump, IDEXBranch, EXMEMRegWrite, MEMWBRegWrite, IDEXMemToReg, IDEXMemWrite, IDEXALUSrc, IDEXRegWrite, stallMuxMemRead, stallMuxMemToReg, stallMuxMemWrite, stallMuxALUSrc, stallMuxRegWrite, regDst, memRead, memToReg, memWrite, ALUSrc, stall, stallMuxRegDst, stallMuxJump, regComparatorOutput, branchAnd,  zero,pcWrite, branch,regWrite,jump,   causeEPCOutput, IFFlush, IFIDWrite: std_logic;
+signal regWriteOutput,writeRegMuxOuptut, MEMWBRd, IDEXMemRd,writeRegMuxOutput, EXMEMRd,  IDEXRtOut, IDEXRdOut, IDEXRsOut :  std_logic_vector(2 downto 0);
+signal ALUOp, stallMuxALUOp,IDEXALUOp: std_logic_vector(3 downto 0);
+signal jumpLeftShifterOutput : std_logic_vector(12 downto 0);
+signal ALUMode : std_logic_vector(3 downto 0);
+signal fw1, fw2 : std_logic_vector(1 downto 0);
+begin 
+
+     programCounterCalc: programCounter
+        PORT MAP ( 
+            clk => clk,
+            enable => clkEnable,
+            pcWrite => pcWrite, 
+            readAddress => pcInput,
+            instruction => pcOutput);
         
-    branchAnd <= branch_sig AND ALUZero;
-    
-    ALUControlUnitCalc : ALUControlUnit
-        PORT MAP(ALUOp => ALUOp_sig, func => instructionMemoryOutput(2 downto 0),  output => ALUControlUnitOutput);
-    dataMemoryCalc: dataMemory
-        PORT MAP(clk => clk, address => ALUResult, writeData => registerOutTwo, memWrite => memWrite_sig, memRead => memRead_sig, ReadData => dataMemoryOutput);
-    memToRegMuxCalc: sixteenBitMux
-        PORT MAP(cntrl => memToReg_sig, topin => dataMemoryOutput, bottom => ALUResult, output => memToRegMuxOutput);
-    
-    -- full jump address is (program counter + 2)(15 downto 14) + (immediate << 1)(13 downto 0)
+      instructionMemCalc: instructionMemory
+        PORT MAP (
+            clk => clk,
+            readAddr => pcOutput,
+            instruction => instructionMemOutput);
+        
      twoAdderCalc: twoAdder
-        PORT MAP(BUSA => pcOutput, RESULT => twoAdderOutput, COUT => open);
-     jumpAddressCalc: jumpLeftShifter
-        PORT MAP(input => instructionMemoryOutput(11 downto 0), output => jumpAddressShifterOutput);
+        PORT MAP (
+            BUSA => pcOutput,
+    	    RESULT => twoAdderOutput,
+    	    COUT => open);
+    
+     jumpShiftCalc: jumpLeftShifter
+        PORT MAP (input => IFIDCurrOutput(11 downto 0), 
+                  output => jumpLeftShifterOutput);
+                  
+     jumpAddress(12 downto 0) <= jumpLeftShifterOutput; 
+     jumpAddress(15 downto 13) <= IFIDCurrOutput(15 downto 13); 
      
-     jumpAddress(12 downto 0) <= jumpAddressShifterOutput(12 downto 0);
-     jumpAddress(15 downto 13) <= twoAdderOutput(15 downto 13);
+     IFIDCalc: IFIDBuffer
+        PORT MAP (
+            clk => clk,
+            flush => IFFlush, 
+            IFIDWrite => IFIDWrite,
+            nextIn => twoAdderOutput,  
+            currIn => instructionMemOutput, 
+            nextOut => IFIDNextOutput, 
+            currOut => IFIDCurrOutput);
+
+     signExtendCalc: signExtender
+        PORT MAP(SigIn => IFIDCurrOutput(5 downto 0), 
+                 SigOut => signExtenderOutput
+                 );
      
-     branchAddressShifterCalc: branchLeftShifter
-        PORT MAP(input => signExtendOutput, output => branchAddressShifterOutput);
-     branchAddressAdderCalc: adder
-        PORT MAP(BUSA => twoAdderOutput, BUSB => branchAddressShifterOutput, RESULT => branchAddress, COUT => open);
-     branchMuxCalc : sixteenBitMux
-        PORT MAP(cntrl => branchAnd, topin => branchAddress, bottom => twoAdderOutput, output => branchAddressMuxOutput);
-     jumpMuxCalc : sixteenBitMux
-        PORT MAP(cntrl => jump_sig, topin => jumpAddress, bottom => branchAddressMuxOutput, output => pcInput);
+     branchLeftShifterCalc: branchLeftShifter
+        PORT MAP (input => signExtenderOutput, 
+                  output => branchLeftShifterOutput);
+     
+     adderCalc: adder
+        PORT MAP (BUSA  => signExtenderOutput,
+              BUSB   => IFIDNextOutput,
+              RESULT  => adderOutput,
+              COUT   => open);
+     
+     branchAnd <= branch AND zero; 
+     
+     branchMuxCalc: sixteenBitMux
+        PORT MAP(cntrl => branchAnd, topin => adderOutput, bottom => twoAdderOutput,  output => branchAddressMuxOutput); 
         
-     -- counter process
+     jumpMuxCalc: sixteenBitMux
+        PORT MAP(cntrl => jump, topin => jumpAddress, bottom => branchAddressMuxOutput, output => pcInput);
+     
+     
+     registerCalc: registers
+        PORT MAP (
+            clk  => clk, 
+            read1 => IFIDCurrOutput(11 downto 9), 
+            read2 => IFIDCurrOutput(8 downto 6),  
+            writeReg =>  regWriteOutput,  
+            registersWrite => regWrite, 
+            writeData => memToRegMuxOutput, 
+            data1 => readDataOne, 
+            data2 =>  readDataTwo);
+                 
+     regComaratorCalc: regComparator
+        PORT MAP (in1 => readDataOne, 
+                  in2 => readDataTwo,  
+                  output => regComparatorOutput);
+                 
+     IDEXControlSignalMux: Stall_Mux
+       PORT MAP( regDst => regDst, 
+             jump =>  jump,
+             branch => branch,
+             memRead => memRead, 
+             memToReg => memToReg, 
+             memWrite => memWrite, 
+             ALUSrc => ALUSrc, 
+             regWrite => regWrite, 
+             stallSig => stall, 
+             alu_op => aluOp,
+             regDstOut => stallMuxRegDst, 
+             jumpOut => stallMuxJump, 
+             branchOut => stallMuxBranch, 
+             memReadOut => stallMuxMemRead, 
+             memToRegOut => stallMuxMemToReg, 
+             memWriteOut => stallMuxMemWrite, 
+             ALUSrcOut => stallMuxALUSrc, 
+             regWriteOut => stallMuxRegWrite, 
+             alu_op_out => stallMuxALUOp);
+     
+     IDEXBufferCalc: IDEXBuffer
+       PORT MAP(clk => clk, 
+  
+                regDstIn => stallMuxRegDst, 
+                jumpIn => stallMuxJump, 
+                branchIn => stallMuxBranch, 
+                memReadIn => stallMuxMemRead, 
+                memToRegIn => stallMuxMemToReg, 
+                memWriteIn => stallMuxMemWrite, 
+                ALUSrcIn => stallMuxALUSrc, 
+                regWriteIn => stallMuxRegWrite, 
+                ALUOpIn => stallMuxAluOp, 
+                
+                regDstOut => IDEXRegDst,  
+                jumpOut => IDEXJump, 
+                branchOut => IDEXBranch, 
+                memReadOut => IDEXMemRead, 
+                memToRegOut => IDEXMemToReg, 
+                memWriteOut => IDEXMemWrite, 
+                ALUSrcOut => IDEXALUSrc, 
+                regWriteOut => IDEXRegWrite,  
+                ALUOpOut => IDEXALUOp,
+                
+                rData1In => readDataOne,  
+                rData2In => readDataTwo, 
+                nextIn => IFIDNextOutput, 
+                signExtendIn => signExtenderOutput, 
+                rtIn => IFIDCurrOutput(8 downto 6), 
+                rdIn => IFIDCurrOutput(5 downto 3), 
+                rsIn => IFIDCurrOutput(11 downto 9), 
+                
+                rData1Out => IDEXRData1,  
+                rData2Out => IDEXRData2, 
+                nextOut => IDEXNextInstr,
+                signExtendOut => IDEXSignExtend,  
+                rtOut => IDEXRtOut, 
+                rdOut => IDEXRdOut, 
+                rsOut => IDEXRsOut);
+        
+        forwardMux1Calc: forward_mux
+             PORT MAP (readData => IDEXRData1, 
+                   aluResult => MEMWBdMemReadDataOut, 
+                   wrData => WBMuxOutput, 
+                   fowardSig => fw1, 
+                   output => ALUIn1);
+                   
+        forwardMux2Calc: forward_mux
+         PORT MAP (readData => IDEXRData2, 
+               aluResult => MEMWBdMemReadDataOut, 
+               wrData => WBMuxOutput, 
+               fowardSig => fw2, 
+               output => aluSrcMuxIn);   
+                       
+         aluSrcMuxCalc: sixteenBitMux
+            PORT MAP(cntrl => IDEXALUSrc, topin => ALUSrcMuxIn, bottom => IDEXSignExtend, output => ALUIn2);
+          
+          aluCalc: ALU
+            PORT MAP (
+                 A => ALUIn1, 
+                 B => ALUIn2, 
+                 C => ALUOut, 
+                 Mode => ALUMode, 
+                 Zero => Zero
+                );
+            
+            
+          writeRegMux: threeBitMux
+             PORT MAP (
+                cntrl => IDEXRegDst, 
+                topin => IDEXRtOut, 
+                bottom => IDEXRDOut, 
+                output => writeRegMuxOutput);
+                
+          
+           forwardUnitCalc: forwarding_unit
+             PORT MAP (rs => IDEXRsOut, 
+                       rt => IDEXRtOut, 
+                       ExMemRd => IDEXMemRd, 
+                       MemWbRd => MEMWBRd,
+                       ExMemRegwr => EXMEMRegWrite, 
+                       MemWbRegwr => MEMWBRegWrite,
+                       forward1 => fw1, 
+                       forward2 => fw2);
+                       
+                       
+          EXMemCalc: EXMEMBuffer
+             PORT MAP(clk => clk, 
+                        aluResultIn => ALUOut, 
+                        dMemWriteDataIn => ALUSrcMuxIn, 
+                        rdIn => writeRegMuxOutput, 
+                        memReadIn => IDEXMemRead,
+                        memWriteIn => IDEXMemWrite, 
+                        regWriteIn => IDEXRegWrite, 
+                        memToRegIn => IDEXMemToReg, 
+                        
+                        memReadOut => EXMEMMemRead, 
+                        memWriteOut => EXMEMemWrite, 
+                        regWriteOut => EXMEMRegWrite,
+                        memToRegOut => EXMEMMemToReg, 
+                
+                        aluResultOut => EXMEMAddress, 
+                        dMemWriteDataOut => EXMEMWriteData, 
+                        rdOut => EXMEMRd);
+               
+           dataMemoryCalc: dataMemory    
+               PORT MAP (address => EXMEMAddress, 
+                    writeData => EXMEMWriteData, 
+                    clk => clk, 
+                    memRead => EXMEMMemRead, 
+                    memWrite => EXMEMemWrite, 
+                    ReadData => dataMemReadData);
+                    
+                
+           MEMWBBufferCalc: MEMWBBuffer
+             PORT MAP(clk => clk, 
+                dMemReadDataIn => dataMemReadData, 
+                aluResultIn => EXMEMAddress, 
+                rdIn => writeRegMuxOuptut,
+                memToRegIn => EXMEMMemToReg, 
+                regWriteIn => EXMEMRegWrite,
+                memToRegOut => MEMWBMemToReg,
+                regWriteOut => MEMWBRegWrite, 
+                
+                dMemReadDataOut => MEMWBDMemReadData, 
+                aluResultOut => MEMWBALUResult,  
+                rdOut => MEMWBRd);
+                
+                
+             WBMuxCalc: sixteenBitMux
+                PORT MAP(cntrl => MEMWBMemToReg, topin => MEMWBDMemReadData, bottom => MEMWBALUResult, output => WBMuxOuput); 
+                
      process(clk, clkEnable, reset)
      begin
         if(reset = '1') then 
