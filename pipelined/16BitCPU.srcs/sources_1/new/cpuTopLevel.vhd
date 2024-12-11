@@ -477,7 +477,7 @@ begin
                output => aluSrcMuxIn);   
                        
          aluSrcMuxCalc: sixteenBitMux
-            PORT MAP(cntrl => IDEXALUSrc, topin => ALUSrcMuxIn, bottom => IDEXSignExtend, output => ALUIn2);
+            PORT MAP(cntrl => IDEXALUSrc, bottom => ALUSrcMuxIn, topin => IDEXSignExtend, output => ALUIn2);
           
           aluCalc: ALU
             PORT MAP (
@@ -492,8 +492,8 @@ begin
           writeRegMux: threeBitMux
              PORT MAP (
                 cntrl => IDEXRegDst, 
-                topin => IDEXRtOut, 
-                bottom => IDEXRDOut, 
+                topin => IDEXRdOut, 
+                bottom => IDEXRtOut, 
                 output => writeRegMuxOutput);
                 
           

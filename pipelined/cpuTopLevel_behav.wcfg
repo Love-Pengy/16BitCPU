@@ -10,13 +10,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="758.571 ns"></ZoomEndTime>
-      <Cursor1Time time="166.178 ns"></Cursor1Time>
+      <ZoomStartTime time="21.666 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,201.667 ns"></ZoomEndTime>
+      <Cursor1Time time="225.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="260"></NameColumnWidth>
-      <ValueColumnWidth column_width="75"></ValueColumnWidth>
+      <NameColumnWidth column_width="258"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="30" />
    <wvobject type="divider" fp_name="divider78">
@@ -96,6 +96,7 @@
       <wvobject fp_name="/cpuTopLevelTB/DUT/registerCalc/registerVals" type="array">
          <obj_property name="ElementShortName">registerVals[0:7][15:0]</obj_property>
          <obj_property name="ObjectShortName">registerVals[0:7][15:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject fp_name="/cpuTopLevelTB/DUT/registerCalc/read1" type="array">
          <obj_property name="ElementShortName">read1[2:0]</obj_property>
@@ -121,6 +122,11 @@
    <wvobject fp_name="group60" type="group">
       <obj_property name="label">Program Counter</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/cpuTopLevelTB/DUT/programCounterCalc/pcWrite" type="logic">
+         <obj_property name="ElementShortName">pcWrite</obj_property>
+         <obj_property name="ObjectShortName">pcWrite</obj_property>
+      </wvobject>
       <wvobject fp_name="/cpuTopLevelTB/DUT/programCounterCalc/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
@@ -141,6 +147,7 @@
    <wvobject fp_name="group61" type="group">
       <obj_property name="label">Instruction Memory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/cpuTopLevelTB/DUT/instructionMemCalc/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
@@ -219,6 +226,7 @@
    <wvobject fp_name="group94" type="group">
       <obj_property name="label">ALU</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/cpuTopLevelTB/DUT/aluCalc/A" type="array">
          <obj_property name="ElementShortName">A[15:0]</obj_property>
          <obj_property name="ObjectShortName">A[15:0]</obj_property>
@@ -267,6 +275,7 @@
    <wvobject fp_name="group114" type="group">
       <obj_property name="label">Data Memory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/cpuTopLevelTB/DUT/dataMemoryCalc/address" type="array">
          <obj_property name="ElementShortName">address[15:0]</obj_property>
          <obj_property name="ObjectShortName">address[15:0]</obj_property>
@@ -359,7 +368,6 @@
    <wvobject fp_name="group872" type="group">
       <obj_property name="label">ALU Src Mux</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/cpuTopLevelTB/DUT/aluSrcMuxCalc/cntrl" type="logic">
          <obj_property name="ElementShortName">cntrl</obj_property>
          <obj_property name="ObjectShortName">cntrl</obj_property>
@@ -504,7 +512,6 @@
    <wvobject fp_name="group66419" type="group">
       <obj_property name="label">IDEXControlSignalMux</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/regDst" type="logic">
          <obj_property name="ElementShortName">regDst</obj_property>
          <obj_property name="ObjectShortName">regDst</obj_property>
@@ -758,6 +765,7 @@
    <wvobject fp_name="group66488" type="group">
       <obj_property name="label">EXMEM</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/cpuTopLevelTB/DUT/EXMemCalc/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>

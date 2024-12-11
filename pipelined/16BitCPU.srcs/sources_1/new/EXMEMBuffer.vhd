@@ -53,7 +53,7 @@ begin
         variable rd : std_logic_vector(2 downto 0);
         variable jump, branch, memRead, memWrite, regWrite, memToReg : std_logic; 
     begin
-        if(rising_edge(clk)) then 
+        --if(rising_edge(clk)) then 
             aluResult := aluResultIn; 
             dMemWriteData := dMemWriteDataIn; 
             rd := rdIn;
@@ -63,7 +63,7 @@ begin
             regWrite := regWriteIn; 
             memToReg := memToRegIn; 
             
-        elsif(falling_edge(clk)) then 
+        if(rising_edge(clk)) then 
            aluResultOut <= aluResult; 
            dMemWriteDataOut <= dMemWriteData; 
            rdOut <= rd;

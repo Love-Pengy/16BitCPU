@@ -53,7 +53,7 @@ begin
         variable memToReg, regWrite : std_logic;
         
     begin
-        if(rising_edge(clk)) then 
+        --if(rising_edge(clk)) then 
             dMemReadData := dMemReadDataIn; 
             aluResult := aluResultIn; 
             rd := rdIn;
@@ -61,7 +61,7 @@ begin
             memToReg := memToRegIn; 
             regWrite := regWriteIn;
             
-        elsif(falling_edge(clk)) then 
+        if(rising_edge(clk)) then 
            dMemReadDataOut <= dMemReadData; 
            aluResultOut <= aluResult; 
            rdOut <= rd;

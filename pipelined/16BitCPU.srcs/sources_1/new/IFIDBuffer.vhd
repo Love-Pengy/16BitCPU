@@ -52,7 +52,7 @@ begin
     begin
         if(rising_edge(clk)) then 
             if(flush = '1') then 
-                currentInstruction := X"1111";
+                currentInstruction := X"F000";
                 nextInstruction := nextIn;
             else  
                 nextInstruction := nextIn; 

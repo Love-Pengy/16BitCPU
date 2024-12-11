@@ -58,7 +58,7 @@ begin
         variable ALUOp : std_logic_vector(3 downto 0);
         variable rt, rd, rs  : std_logic_vector(2 downto 0);
     begin
-        if(rising_edge(clk)) then 
+        --if(rising_edge(clk)) then 
             readData1 := rData1In; 
             readData2 := rData2In; 
             nextInstruction := nextIn;
@@ -77,7 +77,7 @@ begin
             ALUSrc := ALUSrcIn; 
             regWrite := regWriteIn;
             
-        elsif(falling_edge(clk)) then 
+        if(rising_edge(clk)) then 
             rData1Out <= readData1;
             rData2Out <= readData2;
             nextOut <= nextInstruction;
