@@ -47,8 +47,9 @@ begin
                     output <= wrData;
                 when "10" =>
                     output <= aluResult;
-                when others =>
+                when "00" =>
                     output <= readData;
+                when others =>
              end case;
     end process;
 end Behavioral;

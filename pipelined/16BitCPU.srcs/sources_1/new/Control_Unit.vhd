@@ -113,7 +113,7 @@ begin
                 mem_write <= '0';
                 alu_src <= '0';
                 reg_write <= '0';
-                IFflush <= '0';
+                IFflush <= '1';
             when "0111" =>
                 reg_dst <= '0';
                 jump <= '0';
@@ -161,7 +161,6 @@ begin
             when "1011" =>
                 reg_dst <= '0';
                 jump <= '0';
-                branch <= '1';
                 mem_read <= '0';
                 mem_to_reg <= '0';
                 alu_op <= opcode;

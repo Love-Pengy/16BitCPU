@@ -47,7 +47,7 @@ architecture Behavioral of MEMWBBuffer is
 
 begin
 
-    process(clk)
+    process(clk, dMemReadDataIn, aluResultIn, memToRegIn, regWriteIn, rdIn)
         variable dMemReadData, aluResult : std_logic_vector(15 downto 0);
         variable rd : std_logic_vector(2 downto 0);
         variable memToReg, regWrite : std_logic;
@@ -62,12 +62,12 @@ begin
             regWrite := regWriteIn;
             
         if(rising_edge(clk)) then 
-           dMemReadDataOut <= dMemReadData; 
-           aluResultOut <= aluResult; 
-           rdOut <= rd;
+           dMemReadDataOut <= dMemReadDataIn; 
+           aluResultOut <= aluResultIn; 
+           rdOut <= rdIn;
            
-           memToRegOut <= memToReg;
-           regWriteOut <= regWrite;
+           memToRegOut <= memToRegIn;
+           regWriteOut <= regWriteIn;
            
         end if;
 

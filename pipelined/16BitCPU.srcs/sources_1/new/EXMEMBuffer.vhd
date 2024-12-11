@@ -47,7 +47,7 @@ architecture Behavioral of EXMEMBuffer is
 
 begin
 
-    process(clk)
+    process(clk, aluResultIn, dMemWriteDataIn, memReadIn, memWriteIn, regWriteIn, memToRegIn, rdIn)
         variable branchAddress, aluResult, dMemWriteData : std_logic_vector(15 downto 0);
         variable zero : std_logic; 
         variable rd : std_logic_vector(2 downto 0);
@@ -64,15 +64,15 @@ begin
             memToReg := memToRegIn; 
             
         if(rising_edge(clk)) then 
-           aluResultOut <= aluResult; 
-           dMemWriteDataOut <= dMemWriteData; 
-           rdOut <= rd;
+           aluResultOut <= aluResultIn; 
+           dMemWriteDataOut <= dMemWriteDataIn; 
+           rdOut <= rdIn;
            
 
-           memReadOut <= memRead; 
-           memWriteOut <= memWrite; 
-           regWriteOut <= regWrite; 
-           memToRegOut <= memToReg;
+           memReadOut <= memReadIn; 
+           memWriteOut <= memWriteIn; 
+           regWriteOut <= regWriteIn; 
+           memToRegOut <= memToRegIn;
         end if;
 
     end process;

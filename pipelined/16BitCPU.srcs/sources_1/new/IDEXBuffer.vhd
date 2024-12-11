@@ -52,7 +52,7 @@ architecture Behavioral of IDEXBuffer is
 
 begin
 
-    process(clk)
+    process(clk, regDstIn, jumpIn, branchIn, memReadIn, memToRegIn, memWriteIn, ALUSrcIn, regWriteIn, rData1In, rData2In, nextIn, signExtendIn, rtIn, rdIn, rsIn, ALUOpIn)
         variable readData1, readData2, nextInstruction, signExtender: std_logic_vector(15 downto 0);
         variable regDst, jump, branch, memRead, memToReg, memWrite, ALUSrc, regWrite : std_logic;
         variable ALUOp : std_logic_vector(3 downto 0);
@@ -78,23 +78,23 @@ begin
             regWrite := regWriteIn;
             
         if(rising_edge(clk)) then 
-            rData1Out <= readData1;
-            rData2Out <= readData2;
-            nextOut <= nextInstruction;
-            signExtendOut <= signExtender;
-            rtOut <= rt; 
-            rdOut <= rd;
-            rsOut <= rs;
+            rData1Out <= rData1In;
+            rData2Out <= rData2In;
+            nextOut <= nextIn;
+            signExtendOut <= signExtendIn;
+            rtOut <= rtIn; 
+            rdOut <= rdIn;
+            rsOut <= rsIn;
             
-            regDstOut <= regDst; 
-            jumpOut <= jump;
-            branchOut <= branch; 
-            memReadOut <= memRead; 
-            memToRegOut <= memToReg; 
-            ALUOpOut <= ALUOp; 
-            memWriteOut <= memWrite;
-            ALUSrcOut <= ALUSrc; 
-            regWriteOut <= regWrite; 
+            regDstOut <= regDstIn; 
+            jumpOut <= jumpIn;
+            branchOut <= branchIn; 
+            memReadOut <= memReadIn; 
+            memToRegOut <= memToRegIn; 
+            ALUOpOut <= ALUOpIn; 
+            memWriteOut <= memWriteIn;
+            ALUSrcOut <= ALUSrcIn; 
+            regWriteOut <= regWriteIn; 
             
         end if;
 

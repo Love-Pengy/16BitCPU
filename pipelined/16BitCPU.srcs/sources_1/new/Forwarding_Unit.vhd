@@ -47,12 +47,16 @@ begin
                 forward1 <= "10";
             elsif (MemWbRegwr = '1') and (MemWbRd /= "000") and (MemWbRd = rs) then
                 forward1 <= "01";
+            else
+                forward1 <= "00";
             end if;
             
             if (ExMemRegwr = '1') and (ExMemRd /= "000") and (ExMemRd = rt) then
                 forward2 <= "10";
             elsif (MemWbRegwr = '1') and (MemWbRd /= "000") and (MemWbRd = rt) then
                 forward2 <= "01";
+            else
+                forward2 <= "00";
             end if;
     end process;
 

@@ -348,7 +348,7 @@ begin
                   output => branchLeftShifterOutput);
      
      adderCalc: adder
-        PORT MAP (BUSA  => signExtenderOutput,
+        PORT MAP (BUSA  => branchLeftShifterOutput,
               BUSB   => IFIDNextOutput,
               RESULT  => adderOutput,
               COUT   => open);
@@ -473,8 +473,8 @@ begin
                    
         forwardMux2Calc: forward_mux
          PORT MAP (readData => IDEXRData2, 
-               aluResult => WBMuxOutput, 
-               wrData => EXMEMAddress, 
+               aluResult => EXMEMAddress,
+               wrData => WBMuxOutput, 
                fowardSig => fw2, 
                output => aluSrcMuxIn);   
                        

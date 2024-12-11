@@ -34,7 +34,7 @@ architecture Behavioral of programCounter is
 
 begin
 
-process(clk, readAddress) 
+process(clk, readAddress, enable) 
 begin
   if(rising_edge(clk)) then
     if(enable = '1') and (pcWrite = '1') then 

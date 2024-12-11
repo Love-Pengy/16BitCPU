@@ -52,18 +52,18 @@ begin
     begin
         if(rising_edge(clk)) then 
             if(flush = '1') then 
-                currentInstruction := X"F000";
-                nextInstruction := nextIn;
-            else  
-                nextInstruction := nextIn; 
-                currentInstruction := currIn; 
+                currOut <= X"F000";
+                nextOut <= nextIn;
+            elsif (IFIDWrite = '1') then 
+                nextOut <= nextIn; 
+                currOut <= currIn; 
             end if;
         end if;
         
-        if(falling_edge(clk)) and (IFIDWrite = '1') then 
-            nextOut <= nextInstruction; 
-            currOut <= currentInstruction; 
-        end if;
+--        if(falling_edge(clk)) and (IFIDWrite = '1') then 
+--            nextOut <= nextInstruction; 
+--            currOut <= currentInstruction; 
+--        end if;
     
     
     end process;
