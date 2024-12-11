@@ -1,10 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/dusti/Documents/EGRE426/16BitCPU/16BitCPU/pipelined/16BitCPU.srcs/sources_1/new/EXMEMBuffer.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'EXMEMBuffer'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/dusti/Documents/EGRE426/16BitCPU/16BitCPU/pipelined/16BitCPU.srcs/sources_1/new/IDEXBuffer.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'IDEXBuffer'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/dusti/Documents/EGRE426/16BitCPU/16BitCPU/pipelined/16BitCPU.srcs/sources_1/new/MEMWBBuffer.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'MEMWBBuffer'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/dusti/Documents/EGRE426/16BitCPU/16BitCPU/pipelined/16BitCPU.srcs/sources_1/new/cpuTopLevel.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/bee/Projects/16BitCPU/pipelined/16BitCPU.srcs/sources_1/new/cpuTopLevel.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'cpuTopLevel'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/dusti/Documents/EGRE426/16BitCPU/16BitCPU/pipelined/16BitCPU.srcs/dataPathTests/new/cpuTopLevel_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/bee/Projects/16BitCPU/pipelined/16BitCPU.srcs/dataPathTests/new/cpuTopLevel_TB.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'cpuTopLevelTB'

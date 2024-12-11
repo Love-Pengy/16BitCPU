@@ -461,7 +461,9 @@ begin
                 rtOut => IDEXRtOut, 
                 rdOut => IDEXRdOut, 
                 rsOut => IDEXRsOut);
-        
+        -- wrData = 01
+        -- read data = 00
+        -- alu result = 10
         forwardMux1Calc: forward_mux
              PORT MAP (readData => IDEXRData1, 
                    aluResult => EXMEMAddress, 
@@ -471,8 +473,8 @@ begin
                    
         forwardMux2Calc: forward_mux
          PORT MAP (readData => IDEXRData2, 
-               aluResult => EXMEMAddress, 
-               wrData => WBMuxOutput, 
+               aluResult => WBMuxOutput, 
+               wrData => EXMEMAddress, 
                fowardSig => fw2, 
                output => aluSrcMuxIn);   
                        
@@ -484,7 +486,7 @@ begin
                  A => ALUIn1, 
                  B => ALUIn2, 
                  C => ALUOut, 
-                 Mode => ALUOp, 
+                 Mode => stallMuxALUOp, 
                  Zero => Zero
                 );
             

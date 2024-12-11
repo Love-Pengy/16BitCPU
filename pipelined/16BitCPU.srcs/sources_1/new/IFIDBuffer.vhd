@@ -58,7 +58,9 @@ begin
                 nextInstruction := nextIn; 
                 currentInstruction := currIn; 
             end if;
-        elsif(falling_edge(clk)) and (IFIDWrite = '1') then 
+        end if;
+        
+        if(falling_edge(clk)) and (IFIDWrite = '1') then 
             nextOut <= nextInstruction; 
             currOut <= currentInstruction; 
         end if;
