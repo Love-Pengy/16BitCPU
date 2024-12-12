@@ -27,7 +27,8 @@ entity registers is
         read1, read2, writeReg: in std_logic_vector(2 downto 0); 
         registersWrite: in std_logic;
         writeData: in std_logic_vector(15 downto 0);
-        data1, data2: out std_logic_vector(15 downto 0) := (others => '0'));
+        switchAddress : in std_logic_vector(11 downto 0);
+        data1, data2, switchData: out std_logic_vector(15 downto 0) := (others => '0'));
 end registers;
 
 architecture Behavioral of registers is
@@ -47,7 +48,7 @@ signal registerVals : registerArray := (
                                         );
 begin
     
-    process(clk, read1, read2, writeReg, writeData, registersWrite) 
+    process(clk, read1, read2, writeReg, writeData, registersWrite, switchAddress) 
         
     begin
       if(rising_edge(clk)) then
@@ -58,6 +59,18 @@ begin
       end if;
       data1 <= registerVals(to_integer(unsigned(read1)));
       data2 <= registerVals(to_integer(unsigned(read2)));
+      
+     
     end process;
-
+    
+    process(switchAddress)
+    begin 
+    
+      if(unsigned(switchAddress) > X"0008") then 
+        switchData <= X"0000";
+      else 
+        switchData <= registerVals(to_integer(unsigned(switchAddress)));
+      end if; 
+    end process;
+    
 end Behavioral;

@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.runs/impl_1/topLevel.tcl"
+  variable script "/home/bee/Projects/16BitCPU/pipelined/16BitCPU.runs/impl_1/topLevel.tcl"
   variable category "vivado_impl"
 }
 
@@ -108,7 +108,7 @@ set rc [catch {
   set_param chipscope.maxJobs 1
   set_param runs.launchOptions { -jobs 4  }
   open_checkpoint topLevel_routed.dcp
-  set_property webtalk.parent_dir /home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.cache/wt [current_project]
+  set_property webtalk.parent_dir /home/bee/Projects/16BitCPU/pipelined/16BitCPU.cache/wt [current_project]
 set_property TOP topLevel [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }

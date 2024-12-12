@@ -33,11 +33,12 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity Data_Memory is
   Port (address : in std_logic_vector(15 downto 0);
+        switchAddress: in std_logic_vector(11 downto 0);
         writeData : in std_logic_vector(15 downto 0);
         clk : in std_logic;
         memRead : in std_logic;
         memWrite: in std_logic;
-        ReadData : out std_logic_vector(15 downto 0) := (others => '0')
+        ReadData, switchData : out std_logic_vector(15 downto 0) := (others => '0')
   );
 end Data_Memory;
 
@@ -72,6 +73,8 @@ begin
         if memRead = '1' then
                 ReadData <= dm(to_integer(unsigned(address)));
         end if;
+        -- don't need to check bounds because 13 bits cannot represent higher than 65k 
+        switchData <= dm(to_integer(unsigned(address)));
     end process;
 
 

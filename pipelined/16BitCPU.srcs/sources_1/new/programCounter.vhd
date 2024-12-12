@@ -27,7 +27,7 @@ entity programCounter is
         enable: in std_logic := '0';
         pcWrite: in std_logic := '1';
         readAddress: in std_logic_vector(15 downto 0);
-        instruction: out std_logic_vector(15 downto 0) := (others => '0'));
+        instruction, switchData: out std_logic_vector(15 downto 0) := (others => '0'));
 end programCounter;
 
 architecture Behavioral of programCounter is
@@ -41,6 +41,7 @@ begin
         instruction <= readAddress;
      end if;
   end if;
+  switchData <= readAddress; 
 end process;
 
 end Behavioral;

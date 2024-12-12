@@ -31,6 +31,8 @@ architecture behavior of cpuTopLevelTB is
 
 
   signal clk_sig, clkEnable_sig, reset_sig : std_logic := '0';
+  signal switchInAddress_sig : std_logic_vector(11 downto 0); 
+  signal dataMemSwitchOut_sig, registersSwitchOut_sig, programCounterSwitchOut_sig : std_logic_vector(15 downto 0);
 begin
 
   process(clk_sig) 
@@ -45,7 +47,7 @@ begin
  -- this is the component instantiation for the
     -- DUT - the device we are testing
     DUT : entity work.cpuTopLevel(Structural)
-      port map(clk => clk_sig, clkEnable => clkEnable_sig, reset => reset_sig);
+      port map(clk => clk_sig, reset => reset_sig, clkEnable => clkEnable_sig, switchInAddress => switchInAddress_sig, dataMemSwitchOut => dataMemSwitchOut_sig, registersSwitchOut => registersSwitchOut_sig, programCounterSwitchOut => programCounterSwitchOut_sig);
       
 end behavior;
 

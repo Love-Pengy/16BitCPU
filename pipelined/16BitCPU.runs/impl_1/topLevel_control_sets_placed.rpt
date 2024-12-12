@@ -1,11 +1,11 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-| Date         : Mon Nov 18 19:11:12 2024
+| Date         : Wed Dec 11 21:45:34 2024
 | Host         : Jake running 64-bit Linux Mint 22
 | Command      : report_control_sets -verbose -file topLevel_control_sets_placed.rpt
 | Design       : topLevel
-| Device       : xc7a100t
+| Device       : xc7a35t
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 Control Set Information
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     0 |
-|    Minimum number of control sets                        |     0 |
+| Total control sets                                       |    25 |
+|    Minimum number of control sets                        |    25 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |     0 |
+| Unused register locations in slices containing registers |    61 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     0 |
-| >= 0 to < 4        |     0 |
-| >= 4 to < 6        |     0 |
+| Total control sets |    25 |
+| >= 0 to < 4        |     4 |
+| >= 4 to < 6        |     1 |
 | >= 6 to < 8        |     0 |
-| >= 8 to < 10       |     0 |
+| >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     0 |
+| >= 16              |    19 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,20 +58,46 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               0 |            0 |
-| No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |               0 |            0 |
+| No           | No                    | No                     |             206 |           81 |
+| No           | No                    | Yes                    |              33 |            9 |
+| No           | Yes                   | No                     |              56 |           20 |
+| Yes          | No                    | No                     |             168 |           65 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |               0 |            0 |
+| Yes          | Yes                   | No                     |             100 |           27 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+--------------+---------------+------------------+------------------+----------------+--------------+
-| Clock Signal | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
-+--------------+---------------+------------------+------------------+----------------+--------------+
++--------------------------------------------+-------------------------------------+-------------------------------------+------------------+----------------+--------------+
+|                Clock Signal                |            Enable Signal            |           Set/Reset Signal          | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------------------------+-------------------------------------+-------------------------------------+------------------+----------------+--------------+
+|  sysclk_IBUF_BUFG                          |                                     |                                     |                1 |              1 |         1.00 |
+|  cpuCalc/IDEXBufferCalc/memReadOut_reg_0   |                                     |                                     |                1 |              1 |         1.00 |
+|  cpuCalc/MEMWBBufferCalc/rdOut_reg[1]_1[0] |                                     | cpuCalc/EXMemCalc/AS[0]             |                1 |              2 |         2.00 |
+|  cpuCalc/MEMWBBufferCalc/rdOut_reg[1]_0[0] |                                     | cpuCalc/EXMemCalc/rdOut_reg[0]_3[0] |                1 |              2 |         2.00 |
+|  clk__0_BUFG                               | sevenSegReg/rst                     | sevenSegReg/currVal[3]_i_1__1_n_1   |                3 |              4 |         1.33 |
+|  clk__0_BUFG                               | sevenSegReg/rst                     |                                     |                5 |              8 |         1.60 |
+|  clk_BUFG                                  | cpuCalc/EXMemCalc/rdOut_reg[0]_0[0] |                                     |               10 |             16 |         1.60 |
+|  clk_BUFG                                  | cpuCalc/EXMemCalc/rdOut_reg[0]_1[0] |                                     |                3 |             16 |         5.33 |
+|  clk_BUFG                                  | cpuCalc/EXMemCalc/rdOut_reg[0]_2[0] |                                     |                4 |             16 |         4.00 |
+|  clk_BUFG                                  | cpuCalc/EXMemCalc/rdOut_reg[2]_0[0] |                                     |                9 |             16 |         1.78 |
+|  clk_BUFG                                  | cpuCalc/EXMemCalc/rdOut_reg[2]_1[0] |                                     |                6 |             16 |         2.67 |
+|  clk_BUFG                                  | cpuCalc/EXMemCalc/rdOut_reg[2]_3[0] |                                     |                6 |             16 |         2.67 |
+|  clk_BUFG                                  | cpuCalc/stallingUnitCalc/E[0]       |                                     |                4 |             16 |         4.00 |
+|  clk_BUFG                                  | cpuCalc/EXMemCalc/rdOut_reg[2]_2[0] |                                     |                6 |             16 |         2.67 |
+|  clk_BUFG                                  |                                     | cpuCalc/IFIDCalc/branch             |                7 |             16 |         2.29 |
+|  cpuCalc/EXMemCalc/E[0]                    |                                     |                                     |                8 |             16 |         2.00 |
+|  clk_BUFG                                  |                                     | ssClockDivider/sclki                |                5 |             17 |         3.40 |
+|  sysclk_IBUF_BUFG                          |                                     | genClockDivider/sclki               |                6 |             19 |         3.17 |
+|  clk__0_BUFG                               | sevenSegReg/rst                     | sevenSegReg/count0                  |                8 |             32 |         4.00 |
+|  clk__0_BUFG                               | sevenSegReg/rst                     | sevenSegDMem/count0                 |                8 |             32 |         4.00 |
+|  clk__0_BUFG                               | sevenSegReg/rst                     | sevenSegPC/count0                   |                8 |             32 |         4.00 |
+| ~clk_BUFG                                  | cpuCalc/stallingUnitCalc/pcWrite    |                                     |               12 |             32 |         2.67 |
+|  n_0_187_BUFG                              |                                     |                                     |               15 |             33 |         2.20 |
+|  clk__0_BUFG                               |                                     | rst_IBUF                            |                9 |             33 |         3.67 |
+|  clk_BUFG                                  |                                     |                                     |               56 |            155 |         2.77 |
++--------------------------------------------+-------------------------------------+-------------------------------------+------------------+----------------+--------------+
 
 

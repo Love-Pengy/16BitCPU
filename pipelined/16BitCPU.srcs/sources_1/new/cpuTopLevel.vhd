@@ -30,7 +30,9 @@ use IEEE.NUMERIC_STD.ALL;
 entity cpuTopLevel is
   Port (clk: in std_logic := '0';
         clkEnable: in std_logic := '0';
-        reset: in std_logic := '0'); 
+        reset: in std_logic := '0';
+        switchInAddress : in std_logic_vector(11 downto 0) := (others => '0');
+        dataMemSwitchOut, registersSwitchOut, programCounterSwitchOut: out std_logic_vector(15 downto 0)); 
 end cpuTopLevel;
 
 architecture Structural of cpuTopLevel is
@@ -40,7 +42,7 @@ COMPONENT programCounter
         enable: in std_logic;
         pcWrite: in std_logic;
         readAddress: in std_logic_vector(15 downto 0);
-        instruction: out std_logic_vector(15 downto 0));
+        instruction, switchData: out std_logic_vector(15 downto 0));
 end COMPONENT;
 
 COMPONENT instructionMemory 
@@ -71,10 +73,11 @@ END COMPONENT;
 COMPONENT registers
     PORT (
         clk : in std_logic;
+        switchAddress : in std_logic_vector(11 downto 0);
         read1, read2, writeReg: in std_logic_vector(2 downto 0); 
         registersWrite: in std_logic;
         writeData: in std_logic_vector(15 downto 0);
-        data1, data2: out std_logic_vector(15 downto 0));
+        data1, data2, switchData: out std_logic_vector(15 downto 0));
 end COMPONENT;
 
 COMPONENT signExtender
@@ -122,11 +125,12 @@ end COMPONENT;
 
 COMPONENT dataMemory
        Port (address : in std_logic_vector(15 downto 0);
+        switchAddress: in std_logic_vector(11 downto 0);
         writeData : in std_logic_vector(15 downto 0);
         clk : in std_logic;
         memRead : in std_logic;
         memWrite: in std_logic;
-        ReadData : out std_logic_vector(15 downto 0)
+        ReadData, switchData : out std_logic_vector(15 downto 0)
   );
 end COMPONENT; 
 
@@ -307,7 +311,8 @@ begin
             enable => clkEnable,
             pcWrite => pcWrite, 
             readAddress => pcInput,
-            instruction => pcOutput);
+            instruction => pcOutput, 
+            switchData => programCounterSwitchOut);
         
       instructionMemCalc: instructionMemory
         PORT MAP (
@@ -389,6 +394,8 @@ begin
      registerCalc: registers
         PORT MAP (
             clk  => clk, 
+            switchAddress => switchInAddress, 
+            switchData => registersSwitchOut, 
             read1 => IFIDCurrOutput(11 downto 9), 
             read2 => IFIDCurrOutput(8 downto 6),  
             writeReg =>  EXMEMRd,  
@@ -530,12 +537,14 @@ begin
                         rdOut => EXMEMRd);
                
            dataMemoryCalc: dataMemory    
-               PORT MAP (address => EXMEMAddress, 
+               PORT MAP (switchAddress => switchInAddress, 
+                    address => EXMEMAddress, 
                     writeData => EXMEMWriteData, 
                     clk => clk, 
                     memRead => EXMEMMemRead, 
                     memWrite => EXMEMemWrite, 
-                    ReadData => dataMemReadData);
+                    ReadData => dataMemReadData, 
+                    switchData => dataMemSwitchOut);
                     
                 
            MEMWBBufferCalc: MEMWBBuffer

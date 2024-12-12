@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/bee/Projects/16BitCPU/16BitCPU/16BitCPU.runs/synth_1'
+HD_PWD='/home/bee/Projects/16BitCPU/pipelined/16BitCPU.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
