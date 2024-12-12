@@ -5,40 +5,4 @@ Running: C:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.numeric_std
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_unsigned
-Compiling architecture behavioral of entity xil_defaultlib.programCounter [programcounter_default]
-Compiling architecture behavioral of entity xil_defaultlib.instructionMemory [instructionmemory_default]
-Compiling architecture behavioral of entity xil_defaultlib.adder2 [adder2_default]
-Compiling architecture behavioral of entity xil_defaultlib.jumpLeftShifter [jumpleftshifter_default]
-Compiling architecture behavioral of entity xil_defaultlib.IFIDBuffer [ifidbuffer_default]
-Compiling architecture behavioral of entity xil_defaultlib.Sign_Extend [sign_extend_default]
-Compiling architecture behavioral of entity xil_defaultlib.branchLeftShifter [branchleftshifter_default]
-Compiling architecture behavioral of entity xil_defaultlib.adder [adder_default]
-Compiling architecture behavioral of entity xil_defaultlib.Mux [mux_default]
-Compiling architecture behavioral of entity xil_defaultlib.Control_Unit [control_unit_default]
-Compiling architecture behavioral of entity xil_defaultlib.Stalling_Unit [stalling_unit_default]
-Compiling architecture behavioral of entity xil_defaultlib.registers [registers_default]
-Compiling architecture behavioral of entity xil_defaultlib.regComparator [regcomparator_default]
-Compiling architecture behavioral of entity xil_defaultlib.Stall_Mux [stall_mux_default]
-Compiling architecture behavioral of entity xil_defaultlib.IDEXBuffer [idexbuffer_default]
-Compiling architecture behavioral of entity xil_defaultlib.Forward_Mux [forward_mux_default]
-Compiling architecture behavioral of entity xil_defaultlib.oneBitAdder [onebitadder_default]
-Compiling architecture behavioral of entity xil_defaultlib.nBitAdder [nbitadder_default]
-Compiling architecture behavioral of entity xil_defaultlib.comparator [comparator_default]
-Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
-Compiling architecture behavioral of entity xil_defaultlib.Mux [\Mux(n=3)\]
-Compiling architecture behavioral of entity xil_defaultlib.Forwarding_Unit [forwarding_unit_default]
-Compiling architecture behavioral of entity xil_defaultlib.EXMEMBuffer [exmembuffer_default]
-Compiling architecture behavioral of entity xil_defaultlib.Data_Memory [data_memory_default]
-Compiling architecture behavioral of entity xil_defaultlib.MEMWBBuffer [memwbbuffer_default]
-Compiling architecture structural of entity xil_defaultlib.cpuTopLevel [cputoplevel_default]
-Compiling architecture behavior of entity xil_defaultlib.cputopleveltb
-Built simulation snapshot cpuTopLevelTB_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

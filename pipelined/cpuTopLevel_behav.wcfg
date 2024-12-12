@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="21.666 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,201.667 ns"></ZoomEndTime>
-      <Cursor1Time time="225.000 ns"></Cursor1Time>
+      <ZoomStartTime time="675.903 ns"></ZoomStartTime>
+      <ZoomEndTime time="919.104 ns"></ZoomEndTime>
+      <Cursor1Time time="785.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="258"></NameColumnWidth>
+      <NameColumnWidth column_width="248"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="30" />
+   <WVObjectSize size="32" />
    <wvobject type="divider" fp_name="divider78">
       <obj_property name="label">Top Level</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -119,6 +119,23 @@
          <obj_property name="ObjectShortName">writeData[15:0]</obj_property>
       </wvobject>
    </wvobject>
+   <wvobject fp_name="group204180" type="group">
+      <obj_property name="label">regComparator</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/cpuTopLevelTB/DUT/regComaratorCalc/in1" type="array">
+         <obj_property name="ElementShortName">in1[15:0]</obj_property>
+         <obj_property name="ObjectShortName">in1[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/cpuTopLevelTB/DUT/regComaratorCalc/in2" type="array">
+         <obj_property name="ElementShortName">in2[15:0]</obj_property>
+         <obj_property name="ObjectShortName">in2[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/cpuTopLevelTB/DUT/regComaratorCalc/output" type="logic">
+         <obj_property name="ElementShortName">output</obj_property>
+         <obj_property name="ObjectShortName">output</obj_property>
+      </wvobject>
+   </wvobject>
    <wvobject fp_name="group60" type="group">
       <obj_property name="label">Program Counter</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -168,6 +185,14 @@
       <wvobject fp_name="/cpuTopLevelTB/DUT/controlUnitCalc/opcode" type="array">
          <obj_property name="ElementShortName">opcode[3:0]</obj_property>
          <obj_property name="ObjectShortName">opcode[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/cpuTopLevelTB/DUT/controlUnitCalc/func" type="array">
+         <obj_property name="ElementShortName">func[2:0]</obj_property>
+         <obj_property name="ObjectShortName">func[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/cpuTopLevelTB/DUT/controlUnitCalc/branchSig" type="logic">
+         <obj_property name="ElementShortName">branchSig</obj_property>
+         <obj_property name="ObjectShortName">branchSig</obj_property>
       </wvobject>
       <wvobject fp_name="/cpuTopLevelTB/DUT/controlUnitCalc/alu_op" type="array">
          <obj_property name="ElementShortName">alu_op[3:0]</obj_property>
@@ -368,6 +393,7 @@
    <wvobject fp_name="group872" type="group">
       <obj_property name="label">ALU Src Mux</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/cpuTopLevelTB/DUT/aluSrcMuxCalc/cntrl" type="logic">
          <obj_property name="ElementShortName">cntrl</obj_property>
          <obj_property name="ObjectShortName">cntrl</obj_property>
@@ -397,9 +423,43 @@
          <obj_property name="ObjectShortName">N</obj_property>
       </wvobject>
    </wvobject>
+   <wvobject fp_name="group4472" type="group">
+      <obj_property name="label">WBMux</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/cpuTopLevelTB/DUT/WBMuxCalc/cntrl" type="logic">
+         <obj_property name="ElementShortName">cntrl</obj_property>
+         <obj_property name="ObjectShortName">cntrl</obj_property>
+      </wvobject>
+      <wvobject fp_name="/cpuTopLevelTB/DUT/WBMuxCalc/topin" type="array">
+         <obj_property name="ElementShortName">topin[15:0]</obj_property>
+         <obj_property name="ObjectShortName">topin[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/cpuTopLevelTB/DUT/WBMuxCalc/bottom" type="array">
+         <obj_property name="ElementShortName">bottom[15:0]</obj_property>
+         <obj_property name="ObjectShortName">bottom[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/cpuTopLevelTB/DUT/WBMuxCalc/output" type="array">
+         <obj_property name="ElementShortName">output[15:0]</obj_property>
+         <obj_property name="ObjectShortName">output[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/cpuTopLevelTB/DUT/WBMuxCalc/top" type="array">
+         <obj_property name="ElementShortName">top[15:0]</obj_property>
+         <obj_property name="ObjectShortName">top[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/cpuTopLevelTB/DUT/WBMuxCalc/bottomIn" type="array">
+         <obj_property name="ElementShortName">bottomIn[15:0]</obj_property>
+         <obj_property name="ObjectShortName">bottomIn[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/cpuTopLevelTB/DUT/WBMuxCalc/N" type="other">
+         <obj_property name="ElementShortName">N</obj_property>
+         <obj_property name="ObjectShortName">N</obj_property>
+      </wvobject>
+   </wvobject>
    <wvobject fp_name="group855" type="group">
       <obj_property name="label">Branch Mux</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/cpuTopLevelTB/DUT/branchMuxCalc/cntrl" type="logic">
          <obj_property name="ElementShortName">cntrl</obj_property>
          <obj_property name="ObjectShortName">cntrl</obj_property>
@@ -432,6 +492,7 @@
    <wvobject fp_name="group863" type="group">
       <obj_property name="label">Jump Mux</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/cpuTopLevelTB/DUT/jumpMuxCalc/cntrl" type="logic">
          <obj_property name="ElementShortName">cntrl</obj_property>
          <obj_property name="ObjectShortName">cntrl</obj_property>
@@ -464,6 +525,7 @@
    <wvobject fp_name="group66407" type="group">
       <obj_property name="label">Stalling Unit</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/cpuTopLevelTB/DUT/stallingUnitCalc/IdExMemRead" type="logic">
          <obj_property name="ElementShortName">IdExMemRead</obj_property>
          <obj_property name="ObjectShortName">IdExMemRead</obj_property>
@@ -496,6 +558,7 @@
    <wvobject fp_name="group66415" type="group">
       <obj_property name="label">Comparator</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/cpuTopLevelTB/DUT/regComaratorCalc/in1" type="array">
          <obj_property name="ElementShortName">in1[15:0]</obj_property>
          <obj_property name="ObjectShortName">in1[15:0]</obj_property>
@@ -512,6 +575,7 @@
    <wvobject fp_name="group66419" type="group">
       <obj_property name="label">IDEXControlSignalMux</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/cpuTopLevelTB/DUT/IDEXControlSignalMux/regDst" type="logic">
          <obj_property name="ElementShortName">regDst</obj_property>
          <obj_property name="ObjectShortName">regDst</obj_property>
@@ -967,6 +1031,7 @@
    <wvobject fp_name="group66399" type="group">
       <obj_property name="label">IFID</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/cpuTopLevelTB/DUT/IFIDCalc/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>

@@ -53,16 +53,16 @@ begin
                 memWriteOut <= memWrite;
                 ALUSrcOut <= ALUSrc; 
                 regWriteOut <= regWrite;
-            else
-                regDstOut <= '0'; 
-                jumpOut <= '0';
-                branchOut <= '0'; 
-                memReadOut <= '0'; 
-                memToRegOut <= '0'; 
-                alu_op_out <= "1111"; 
-                memWriteOut <= '0';
-                ALUSrcOut <= '0'; 
-                regWriteOut <= '0';
+--            else
+--                regDstOut <= '0'; 
+--                jumpOut <= '0';
+--                branchOut <= '0'; 
+--                memReadOut <= '0'; 
+--                memToRegOut <= '0'; 
+--                alu_op_out <= "1111"; 
+--                memWriteOut <= '0';
+--                ALUSrcOut <= '0'; 
+--                regWriteOut <= '0';
             end if;
     end process;
 end Behavioral;

@@ -292,7 +292,7 @@ signal ccCounter : integer;
 constant handler : std_logic_vector(15 downto 0) := X"0000";
 
 
-signal WBMuxOuput, dataMemReadData, MEMWBDMemReadData, MEMWBALUResult,  ALUOut, ALUIn2,EXMEMWriteData,   EXMEMAddress, branchLeftShifterOutput,pcInput,ALUSrcMuxIn, MEMWBdMemReadDataOut,ALUIn1,  WBMuxOutput, IDEXRData1, IDEXRData2, IDEXNextInstr, IDEXSignExtend,   branchAddressMuxOutput, jumpAddress, readDataOne, readDataTwo, memToRegMuxOutput,  signExtenderOutput, IFIDNextOutput, IFIDCurrOutput, instructionMemOutput, twoAdderOutput, adderOutput, pcOutput, pcMuxOutput : std_logic_vector(15 downto 0);
+signal WBMuxOuput, twoAdderJumpOutput, dataMemReadData, MEMWBDMemReadData, MEMWBALUResult,  ALUOut, ALUIn2,EXMEMWriteData,   EXMEMAddress, branchLeftShifterOutput,pcInput,ALUSrcMuxIn, MEMWBdMemReadDataOut,ALUIn1,  WBMuxOutput, IDEXRData1, IDEXRData2, IDEXNextInstr, IDEXSignExtend,   branchAddressMuxOutput, jumpAddress, readDataOne, readDataTwo, memToRegMuxOutput,  signExtenderOutput, IFIDNextOutput, IFIDCurrOutput, instructionMemOutput, twoAdderOutput, adderOutput, pcOutput, pcMuxOutput : std_logic_vector(15 downto 0);
 signal EXMEMMemRead,IDEXMemRead, flush,  MEMWBMemToReg, EXMEMemWrite, EXMEMMemWrite, EXMEMMemToReg, stallMuxBranch,IDEXRegDst, IDEXJump, IDEXBranch, EXMEMRegWrite, MEMWBRegWrite, IDEXMemToReg, IDEXMemWrite, IDEXALUSrc, IDEXRegWrite, stallMuxMemRead, stallMuxMemToReg, stallMuxMemWrite, stallMuxALUSrc, stallMuxRegWrite, regDst, memRead, memToReg, memWrite, ALUSrc, stall, stallMuxRegDst, stallMuxJump, regComparatorOutput, branchAnd,  zero,pcWrite, branch,regWrite,jump,   causeEPCOutput, IFFlush, IFIDWrite: std_logic;
 signal regWriteOutput,writeRegMuxOuptut, MEMWBRd, IDEXMemRd,writeRegMuxOutput, EXMEMRd,  IDEXRtOut, IDEXRdOut, IDEXRsOut :  std_logic_vector(2 downto 0);
 signal ALUOp, stallMuxALUOp,IDEXALUOp: std_logic_vector(3 downto 0);
@@ -320,13 +320,20 @@ begin
             BUSA => pcOutput,
     	    RESULT => twoAdderOutput,
     	    COUT => open);
-    
+    	    
+     twoAdderJumpCalc: twoAdder
+        PORT MAP (
+            BUSA => IDEXNextInstr, --IFIDNextOutput, 
+            RESULT => twoAdderJumpOutput, 
+            COUT => open); 
+            
+            
      jumpShiftCalc: jumpLeftShifter
         PORT MAP (input => IFIDCurrOutput(11 downto 0), 
                   output => jumpLeftShifterOutput);
                   
      jumpAddress(12 downto 0) <= jumpLeftShifterOutput; 
-     jumpAddress(15 downto 13) <= IFIDCurrOutput(15 downto 13); 
+     jumpAddress(15 downto 13) <= IFIDNextOutput(15 downto 13);--twoAdderJumpOutput(15 downto 13); 
      
      IFIDCalc: IFIDBuffer
         PORT MAP (
@@ -337,7 +344,7 @@ begin
             currIn => instructionMemOutput, 
             nextOut => IFIDNextOutput, 
             currOut => IFIDCurrOutput);
-
+        
      signExtendCalc: signExtender
         PORT MAP(SigIn => IFIDCurrOutput(5 downto 0), 
                  SigOut => signExtenderOutput
@@ -356,10 +363,10 @@ begin
      branchAnd <= branch AND zero; 
      
      branchMuxCalc: sixteenBitMux
-        PORT MAP(cntrl => branchAnd, topin => adderOutput, bottom => twoAdderOutput,  output => branchAddressMuxOutput); 
+        PORT MAP(cntrl => stallMuxBranch, topin => adderOutput, bottom => twoAdderOutput,  output => branchAddressMuxOutput); 
         
      jumpMuxCalc: sixteenBitMux
-        PORT MAP(cntrl => jump, topin => jumpAddress, bottom => branchAddressMuxOutput, output => pcInput);
+        PORT MAP(cntrl => stallMuxJump, topin => jumpAddress, bottom => branchAddressMuxOutput, output => pcInput);
      
      controlUnitCalc: controlUnit
          PORT MAP (
@@ -391,8 +398,8 @@ begin
             clk  => clk, 
             read1 => IFIDCurrOutput(11 downto 9), 
             read2 => IFIDCurrOutput(8 downto 6),  
-            writeReg =>  EXMEMRd,  
-            registersWrite => regWrite, 
+            writeReg =>  MEMWBRd,  
+            registersWrite => MEMWBRegWrite, 
             writeData => WBMuxOutput, 
             data1 => readDataOne, 
             data2 =>  readDataTwo);
@@ -486,7 +493,7 @@ begin
                  A => ALUIn1, 
                  B => ALUIn2, 
                  C => ALUOut, 
-                 Mode => stallMuxALUOp, 
+                 Mode => IDEXALUOp, 
                  Zero => Zero
                 );
             

@@ -163,7 +163,7 @@ begin
                 jump <= '0';
                 mem_read <= '0';
                 mem_to_reg <= '0';
-                alu_op <= opcode;
+                alu_op <= "0001";
                 mem_write <= '0';
                 alu_src <= '0';
                 reg_write <= '0';
